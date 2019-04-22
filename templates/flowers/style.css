@@ -18,7 +18,10 @@ Version: 1.0.5
   margin-bottom: 7px;
 }
 
-.chatPeople .chatPeopleTitle:focus, .chatSendExitPanel select:focus, .chatInputText:focus {
+.chatPeople .chatPeopleTitle:focus, .chatSendExitPanel select:focus, .chatInputText:focus, input:focus[type="submit"],
+input:focus[type="button"],
+#join-chat-button:focus,
+#join-chat-button2:focus {
   outline: none;
 }
 
@@ -28,6 +31,17 @@ Version: 1.0.5
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs > ul > li.appTab a, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a {
   text-decoration: none;
+}
+
+.chatHeader .chatTopLine, .chatMain .chatMessages,
+.chatMain .chatPrivateMessages, .chatEventDiv, .chatPeople, .chatTabs, .chatPopupMenuDiv2, .smilesBox, .content form {
+  border-radius: 6px;
+}
+
+.chatHeader, .chatMain .chatMessages,
+.chatMain .chatPrivateMessages, .chatMain .chatPeople, .chatTabs, .content form {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.31);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.31);
 }
 
 *,
@@ -53,6 +67,11 @@ body {
 input[type=text] {
   padding-right: 5px;
   padding-left: 5px;
+  border-radius: 3px;
+}
+
+.msi {
+  display: none;
 }
 
 .smilesBox::-webkit-scrollbar,
@@ -64,14 +83,16 @@ input[type=text] {
 .vscrollable::-webkit-scrollbar-thumb {
   visibility: hidden;
   opacity: 0;
-  background-color: #555;
+  background-color: rgba(235, 97, 194, 0.3);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   -webkit-transition: visibility 0 linear 500ms, opacity 500ms linear;
   transition: visibility 0 linear 500ms, opacity 500ms linear;
 }
 
 .smilesBox::-webkit-scrollbar-thumb:hover,
 .vscrollable::-webkit-scrollbar-thumb:hover {
-  background-color: #999;
+  background-color: rgba(235, 97, 194, 0.6);
 }
 
 .smilesBox:hover::-webkit-scrollbar-thumb,
@@ -97,7 +118,46 @@ input[type=text] {
   border: 0;
 }
 
+.chatHeader {
+  top: 0;
+  right: 10px;
+  left: 10px;
+  margin: 0;
+  padding: 10px 40px 10px;
+  border: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.chatHeader .chatHeaderWrapper {
+  top: 0;
+  right: 10px;
+  left: 10px;
+  margin: 0;
+  padding: 10px 40px 10px;
+}
+
+.chatHeader .chatTitle {
+  white-space: nowrap;
+  margin: 0;
+  margin-top: -10px;
+  padding: 0;
+  overflow: hidden;
+  width: 80%;
+  line-height: 42px;
+  font-size: 34px;
+  font-weight: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.chatHeader .chatTopLine {
+  border-color: #cfcfc9;
+  background-color: #fff;
+}
+
 .chatTopLineWrapper > ul > li > a {
+  white-space: nowrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,12 +245,57 @@ input[type=text] {
   background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC") 0 0 no-repeat;
 }
 
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText {
+  border-radius: 3px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton {
+  border-radius: 3px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a {
+  white-space: nowrap;
+}
+
+.chatSendExitPanel select {
+  border-radius: 3px;
+}
+
+.chatInputText {
+  border-radius: 3px;
+}
+
+input[type="submit"],
+input[type="button"],
+#join-chat-button,
+#join-chat-button2 {
+  font-weight: 300;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  background: #eb55a3;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+#join-chat-button:hover,
+#join-chat-button2:hover {
+  background: #e899cf;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
 .chatPopupMenuDiv2 {
   width: auto !important;
   border: 0;
 }
 
 .chatPopupMenuDiv2 .chatPopupMenuContent p {
+  white-space: nowrap;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent p a {
   white-space: nowrap;
 }
 
@@ -207,5 +312,9 @@ input[type=text] {
   background-color: #fff;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+
+#nick {
+  border-radius: 3px;
 }
 /*# sourceMappingURL=style.css.map */
