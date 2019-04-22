@@ -9,3 +9,416 @@ Version: 1.0.5
  *
  * Copyright (c) 2019 Andrej Sharapov
  */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+// COMPONENTS
+
+$more: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC';
+$btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATxJREFUeNqkU7Fqw0AMzYkSjo5Jtto0QwshX9FCshbyCRk6lEz9qUymtHMC7W+EbonjIZSMxYTkrpLjM4osTxUInW2903uSbLz3rf/YlXwxHj9eY3Do+Wr1Xdy+2WxN+D4aPVCw6EB5IC9YLD5/MRyWy69aNQSH/CM65eVGk2DMuWAc31QMSrBjaYBF6gwCWKlcA7dKHaTbooMGLk0F8ybmmmYyIfECXDFoatgZbBrB6hgvNRPYq+DArJgC1x7H0Yf37imA+TfvzXuaphMuC2TlbrczRfBOgtF2zrlnyRYk7V6vs7e2PZMTwcdZlmU/cm+ArWelsd+/fcOQsLxkvd4m2tIFBpY1tGjY6eRfiDY5ndkaq1OAcr+rbhPdKIpe6Twc3u/xH3Ha1gLfNDkq7Ph8MLib47HdtKJ/AgwA9W6ajnCeJa4AAAAASUVORK5CYII=';
+
+%scroll {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+%curp {
+    cursor: pointer;
+}
+
+%focus {
+    &:focus {
+        outline: none;
+    }
+}
+
+%sizes {
+    font-size: 13px;
+}
+
+%tdn {
+    text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input[type=text] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.smilesBox,
+.vscrollable {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @extend %scroll;
+        visibility: hidden;
+        opacity: 0;
+        background-color: #555;
+        transition: visibility 0 linear 500ms, opacity 500ms linear;
+
+        &:hover {
+            background-color: #999;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        @extend %scroll;
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+#scrollBottomBox {
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    font-size: 0;
+    border: 0;
+
+    background: {
+        color: transparent;
+        position: center center;
+        repeat: no-repeat;
+    }
+
+    background-image: url($btndown);
+}
+
+#chatMainMenuProfile {}
+
+.menu_profile_title {}
+
+.chat {
+    font: 16px 'Comfortaa', sans-serif;
+    border: 0;
+}
+
+.chatHeader {
+
+    .chatHeaderWrapper {}
+
+    .chatTitle {}
+
+    .chatTopLine {}
+}
+
+.chatTopLineWrapper {
+
+    >ul {
+        >li {
+            >a {
+                display: flex;
+                align-items: center;
+                min-height: 15px;
+
+                span {
+                    &.menu_profile_title {
+                        font-weight: normal;
+                    }
+                }
+
+                .downarrowclass {
+                    top: auto;
+                }
+            }
+
+            >ul {
+                width: auto;
+
+                >li {
+                    >a {
+                        margin: 0;
+                        padding: .5em .75em;
+                        display: block;
+                        min-width: 162px;
+                        width: auto;
+                        white-space: nowrap;
+                        @extend %sizes;
+                        color: #333;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+    }
+
+    ul {
+
+        li {
+            &.chatMenuItemWithSeparator {
+                a {
+                    background-image: none;
+                }
+            }
+
+            a {}
+
+            ul {
+                border-color: #ccc;
+
+                li {
+                    a {}
+                }
+
+                &#chatMainMenuChat,
+                &#chatMainMenuChatovod {
+                    //! if li last-child(display: none)
+                    margin-left: -12px;
+                }
+            }
+        }
+    }
+}
+
+.chatMain {
+
+    .chatMessages,
+    .chatPrivateMessages {
+        right: 173px;
+
+        .chatMessage {
+
+            .chatTime {}
+        }
+    }
+
+    .chatPeople {}
+}
+
+.chatUserFrom {}
+
+.chatPeople {
+    .chatPeopleTitle {
+        margin: 4px 0;
+        width: 100%;
+        text-align: center;
+
+        @extend %focus;
+
+        .chatUsersCount {}
+    }
+
+    ul {
+        &.chatPeopleList {
+            li {
+                a {
+
+                    &.chatUserSex1,
+                    &.chatUserSex2,
+                    &.chatUserSex0 {
+                        b {}
+                    }
+
+                    &.chatUser {}
+                }
+
+                img {}
+
+                .chatUserMenu {
+                    .chatUserMenuItems {
+                        ul {
+                            li {
+                                a {
+                                    @extend %tdn;
+                                    @extend %sizes;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chatUserSex1,
+.chatUserSex2,
+.chatUserSex0 {
+    b {}
+}
+
+.chatUserWrapper {}
+
+.chatUserGiftsCount {
+    >img {}
+}
+
+.chatTabs {
+
+    >ul {
+
+        >li {
+
+            &.appTab {
+                a {
+                    @extend %tdn;
+                }
+            }
+
+            >a {}
+        }
+    }
+}
+
+.chatFooter {
+    .chatFooterWrapper {
+        .chatPanel {
+
+            div {
+                a {
+                    span {
+                        white-space: nowrap;
+                        @extend %sizes;
+                        border-bottom-color: transparent;
+                    }
+                }
+            }
+
+            .chatSendLinksPanel {
+                a {
+                    &.chatLinkSmiles {}
+
+                    &.chatLinkImage {}
+
+                    &.chatLinkProfile {}
+
+                    &.chatLinkGold {}
+
+                    &.chatLinkVip {
+                        margin-right: 33px !important;
+
+                        &::after {
+                            position: absolute;
+                            padding-left: 21px;
+                            content: 'vip';
+                            @extend %sizes;
+                        }
+                    }
+
+                    &.chatLinkModerate {
+
+                        &::before {
+                            position: absolute;
+                            padding-left: 21px;
+                            margin-right: 16px;
+                            content: 'модер';
+                            @extend %sizes;
+                        }
+                    }
+
+                    &.chatLinkMore {
+                        position: relative;
+                        left: 46px;
+                        padding-left: 21px;
+                        background: transparent url($more) 0 0 no-repeat;
+                    }
+                }
+            }
+
+            .chatSendTextPanel {
+                .chatSendText {}
+            }
+
+            .chatSendButtonPanel {
+                .chatSendButton {}
+            }
+
+            .chatSoundPanel {
+                a {
+                    &.muted {}
+                }
+            }
+
+            .chatSendExitPanel {}
+        }
+    }
+}
+
+.chatSendExitPanel {
+    select {
+        &:focus {
+            @extend %focus;
+        }
+    }
+}
+
+.chatInputText {
+    @extend %focus;
+}
+
+.chatSetupNickname {}
+
+#join-chat-button,
+#join-chat-button2 {}
+
+.chatPanel {}
+
+.chatPopupMenuDiv2 {
+    width: auto !important;
+    border: 0;
+
+    .chatPopupMenuContent {
+        p {
+            white-space: nowrap;
+            @extend %sizes;
+
+            a {
+                @extend %tdn;
+            }
+        }
+    }
+}
+
+.smilesBox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    z-index: 98;
+    margin: 1px -3px;
+    padding-left: 3px;
+    width: 320px;
+    height: 247px;
+    background-color: #fff;
+    transition: all 0.25s ease-in-out;
+
+    p {
+        @extend %sizes;
+
+        a {
+            @extend %tdn;
+        }
+    }
+
+    &.hidden {}
+}
+
+// login page / content
