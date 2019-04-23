@@ -12,7 +12,7 @@ Version: 1.0.5
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-// COMPONENTS
+// COMPONENTS of BASE
 
 $more: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC';
 $btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATxJREFUeNqkU7Fqw0AMzYkSjo5Jtto0QwshX9FCshbyCRk6lEz9qUymtHMC7W+EbonjIZSMxYTkrpLjM4osTxUInW2903uSbLz3rf/YlXwxHj9eY3Do+Wr1Xdy+2WxN+D4aPVCw6EB5IC9YLD5/MRyWy69aNQSH/CM65eVGk2DMuWAc31QMSrBjaYBF6gwCWKlcA7dKHaTbooMGLk0F8ybmmmYyIfECXDFoatgZbBrB6hgvNRPYq+DArJgC1x7H0Yf37imA+TfvzXuaphMuC2TlbrczRfBOgtF2zrlnyRYk7V6vs7e2PZMTwcdZlmU/cm+ArWelsd+/fcOQsLxkvd4m2tIFBpY1tGjY6eRfiDY5ndkaq1OAcr+rbhPdKIpe6Twc3u/xH3Ha1gLfNDkq7Ph8MLib47HdtKJ/AgwA9W6ajnCeJa4AAAAASUVORK5CYII=';
@@ -58,6 +58,18 @@ $bgi: '';
     text-decoration: none;
 }
 
+%btns {
+    text-decoration: none;
+
+    &:hover {}
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {}
+}
+
 *,
 *::before,
 *::after {
@@ -82,6 +94,7 @@ input[type=text] {
     padding-left: 5px;
 }
 
+//! optional
 .smilesBox,
 .vscrollable {
     &::-webkit-scrollbar {
@@ -130,8 +143,6 @@ input[type=text] {
 
 #chatMainMenuProfile {}
 
-.menu_profile_title {}
-
 .chat {
     font: 16px 'Ubuntu', sans-serif;
     border: 0;
@@ -147,7 +158,6 @@ input[type=text] {
 }
 
 .chatTopLineWrapper {
-
     >ul {
         >li {
             >a {
@@ -168,6 +178,22 @@ input[type=text] {
 
             >ul {
                 width: auto;
+
+                &[style*="display: none"] {
+                    display: block !important;
+                    pointer-events: none;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 200ms ease-in-out;
+                    transform: translateY(5px);
+                }
+
+                &[style*="display: block"] {
+                    pointer-events: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
 
                 >li {
                     >a {
@@ -219,6 +245,13 @@ input[type=text] {
 
 .chatMain {
 
+    //! danger message
+    #chatChannel_main {
+        .chatMessage {
+            strong {}
+        }
+    }
+
     .chatMessages,
     .chatPrivateMessages {
         right: 173px;
@@ -236,7 +269,15 @@ input[type=text] {
     .chatToUser {}
 }
 
-.chatSystemMessage {}
+.chatSystemMessage {
+    &.type-news {}
+
+    &.type-event {}
+
+    &.type-ban {}
+
+    a {}
+}
 
 #chatUserMiniMenu {}
 
@@ -301,21 +342,35 @@ input[type=text] {
 }
 
 .chatTabs {
-
-    >ul {
-
-        >li {
-
+    ul {
+        li {
             &.appTab {
                 a {
                     @extend %tdn;
                 }
             }
+        }
+    }
 
-            >a {}
+    >ul {
+        >li {
+            &.chatTab {
+                >a {}
+
+                &.chatTabActive {
+                    a {}
+                }
+
+                &#chat_main {
+                    a {}
+                }
+            }
         }
     }
 }
+
+.chatTabsRight.chatTabsLRActive,
+.chatTabsLeft.chatTabsLRActive {}
 
 .chatFooter {
     .chatFooterWrapper {
@@ -377,7 +432,9 @@ input[type=text] {
             }
 
             .chatSendButtonPanel {
-                .chatSendButton {}
+                .chatSendButton {
+                    @extend %btns;
+                }
             }
 
             .chatSoundPanel {
@@ -386,18 +443,17 @@ input[type=text] {
                 }
             }
 
-            .chatSendExitPanel {}
+            .chatSendExitPanel {
+                @extend %focus;
+
+                select {}
+            }
         }
     }
 }
 
-.chatSendExitPanel {
-    select {
-        &:focus {
-            @extend %focus;
-        }
-    }
-}
+.chatLinkVip,
+.chatLinkModerate {}
 
 .chatInputText {
     @extend %focus;
@@ -406,25 +462,16 @@ input[type=text] {
 .chatSetupNickname {}
 
 #join-chat-button,
-#join-chat-button2 {}
-
-.chatPopupMenuDiv2 {
-    width: auto !important;
-    border: 0;
-
-    .chatPopupMenuContent {
-        p {
-            white-space: nowrap;
-            @extend %sizes;
-
-            a {
-                @extend %tdn;
-            }
-        }
-    }
+#join-chat-button2 {
+    @extend %btns;
+    @extend %focus;
 }
 
 #chatImageUrl {}
+
+.dialog {
+    &.smoke {}
+}
 
 .smilesBox {
     position: absolute;
@@ -436,8 +483,8 @@ input[type=text] {
     padding-left: 3px;
     width: 320px;
     height: 247px;
-    background-color: #fff;
-    transition: all 0.25s ease-in-out;
+    background-color: $white;
+    transition: all 200ms ease-in-out;
 
     p {
         @extend %sizes;
@@ -452,7 +499,29 @@ input[type=text] {
 
 .chatEventDiv {}
 
-// login page / content
+.chatPopupMenuDiv1 {}
+
+.chatPopupMenuDiv2 {
+    width: auto !important;
+    border: 0;
+
+    .chatPopupMenuContent {
+        p {
+            white-space: nowrap;
+            @extend %sizes;
+
+            a {
+                @extend %tdn;
+            }
+
+            input[type="submit"] {
+                @extend %btns;
+            }
+        }
+    }
+}
+
+//* login page
 
 .chatFull {
     .transparent {
@@ -461,18 +530,61 @@ input[type=text] {
     }
 }
 
-.content {
-    form {}
-}
+//* login form
 
-#sign-in-label {
-    a {}
-}
+.center-wrapper {
+    .content {
+        form {
+            #sign-in-label {
+                a {
+                    @extend %tdn;
+                    @extend %btns;
+                }
+            }
 
-.justify {
-    a {}
+            #account-info {
+                a {
+                    @extend %tdn;
+                }
+            }
+
+            #new-nick-label {}
+
+            #existing-nick-label {}
+
+            #nick {}
+
+            #captcha-block {
+                a {
+                    img {}
+                }
+            }
+
+            #captcha-label {}
+
+            #captcha-input {}
+
+            //! #join-buttons
+            .justify {
+                #join-chat-button2 {
+                    //* input[type="submit"]
+                    @extend %sizes;
+                }
+
+                a {
+                    @extend %sizes;
+                }
+            }
+
+            #captcha-input {}
+
+            #email {}
+        }
+    }
 }
 
 .dialog-buttons {
-    button {}
+    button {
+        @extend %btns;
+    }
 }
