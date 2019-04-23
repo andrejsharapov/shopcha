@@ -545,8 +545,6 @@ input[type=text] {
     }
 }
 
-.chatUserFrom {}
-
 .chatPeople {
     .chatPeopleTitle {
         margin: 4px 0;
@@ -566,19 +564,6 @@ input[type=text] {
     ul {
         &.chatPeopleList {
             li {
-                a {
-
-                    &.chatUserSex1,
-                    &.chatUserSex2,
-                    &.chatUserSex0 {
-                        b {}
-                    }
-
-                    &.chatUser {}
-                }
-
-                img {}
-
                 .chatUserMenu {
                     padding: 8px 0;
                     width: 170px;
@@ -678,12 +663,6 @@ input[type=text] {
             }
         }
     }
-}
-
-.chatUserSex1,
-.chatUserSex2,
-.chatUserSex0 {
-    b {}
 }
 
 .chatUserAvatar {
@@ -1100,7 +1079,14 @@ option[value="EXIT"] {
         }
     }
 
-    &.hidden {}
+    &.hidden {
+        display: block !important;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 200ms ease-in-out;
+        transform: translateY(5px);
+    }
 }
 
 #chat_main {
@@ -1159,6 +1145,7 @@ option[value="EXIT"] {
                 a {
                     @extend %tdn;
                     @extend %btns;
+                    background-color: $col2;
                 }
             }
 
@@ -1180,24 +1167,21 @@ option[value="EXIT"] {
                 }
             }
 
-            #new-nick-label {}
-
-            #existing-nick-label {}
-
             #nick {
                 @extend %inputs;
             }
 
             #captcha-block {
                 a {
-                    img {}
+                    img { //* captcha
+                        width: 100%;
+                        height: auto;
+                    }
                 }
-            }
 
-            #captcha-label {}
-
-            #captcha-input {
-                @extend %inputs;
+                #captcha-input {
+                    @extend %inputs;
+                }
             }
 
             //! #join-buttons
@@ -1218,8 +1202,6 @@ option[value="EXIT"] {
                 }
             }
 
-            #captcha-input {}
-
             #email {
                 margin-bottom: 1.5rem;
                 display: block;
@@ -1228,6 +1210,16 @@ option[value="EXIT"] {
             }
         }
     }
+}
+
+.yes-button {
+    @extend %btns;
+    background-color: green;
+}
+
+.no-button {
+    @extend %btns;
+    background-color: red;
 }
 
 .dialog-buttons {

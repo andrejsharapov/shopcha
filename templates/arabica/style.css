@@ -41,7 +41,7 @@ Version: 1.0.5
   text-decoration: none;
 }
 
-.chatInputText, .center-wrapper .content form #nick, .center-wrapper .content form #captcha-input {
+.chatInputText, .center-wrapper .content form #nick, .center-wrapper .content form #captcha-block #captcha-input {
   margin-top: 10px;
   padding: 0.5em;
   min-width: 100%;
@@ -60,7 +60,7 @@ Version: 1.0.5
 }
 
 .chatTopLineWrapper > ul > li > a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a, #join-chat-button,
-#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .center-wrapper .content form .justify a, .dialog-buttons button {
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .center-wrapper .content form .justify a, .yes-button, .no-button, .dialog-buttons button {
   padding: 0.75em 1.25em;
   vertical-align: baseline;
   line-height: 1em;
@@ -89,7 +89,7 @@ Version: 1.0.5
 }
 
 .chatTopLineWrapper > ul > li > a:hover, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:hover, #join-chat-button:hover,
-#join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form .justify a:hover, .dialog-buttons button:hover {
+#join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form .justify a:hover, .yes-button:hover, .no-button:hover, .dialog-buttons button:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(255, 255, 255, 0.08)));
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -97,7 +97,7 @@ Version: 1.0.5
 }
 
 .chatTopLineWrapper > ul > li > a:active, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:active, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:active, #join-chat-button:active,
-#join-chat-button2:active, .chatPopupMenuDiv2 .chatPopupMenuContent p input:active[type="submit"], .center-wrapper .content form #sign-in-label a:active, .center-wrapper .content form .justify a:active, .dialog-buttons button:active {
+#join-chat-button2:active, .chatPopupMenuDiv2 .chatPopupMenuContent p input:active[type="submit"], .center-wrapper .content form #sign-in-label a:active, .center-wrapper .content form .justify a:active, .yes-button:active, .no-button:active, .dialog-buttons button:active {
   border-color: rgba(255, 255, 255, 0.08);
   -webkit-box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
           box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
@@ -932,6 +932,17 @@ option[value="EXIT"] {
   color: #fff;
 }
 
+.smilesBox.hidden {
+  display: block !important;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
 #chat_main {
   padding: .25rem 1rem !important;
   color: #e6a756;
@@ -979,6 +990,10 @@ option[value="EXIT"] {
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
 }
 
+.center-wrapper .content form #sign-in-label a {
+  background-color: #df902a;
+}
+
 .center-wrapper .content form #account-info {
   text-transform: uppercase;
   line-height: 1.2;
@@ -990,6 +1005,11 @@ option[value="EXIT"] {
 
 .center-wrapper .content form #account-info a {
   color: rgba(47, 23, 15, 0.9);
+}
+
+.center-wrapper .content form #captcha-block a img {
+  width: 100%;
+  height: auto;
 }
 
 .center-wrapper .content form .justify #join-chat-button2 {
@@ -1008,6 +1028,14 @@ option[value="EXIT"] {
   display: block;
   font-size: 24px !important;
   font-weight: 200;
+}
+
+.yes-button {
+  background-color: green;
+}
+
+.no-button {
+  background-color: red;
 }
 
 body:not(.has-nick) .chatFooterWrapper::after {
