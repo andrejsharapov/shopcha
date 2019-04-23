@@ -1,0 +1,900 @@
+/*
+Theme Name: Arabica
+To project: shopcha
+Author: Andrej Sharapov 
+Author URI: https://madeas.ru
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Version: 1.0.5
+ *
+ * Copyright (c) 2019 Andrej Sharapov
+ */
+@import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.chatMain, .chatFull .transparent {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65)), to(rgba(47, 23, 15, 0.65))), url("https://madeas.ru/wp-content/uploads/2018/02/bg_beans.jpg");
+  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("https://madeas.ru/wp-content/uploads/2018/02/bg_beans.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.smilesBox::-webkit-scrollbar-thumb,
+.vscrollable::-webkit-scrollbar-thumb, .smilesBox::-webkit-scrollbar-track,
+.vscrollable::-webkit-scrollbar-track {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.chatPeople .chatPeopleTitle:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:focus, .chatInputText:focus {
+  outline: none;
+}
+
+.chatTopLineWrapper > ul > li > ul > li > a, .chatPopupMenuDiv2 .chatPopupMenuContent p, .smilesBox p {
+  font-size: 13px;
+}
+
+.chatMain .chatMessages .chatMessage a,
+.chatMain .chatPrivateMessages .chatMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .chatPopupMenuDiv2, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a {
+  text-decoration: none;
+}
+
+.chatInputText, .content form #nick, .content form #captcha-input {
+  margin-top: 10px;
+  padding: 0.5em;
+  min-width: 100%;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(0, 0, 0, 0.3);
+  background-image: none;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.chatTopLineWrapper ul li ul, .chatEventDiv, .chatPopupMenuDiv2, .dialog.smoke {
+  border-color: rgba(255, 255, 255, 0.08);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 20px, rgba(0, 0, 0, 0.1) 0px 2px 2px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 20px, rgba(0, 0, 0, 0.1) 0px 2px 2px;
+}
+
+.chatTopLineWrapper > ul > li > a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a, #join-chat-button,
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], #sign-in-label a, .dialog-buttons button, .justify a {
+  padding: 0.75em 1.25em;
+  vertical-align: baseline;
+  line-height: 1em;
+  text-align: center;
+  display: inline-block;
+  min-height: 1em;
+  text-transform: none;
+  text-shadow: none;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(223, 144, 42, 0.09)));
+  background: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
+  -webkit-box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
+          box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.chatTopLineWrapper > ul > li > a:hover, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:hover, #join-chat-button:hover,
+#join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], #sign-in-label a:hover, .dialog-buttons button:hover, .justify a:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(255, 255, 255, 0.08)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chatTopLineWrapper > ul > li > a:active, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:active, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:active, #join-chat-button:active,
+#join-chat-button2:active, .chatPopupMenuDiv2 .chatPopupMenuContent p input:active[type="submit"], #sign-in-label a:active, .dialog-buttons button:active, .justify a:active {
+  border-color: rgba(255, 255, 255, 0.08);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
+          box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.smilesBox::-webkit-scrollbar,
+.vscrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.smilesBox::-webkit-scrollbar-thumb,
+.vscrollable::-webkit-scrollbar-thumb {
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(223, 144, 42, 0.5);
+  -webkit-transition: visibility 0 linear 500ms, opacity 500ms linear;
+  transition: visibility 0 linear 500ms, opacity 500ms linear;
+}
+
+.smilesBox::-webkit-scrollbar-thumb:hover,
+.vscrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(223, 144, 42, 0.7);
+}
+
+.smilesBox::-webkit-scrollbar-thumb:active,
+.vscrollable::-webkit-scrollbar-thumb:active {
+  background: rgba(223, 144, 42, 0.9);
+}
+
+.smilesBox::-webkit-scrollbar-track,
+.vscrollable::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.smilesBox:hover::-webkit-scrollbar-thumb,
+.vscrollable:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+  opacity: 1;
+}
+
+#scrollBottomBox {
+  right: 230px;
+  left: auto !important;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 0;
+  border-color: rgba(47, 23, 15, 0.1);
+  background-color: #df902a;
+}
+
+#scrollBottomBox::before {
+  position: relative;
+  vertical-align: top;
+  content: '\e874';
+  font-family: 'Linearicons-Free';
+  font-size: 16px !important;
+  color: #fff;
+  background: none;
+  -webkit-animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+          animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+}
+
+#scrollBottomBox:hover::before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.menu_profile_title {
+  display: none !important;
+}
+
+.chat {
+  font: 16px 'Raleway', sans-serif;
+  border: 0;
+}
+
+.chatHeader {
+  height: 80px;
+  border-bottom: 0;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .chatHeader {
+    height: 50px;
+  }
+}
+
+.chatHeader .chatTitle {
+  float: none;
+  margin: 0;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px !important;
+  font-weight: 800;
+  color: #e6a756;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .chatHeader .chatTitle {
+    font-size: 32px !important;
+  }
+}
+
+.chatHeader .chatTopLine {
+  right: auto;
+  left: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+}
+
+.chatTopLineWrapper > ul > li > a {
+  position: relative;
+  margin-right: 2px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 42px;
+  font-size: 0;
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(47, 23, 15, 0.95);
+  background-image: none;
+  -webkit-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+
+.chatTopLineWrapper > ul > li > a span.menu_profile_title {
+  font-weight: normal;
+}
+
+.chatTopLineWrapper > ul > li > a .downarrowclass {
+  display: none !important;
+}
+
+.chatTopLineWrapper > ul > li > a::before {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-family: 'Linearicons-Free';
+  font-size: 26px !important;
+  font-weight: bold;
+  color: #e6a756;
+}
+
+.chatTopLineWrapper > ul > li > a:hover {
+  background-color: #2f170f;
+}
+
+.chatTopLineWrapper > ul > li > ul {
+  width: auto;
+  border: 1px solid #422015 !important;
+  background: #2f170f;
+  -webkit-transition: all .25s ease-in-out 0s;
+  transition: all .25s ease-in-out 0s;
+}
+
+.chatTopLineWrapper > ul > li > ul[style*="display: none"] {
+  display: block !important;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.chatTopLineWrapper > ul > li > ul[style*="display: block"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.chatTopLineWrapper > ul > li > ul > li {
+  display: block;
+  white-space: nowrap;
+}
+
+.chatTopLineWrapper > ul > li > ul > li > a {
+  margin: 0;
+  padding: .5em .75em;
+  display: block;
+  min-width: 162px;
+  width: auto;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.chatTopLineWrapper > ul > li > ul > li > a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(223, 144, 42, 0.9);
+}
+
+.chatTopLineWrapper > ul > li:nth-child(1) > a::before {
+  content: '\e82a';
+}
+
+.chatTopLineWrapper > ul > li:nth-child(2) > a::before {
+  content: '\e83f';
+}
+
+.chatTopLineWrapper > ul > li:nth-child(3) > a::before {
+  content: '\e871';
+}
+
+.chatTopLineWrapper > ul > li:nth-child(3) > a img {
+  display: none;
+}
+
+.chatTopLineWrapper > ul > li:last-child > a {
+  margin-right: 0 !important;
+}
+
+.chatTopLineWrapper ul li.chatMenuItemWithSeparator a {
+  overflow: hidden;
+  background-image: none;
+}
+
+.chatTopLineWrapper ul li ul {
+  border-color: #ccc;
+}
+
+.chatTopLineWrapper ul li ul#chatMainMenuChat, .chatTopLineWrapper ul li ul#chatMainMenuChatovod {
+  margin-left: -12px;
+}
+
+.chatMain {
+  top: 0;
+  bottom: 0;
+}
+
+.chatMain .chatMessages,
+.chatMain .chatPrivateMessages {
+  top: 160px;
+  right: 173px;
+  bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .chatMain .chatMessages,
+  .chatMain .chatPrivateMessages {
+    top: 110px;
+  }
+}
+
+.chatMain .chatMessages .chatMessage a,
+.chatMain .chatPrivateMessages .chatMessage a {
+  font-weight: 700;
+  color: #df902a;
+}
+
+.chatMain .chatMessages .chatMessage .chatTime,
+.chatMain .chatPrivateMessages .chatMessage .chatTime {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: help;
+}
+
+.chatMain .chatPeople {
+  top: 160px;
+  bottom: 80px;
+  border-left: 0;
+}
+
+@media (max-width: 768px) {
+  .chatMain .chatPeople {
+    top: 110px;
+  }
+}
+
+.chatMessageToMe .chatToUser {
+  padding: 2px 6px;
+  border-radius: 2px;
+  background-color: #e6a756;
+}
+
+.chatSystemMessage {
+  font-style: normal !important;
+}
+
+.chatSystemMessage a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #df902a;
+}
+
+#chatUserMiniMenu {
+  border-color: rgba(230, 167, 86, 0.4);
+  background: rgba(47, 23, 15, 0.9);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.chatPeople .chatPeopleTitle {
+  margin: 4px 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu {
+  padding: 8px 0;
+  width: 170px;
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems {
+  margin-left: 66px;
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li {
+  margin: 0 3px 2px 0;
+  width: 24px;
+  height: 24px;
+  float: left;
+  cursor: pointer;
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 0 !important;
+  background-image: none;
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a::before {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-family: 'Linearicons-Free';
+  font-size: 14px !important;
+  color: #e6a756;
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuInfo::before {
+  content: '\e82a';
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuPrivate::before {
+  content: '\e82a';
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuPhotos::before {
+  content: '\e82b';
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuGift::before {
+  content: '\e844';
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuIgnore::before {
+  content: '\e86e';
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuBan::before {
+  content: '\e880';
+}
+
+.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li:active {
+  border-color: rgba(255, 255, 255, 0.08);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
+          box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
+}
+
+.chatPeople ul.chatPeopleList li.hover {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  background: rgba(47, 23, 15, 0.9);
+}
+
+.chatPeople ul.chatPeopleList li.hover .chatUser {
+  color: #e6a756;
+}
+
+.chatUserAvatar {
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+
+.chatTabs {
+  top: 80px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(47, 23, 15, 0.9);
+}
+
+@media (max-width: 768px) {
+  .chatTabs {
+    top: 60px;
+    height: 50px;
+  }
+}
+
+.chatTabs ul li.appTab a, .chatTabs > ul > li.chatTab > a, .chatTabs > ul > li.chatTab > a:hover, .chatTabs > ul > li.chatTab > a.active, .chatTabs > ul > li.chatTab.chatTabActive > a {
+  margin: 0 !important;
+  padding: .25rem 1rem;
+  line-height: 70px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  background: none !important;
+}
+
+@media (max-width: 768px) {
+  .chatTabs ul li.appTab a, .chatTabs > ul > li.chatTab > a, .chatTabs > ul > li.chatTab > a:hover, .chatTabs > ul > li.chatTab > a.active, .chatTabs > ul > li.chatTab.chatTabActive > a {
+    line-height: 40px;
+  }
+}
+
+.chatTabs ul {
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto 25px;
+  height: 80px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .chatTabs ul {
+    height: 50px;
+  }
+}
+
+.chatTabs > ul > li {
+  margin: 0 !important;
+}
+
+.chatTabs > ul > li.chatTab.chatTabActive {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.chatTabs > ul > li:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.chatTabsRight.chatTabsLRActive,
+.chatTabsLeft.chatTabsLRActive {
+  width: 25px;
+  text-align: center;
+  background-color: rgba(230, 167, 86, 0.54);
+  background-position: 6px center;
+}
+
+.chatFooter {
+  bottom: 0;
+  height: 80px;
+  border-top: 0;
+  background: rgba(47, 23, 15, 0.9);
+}
+
+.chatFooter .chatFooterWrapper {
+  bottom: 0;
+  height: 80px;
+  border-top: 0;
+  background: rgba(47, 23, 15, 0.9);
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div a span {
+  white-space: nowrap;
+  font-size: 0;
+  border-bottom-color: transparent;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel {
+  top: auto;
+  bottom: 46px;
+  left: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a {
+  margin-right: 2px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  background-image: none;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkSmiles::before {
+  content: '\e854';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkImage::before {
+  content: '\e824';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkProfile::before {
+  content: '\e82a';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkGold::before {
+  content: '\e80e';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip {
+  margin-right: 2px !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::before {
+  content: '\e814';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate {
+  margin-right: 2px !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before {
+  content: '\e810';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkMore::before {
+  content: '\e82b';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a::before {
+  padding-top: 2px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-family: 'Linearicons-Free';
+  font-size: 16px !important;
+  color: #e6a756;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:last-child {
+  margin-right: 0 !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel {
+  top: auto;
+  right: 144px;
+  bottom: 6px;
+  left: 6px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText {
+  height: 2em !important;
+  line-height: 1em;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel {
+  top: auto;
+  right: 6px;
+  bottom: 6px;
+  width: 130px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton {
+  width: 100%;
+  height: auto;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel {
+  top: 2px !important;
+  right: auto !important;
+  bottom: 46px;
+  left: 232px;
+  width: 32px !important;
+  height: 32px !important;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a {
+  margin-right: 0 !important;
+  padding: 5px !important;
+  width: 30px;
+  height: 30px !important;
+  text-align: center !important;
+  background-image: none !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a::before {
+  padding-top: 2px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-family: 'Linearicons-Free';
+  font-size: 16px !important;
+  content: '\e85a';
+  color: #e6a756;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a.muted::before {
+  content: '\e85d';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(255, 255, 255, 0.08)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel {
+  top: auto;
+  right: 0;
+  bottom: 50px;
+  width: 171px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  border-color: transparent;
+  background: rgba(230, 167, 86, 0);
+}
+
+.chatLinkVip,
+.chatLinkModerate {
+  margin-right: 2 !important;
+}
+
+option[value="ONLINE"] {
+  background: #4caf50;
+  color: #fff;
+}
+
+option[value="AWAY"],
+option[value="CUSTOM"],
+option[value="DND"] {
+  background: rgba(255, 255, 255, 0.85);
+  color: #90A4ae;
+}
+
+option[value="EXIT"] {
+  background: #990000;
+  color: #fff;
+}
+
+.chatEventDiv {
+  top: auto !important;
+  right: auto !important;
+  bottom: 90px !important;
+  left: 3px !important;
+  width: 320px !important;
+  min-height: 95px;
+}
+
+.chatPopupMenuDiv1 {
+  display: none !important;
+}
+
+.chatPopupMenuDiv2 {
+  top: auto !important;
+  right: auto !important;
+  bottom: 90px !important;
+  left: 3px !important;
+  padding: 6px;
+  min-width: 320px !important;
+  width: auto !important;
+  min-height: 95px;
+  color: #fff;
+  background: #2f170f;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent {
+  padding: 0;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent p {
+  white-space: nowrap;
+  color: #fff;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent p a {
+  color: #fff;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent > p > a[onclick*="removePopupMenu"] {
+  padding: 3px 15px;
+  display: block;
+  text-decoration: none;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent > p > a[onclick*="removePopupMenu"]:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#chatImageUrl {
+  margin: -2px auto 5px;
+}
+
+.smilesBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  z-index: 98;
+  margin: 1px -3px;
+  padding: 6px 0 6px 6px;
+  width: 316px;
+  height: 247px;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background: #2f170f;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.smilesBox p a {
+  color: #fff;
+}
+
+#chat_main {
+  padding: .25rem 1rem !important;
+  color: #e6a756;
+}
+
+.chat_0 {
+  padding: .25rem 1rem !important;
+  color: #e6a756;
+}
+
+.chatFull .transparent {
+  opacity: 1;
+}
+
+#account-info a {
+  background: rgba(47, 23, 15, 0.9);
+}
+
+@-webkit-keyframes bouncing {
+  0% {
+    bottom: 0;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    bottom: 25px;
+    -webkit-box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes bouncing {
+  0% {
+    bottom: 0;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    bottom: 25px;
+    -webkit-box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
