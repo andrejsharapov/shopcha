@@ -89,6 +89,7 @@ $bgi: 'https://madeas.ru/wp-content/uploads/2018/02/bg_beans.jpg';
     cursor: pointer;
     text-decoration: none;
     border: 1px solid rgba($black, .25);
+    border-radius: $bdrs / 3;
     background: linear-gradient(rgba($white, .2) 0%, rgba($col2, .09) 100%);
     box-shadow: inset rgba($white, .1) 0px 1px 0px, rgba($black, .3) 0px 1px 3px;
 
@@ -197,12 +198,6 @@ input[type=text] {
     }
 }
 
-#chatMainMenuProfile {}
-
-.menu_profile_title {
-    display: none !important;
-}
-
 .chat {
     font: 16px 'Raleway', sans-serif;
     border: 0;
@@ -216,8 +211,6 @@ input[type=text] {
     @media (max-width: 768px) {
         height: 50px;
     }
-
-    .chatHeaderWrapper {}
 
     .chatTitle {
         float: none;
@@ -268,7 +261,7 @@ input[type=text] {
 
                 span {
                     &.menu_profile_title {
-                        font-weight: normal;
+                        display: none !important;
                     }
                 }
 
@@ -304,14 +297,14 @@ input[type=text] {
                     pointer-events: none;
                     opacity: 0;
                     visibility: hidden;
-                    transition: all.25s ease-in-out;
+                    transition: all .25s ease-in-out;
                     transform: translateY(5px);
                 }
 
                 &[style*="display: block"] {
+                    pointer-events: auto;
                     opacity: 1;
                     visibility: visible;
-                    pointer-events: auto;
                     transform: translateY(0);
                 }
 
@@ -385,20 +378,16 @@ input[type=text] {
                 }
             }
 
-            a {}
-
             ul {
                 border-color: #ccc;
                 @extend %bdcbs;
-
-                li {
-                    a {}
-                }
 
                 &#chatMainMenuChat,
                 &#chatMainMenuChatovod {
                     //! if li last-child(display: none)
                     margin-left: -12px;
+                    width: auto !important;
+                    min-width: 180px;
                 }
             }
         }
@@ -459,6 +448,20 @@ input[type=text] {
 .chatSystemMessage {
     font-style: normal !important;
 
+    .chatSystemMessage {
+        &.type-news {
+            background-color: rgba(0, 153, 53, 0.5);
+        }
+
+        &.type-event {
+            background-color: rgba(0, 53, 153, 0.5);
+        }
+
+        &.type-ban {
+            background-color: rgba(153, 0, 0, 0.5);
+        }
+    }
+
     a {
         font-weight: 700;
         text-decoration: none;
@@ -467,9 +470,79 @@ input[type=text] {
 }
 
 #chatUserMiniMenu {
+    margin-right: 5px;
+    line-height: 24px;
+    color: $col1;
     border-color: rgba($col1, .4);
+    border-radius: $bdrs / 2;
     background: rgba($col3, .9);
     box-shadow: none;
+
+    .buttons {
+        div {
+            margin-left: 3px;
+            width: 24px;
+            height: 24px;
+            line-height: 20px;
+            text-align: center;
+            background-image: none;
+
+            &::before {
+                padding-top: 2px;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                color: $col1;
+                font-family: 'Linearicons-Free';
+                font-size: 13px !important;
+                border-radius: 3px;
+                background: linear-gradient(rgba($white, 0.2) 0%, rgba($col2, .09) 100%);
+                box-shadow: inset rgba($white, 0.1) 0px 1px 0px, rgba($black, 0.3) 0px 1px 3px;
+            }
+
+            &:active {
+                &::before {
+                    background-image: linear-gradient(rgba($white, .08) 0%, rgba($white, .08) 100%);
+                }
+            }
+
+            &.chatUserMenuInfo {
+                &::before {
+                    content: '\e82a';
+                }
+            }
+
+            &.chatUserMenuPrivate {
+                &::before {
+                    content: '\e82b';
+                }
+            }
+
+            &.chatUserMenuPhotos {
+                &::before {
+                    content: '\e827';
+                }
+            }
+
+            &.chatUserMenuGift {
+                &::before {
+                    content: '\e844';
+                }
+            }
+
+            &.chatUserMenuIgnore {
+                &::before {
+                    content: '\e86e';
+                }
+            }
+
+            &.chatUserMenuBan {
+                &::before {
+                    content: '\e880';
+                }
+            }
+        }
+    }
 }
 
 .chatUserFrom {}
@@ -483,7 +556,11 @@ input[type=text] {
 
         @extend %focus;
 
-        .chatUsersCount {}
+        .chatUsersCount {
+            //? users online
+            font-weight: 600;
+            color: $white;
+        }
     }
 
     ul {
@@ -512,8 +589,8 @@ input[type=text] {
                         ul {
                             li {
                                 margin: 0 3px 2px 0;
-                                width: 24px;
-                                height: 24px;
+                                width: 26px;
+                                height: 26px;
                                 float: left;
                                 cursor: pointer;
                                 text-shadow: none;
@@ -551,13 +628,13 @@ input[type=text] {
 
                                     &.chatUserMenuPrivate {
                                         &::before {
-                                            content: '\e82a';
+                                            content: '\e82b';
                                         }
                                     }
 
                                     &.chatUserMenuPhotos {
                                         &::before {
-                                            content: '\e82b';
+                                            content: '\e827';
                                         }
                                     }
 
@@ -581,7 +658,7 @@ input[type=text] {
                                 }
 
                                 &:active {
-                                    border-color: rgba(255, 255, 255, 0.08);
+                                    border-color: rgba($white, 0.08);
                                     box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
                                 }
                             }
@@ -609,16 +686,10 @@ input[type=text] {
     b {}
 }
 
-.chatUserWrapper {}
-
 .chatUserAvatar {
     text-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.25);
     transition: 0.1s all linear;
-}
-
-.chatUserGiftsCount {
-    >img {}
 }
 
 .chatTabs {
@@ -742,9 +813,10 @@ input[type=text] {
 
                 a {
                     margin-right: 2px;
-                    padding: 5px;
+                    padding: 0;
                     width: 30px;
                     height: 30px;
+                    line-height: 25px;
                     background-image: none;
                     @extend %btns;
 
@@ -850,10 +922,12 @@ input[type=text] {
 
                 a {
                     margin-right: 0 !important;
-                    padding: 5px !important;
+                    padding: 0 !important;
                     width: 30px;
                     height: 30px !important;
+                    line-height: 25px;
                     text-align: center !important;
+                    font-size: 0 !important;
                     background-image: none !important;
                     @extend %btns;
 
@@ -926,11 +1000,10 @@ option[value="EXIT"] {
     @extend %focus;
 }
 
-.chatSetupNickname {}
-
 #join-chat-button,
 #join-chat-button2 {
     @extend %btns;
+    @extend %focus;
 }
 
 .chatEventDiv {
@@ -1035,11 +1108,6 @@ option[value="EXIT"] {
     color: $col1;
 }
 
-.chat_0 {
-    padding: .25rem 1rem !important;
-    color: $col1;
-}
-
 .chatFull {
     .transparent {
         @extend %bg; //! optimal
@@ -1047,33 +1115,118 @@ option[value="EXIT"] {
     }
 }
 
-.content {
-    form {
-        #nick {
-            @extend %inputs;
+.center-wrapper {
+    .content {
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            content: '';
+            border-radius: .25em;
+            background: url(https://madeas.ru/wp-content/uploads/2018/02/bg_beans_form.jpg) 90% 50% no-repeat;
+            background-size: 50%;
         }
 
-        #captcha-input {
-            @extend %inputs;
+        form {
+            position: fixed;
+            top: 20%;
+            left: 20%;
+            z-index: 1;
+            margin: .5rem;
+            padding: 3rem;
+            text-align: center;
+            border-radius: .25em;
+            background-color: rgba($white, .85);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -.5rem;
+                right: -.5rem;
+                bottom: -.5rem;
+                left: -.5rem;
+                z-index: -1;
+                border-radius: .5rem;
+                border: .25rem solid rgba($white, .85);
+            }
+
+            #sign-in-label {
+                a {
+                    @extend %tdn;
+                    @extend %btns;
+                }
+            }
+
+            #account-info {
+                text-transform: uppercase;
+                line-height: 1.2;
+
+                font: {
+                    size: 18px !important;
+                    family: 'Raleway', sans-serif;
+                    weight: 800;
+                }
+
+                color: inherit;
+
+                a {
+                    @extend %tdn;
+                    color: rgba($col3, .9);
+                }
+            }
+
+            #new-nick-label {}
+
+            #existing-nick-label {}
+
+            #nick {
+                @extend %inputs;
+            }
+
+            #captcha-block {
+                a {
+                    img {}
+                }
+            }
+
+            #captcha-label {}
+
+            #captcha-input {
+                @extend %inputs;
+            }
+
+            //! #join-buttons
+            .justify {
+                #join-chat-button2 {
+                    //* input[type="submit"]
+                    @extend %sizes;
+                    border-color: $col2;
+                    background-color: $col1;
+                }
+
+                a {
+                    @extend %btns;
+                    @extend %sizes;
+                    border-color: $col2;
+                    border-radius: $bdrs / 3;
+                    background-color: $col1;
+                }
+            }
+
+            #captcha-input {}
+
+            #email {
+                margin-bottom: 1.5rem;
+                display: block;
+                font-size: 24px !important;
+                font-weight: 200;
+            }
         }
-    }
-}
-
-#account-info {
-    a {
-        background: rgba($col3, .9);
-    }
-}
-
-#sign-in-label {
-    a {
-        @extend %btns;
-    }
-}
-
-#sign-in-label {
-    a {
-        @extend %btns;
     }
 }
 
@@ -1083,9 +1236,16 @@ option[value="EXIT"] {
     }
 }
 
-.justify {
-    a {
-        @extend %btns;
+body:not(.has-nick) {
+    .chatFooterWrapper {
+        &::after {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            content: '© 2019 by Andrej Sharapov';
+            color: rgba($white, .07);
+            font-size: 9px;
+        }
     }
 }
 

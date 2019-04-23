@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Arabica
 To project: shopcha
@@ -26,20 +27,21 @@ Version: 1.0.5
   margin-bottom: 5px;
 }
 
-.chatPeople .chatPeopleTitle:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:focus, .chatInputText:focus {
+.chatPeople .chatPeopleTitle:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:focus, .chatInputText:focus, #join-chat-button:focus,
+#join-chat-button2:focus {
   outline: none;
 }
 
-.chatTopLineWrapper > ul > li > ul > li > a, .chatPopupMenuDiv2 .chatPopupMenuContent p, .smilesBox p {
+.chatTopLineWrapper > ul > li > ul > li > a, .chatPopupMenuDiv2 .chatPopupMenuContent p, .smilesBox p, .center-wrapper .content form .justify #join-chat-button2, .center-wrapper .content form .justify a {
   font-size: 13px;
 }
 
 .chatMain .chatMessages .chatMessage a,
-.chatMain .chatPrivateMessages .chatMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .chatPopupMenuDiv2, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a {
+.chatMain .chatPrivateMessages .chatMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .chatPopupMenuDiv2, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a, .center-wrapper .content form #sign-in-label a, .center-wrapper .content form #account-info a {
   text-decoration: none;
 }
 
-.chatInputText, .content form #nick, .content form #captcha-input {
+.chatInputText, .center-wrapper .content form #nick, .center-wrapper .content form #captcha-input {
   margin-top: 10px;
   padding: 0.5em;
   min-width: 100%;
@@ -58,7 +60,7 @@ Version: 1.0.5
 }
 
 .chatTopLineWrapper > ul > li > a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a, #join-chat-button,
-#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], #sign-in-label a, .dialog-buttons button, .justify a {
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .center-wrapper .content form .justify a, .dialog-buttons button {
   padding: 0.75em 1.25em;
   vertical-align: baseline;
   line-height: 1em;
@@ -73,6 +75,7 @@ Version: 1.0.5
   cursor: pointer;
   text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(223, 144, 42, 0.09)));
   background: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
   -webkit-box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
@@ -86,7 +89,7 @@ Version: 1.0.5
 }
 
 .chatTopLineWrapper > ul > li > a:hover, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:hover, #join-chat-button:hover,
-#join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], #sign-in-label a:hover, .dialog-buttons button:hover, .justify a:hover {
+#join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form .justify a:hover, .dialog-buttons button:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(255, 255, 255, 0.08)));
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -94,7 +97,7 @@ Version: 1.0.5
 }
 
 .chatTopLineWrapper > ul > li > a:active, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:active, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:active, #join-chat-button:active,
-#join-chat-button2:active, .chatPopupMenuDiv2 .chatPopupMenuContent p input:active[type="submit"], #sign-in-label a:active, .dialog-buttons button:active, .justify a:active {
+#join-chat-button2:active, .chatPopupMenuDiv2 .chatPopupMenuContent p input:active[type="submit"], .center-wrapper .content form #sign-in-label a:active, .center-wrapper .content form .justify a:active, .dialog-buttons button:active {
   border-color: rgba(255, 255, 255, 0.08);
   -webkit-box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
           box-shadow: inset rgba(0, 0, 0, 0.4) 0px 1px 3px;
@@ -188,10 +191,6 @@ input[type=text] {
           animation-play-state: paused;
 }
 
-.menu_profile_title {
-  display: none !important;
-}
-
 .chat {
   font: 16px 'Raleway', sans-serif;
   border: 0;
@@ -259,7 +258,7 @@ input[type=text] {
 }
 
 .chatTopLineWrapper > ul > li > a span.menu_profile_title {
-  font-weight: normal;
+  display: none !important;
 }
 
 .chatTopLineWrapper > ul > li > a .downarrowclass {
@@ -293,16 +292,16 @@ input[type=text] {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
   -webkit-transform: translateY(5px);
           transform: translateY(5px);
 }
 
 .chatTopLineWrapper > ul > li > ul[style*="display: block"] {
+  pointer-events: auto;
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
@@ -358,6 +357,8 @@ input[type=text] {
 
 .chatTopLineWrapper ul li ul#chatMainMenuChat, .chatTopLineWrapper ul li ul#chatMainMenuChatovod {
   margin-left: -12px;
+  width: auto !important;
+  min-width: 180px;
 }
 
 .chatMain {
@@ -413,6 +414,18 @@ input[type=text] {
   font-style: normal !important;
 }
 
+.chatSystemMessage .chatSystemMessage.type-news {
+  background-color: rgba(0, 153, 53, 0.5);
+}
+
+.chatSystemMessage .chatSystemMessage.type-event {
+  background-color: rgba(0, 53, 153, 0.5);
+}
+
+.chatSystemMessage .chatSystemMessage.type-ban {
+  background-color: rgba(153, 0, 0, 0.5);
+}
+
 .chatSystemMessage a {
   font-weight: 700;
   text-decoration: none;
@@ -420,10 +433,67 @@ input[type=text] {
 }
 
 #chatUserMiniMenu {
+  margin-right: 5px;
+  line-height: 24px;
+  color: #e6a756;
   border-color: rgba(230, 167, 86, 0.4);
+  border-radius: 3px;
   background: rgba(47, 23, 15, 0.9);
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+#chatUserMiniMenu .buttons div {
+  margin-left: 3px;
+  width: 24px;
+  height: 24px;
+  line-height: 20px;
+  text-align: center;
+  background-image: none;
+}
+
+#chatUserMiniMenu .buttons div::before {
+  padding-top: 2px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  color: #e6a756;
+  font-family: 'Linearicons-Free';
+  font-size: 13px !important;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(223, 144, 42, 0.09)));
+  background: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
+  -webkit-box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
+          box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
+}
+
+#chatUserMiniMenu .buttons div:active::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.08)), to(rgba(255, 255, 255, 0.08)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuInfo::before {
+  content: '\e82a';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuPrivate::before {
+  content: '\e82b';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuPhotos::before {
+  content: '\e827';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuGift::before {
+  content: '\e844';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuIgnore::before {
+  content: '\e86e';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuBan::before {
+  content: '\e880';
 }
 
 .chatPeople .chatPeopleTitle {
@@ -431,6 +501,11 @@ input[type=text] {
   width: 100%;
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.chatPeople .chatPeopleTitle .chatUsersCount {
+  font-weight: 600;
+  color: #fff;
 }
 
 .chatPeople ul.chatPeopleList li .chatUserMenu {
@@ -444,8 +519,8 @@ input[type=text] {
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li {
   margin: 0 3px 2px 0;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   float: left;
   cursor: pointer;
   text-shadow: none;
@@ -480,11 +555,11 @@ input[type=text] {
 }
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuPrivate::before {
-  content: '\e82a';
+  content: '\e82b';
 }
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuPhotos::before {
-  content: '\e82b';
+  content: '\e827';
 }
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a.chatUserMenuGift::before {
@@ -619,9 +694,10 @@ input[type=text] {
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a {
   margin-right: 2px;
-  padding: 5px;
+  padding: 0;
   width: 30px;
   height: 30px;
+  line-height: 25px;
   background-image: none;
 }
 
@@ -715,10 +791,12 @@ input[type=text] {
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a {
   margin-right: 0 !important;
-  padding: 5px !important;
+  padding: 0 !important;
   width: 30px;
   height: 30px !important;
+  line-height: 25px;
   text-align: center !important;
+  font-size: 0 !important;
   background-image: none !important;
 }
 
@@ -859,17 +937,86 @@ option[value="EXIT"] {
   color: #e6a756;
 }
 
-.chat_0 {
-  padding: .25rem 1rem !important;
-  color: #e6a756;
-}
-
 .chatFull .transparent {
   opacity: 1;
 }
 
-#account-info a {
-  background: rgba(47, 23, 15, 0.9);
+.center-wrapper .content::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  content: '';
+  border-radius: .25em;
+  background: url(https://madeas.ru/wp-content/uploads/2018/02/bg_beans_form.jpg) 90% 50% no-repeat;
+  background-size: 50%;
+}
+
+.center-wrapper .content form {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  z-index: 1;
+  margin: .5rem;
+  padding: 3rem;
+  text-align: center;
+  border-radius: .25em;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.center-wrapper .content form::before {
+  content: '';
+  position: absolute;
+  top: -.5rem;
+  right: -.5rem;
+  bottom: -.5rem;
+  left: -.5rem;
+  z-index: -1;
+  border-radius: .5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+.center-wrapper .content form #account-info {
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-size: 18px !important;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  color: inherit;
+}
+
+.center-wrapper .content form #account-info a {
+  color: rgba(47, 23, 15, 0.9);
+}
+
+.center-wrapper .content form .justify #join-chat-button2 {
+  border-color: #df902a;
+  background-color: #e6a756;
+}
+
+.center-wrapper .content form .justify a {
+  border-color: #df902a;
+  border-radius: 2px;
+  background-color: #e6a756;
+}
+
+.center-wrapper .content form #email {
+  margin-bottom: 1.5rem;
+  display: block;
+  font-size: 24px !important;
+  font-weight: 200;
+}
+
+body:not(.has-nick) .chatFooterWrapper::after {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  content: '© 2019 by Andrej Sharapov';
+  color: rgba(255, 255, 255, 0.07);
+  font-size: 9px;
 }
 
 @-webkit-keyframes bouncing {
