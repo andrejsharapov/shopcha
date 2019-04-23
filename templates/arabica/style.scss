@@ -26,7 +26,8 @@ $col2: #df902a; //* 223, 144, 42
 $col3: #2f170f; //* 47,23,15
 $black: #000;
 
-$bgi: 'https://madeas.ru/wp-content/uploads/2018/02/bg_beans.jpg';
+$bgi: 'http://www.lebo.ru/upload/headers/lb-production-first.png';
+$afterlog: 'https://i.pinimg.com/736x/59/4b/96/594b969d1e6f19ea7671cfadfc1af632.jpg';
 
 %bg {
     background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
@@ -1114,7 +1115,7 @@ option[value="EXIT"] {
             width: 100%;
             content: '';
             border-radius: .25em;
-            background: url(https://madeas.ru/wp-content/uploads/2018/02/bg_beans_form.jpg) 90% 50% no-repeat;
+            background: url($afterlog) 90% 50% no-repeat;
             background-size: 50%;
         }
 

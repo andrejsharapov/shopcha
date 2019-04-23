@@ -13,8 +13,8 @@ Version: 1.0.5
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 .chatMain, .chatFull .transparent {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65)), to(rgba(47, 23, 15, 0.65))), url("https://madeas.ru/wp-content/uploads/2018/02/bg_beans.jpg");
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("https://madeas.ru/wp-content/uploads/2018/02/bg_beans.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65)), to(rgba(47, 23, 15, 0.65))), url("http://www.lebo.ru/upload/headers/lb-production-first.png");
+  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("http://www.lebo.ru/upload/headers/lb-production-first.png");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -962,7 +962,7 @@ option[value="EXIT"] {
   width: 100%;
   content: '';
   border-radius: .25em;
-  background: url(https://madeas.ru/wp-content/uploads/2018/02/bg_beans_form.jpg) 90% 50% no-repeat;
+  background: url("https://i.pinimg.com/736x/59/4b/96/594b969d1e6f19ea7671cfadfc1af632.jpg") 90% 50% no-repeat;
   background-size: 50%;
 }
 
