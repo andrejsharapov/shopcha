@@ -237,6 +237,8 @@ input[type=text] {
                 &#chatMainMenuChatovod {
                     //! if li last-child(display: none)
                     margin-left: -12px;
+                    width: auto !important;
+                    min-width: 180px;
                 }
             }
         }
@@ -266,17 +268,27 @@ input[type=text] {
 }
 
 .chatMessageToMe {
-    .chatToUser {}
+    .chatToUser {
+        padding: 2px 6px;
+    }
 }
 
 .chatSystemMessage {
-    &.type-news {}
+    &.type-news {
+        background-color: rgba(0, 153, 53, 0.5);
+    }
 
-    &.type-event {}
+    &.type-event {
+        background-color: rgba(0, 53, 153, 0.5);
+    }
 
-    &.type-ban {}
+    &.type-ban {
+        background-color: rgba(153, 0, 0, 0.5);
+    }
 
-    a {}
+    a {
+        @extend %tdn;
+    }
 }
 
 #chatUserMiniMenu {}
