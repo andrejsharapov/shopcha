@@ -560,21 +560,27 @@ input[type=text] {
                 }
             }
 
-            #new-nick-label {}
-
+            #new-nick-label,
             #existing-nick-label {}
 
-            #nick {}
+            #nick {
+                @extend %inputs;
+            }
 
             #captcha-block {
                 a {
-                    img {}
+                    img { //* captcha
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                #captcha-label {}
+
+                #captcha-input {
+                    @extend %inputs;
                 }
             }
-
-            #captcha-label {}
-
-            #captcha-input {}
 
             //! #join-buttons
             .justify {
@@ -588,11 +594,19 @@ input[type=text] {
                 }
             }
 
-            #captcha-input {}
-
             #email {}
         }
     }
+}
+
+.yes-button {
+    @extend %btns;
+    background-color: green;
+}
+
+.no-button {
+    @extend %btns;
+    background-color: red;
 }
 
 .dialog-buttons {
