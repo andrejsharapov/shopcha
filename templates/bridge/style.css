@@ -13,8 +13,8 @@ Version: 1.0.5
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 .chatMain, .chatFull .transparent {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(52, 60, 71, 0.65)), to(rgba(52, 60, 71, 0.65))), url("https://www.lukas-petereit.com/wp-content/uploads/2017/05/Rakotzbr%C3%BCcke-Rakotz-Bridge-Kromlau-Lake-Devils-Bridge-Sunrise-Landscape-Reflection-Germany-Saxony-Travel-Photography-Nature-Photo-Spreewald.jpg");
-  background: linear-gradient(rgba(52, 60, 71, 0.65), rgba(52, 60, 71, 0.65)), url("https://www.lukas-petereit.com/wp-content/uploads/2017/05/Rakotzbr%C3%BCcke-Rakotz-Bridge-Kromlau-Lake-Devils-Bridge-Sunrise-Landscape-Reflection-Germany-Saxony-Travel-Photography-Nature-Photo-Spreewald.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(52, 60, 71, 0.65)), to(rgba(52, 60, 71, 0.65))), url("https://shop.madeas.ru/chatemplate/bridge/src/bg.jpg");
+  background: linear-gradient(rgba(52, 60, 71, 0.65), rgba(52, 60, 71, 0.65)), url("https://shop.madeas.ru/chatemplate/bridge/src/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -27,7 +27,7 @@ Version: 1.0.5
   margin-bottom: 5px;
 }
 
-.chatPeople .chatPeopleTitle:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:focus, .chatInputText:focus, #join-chat-button:focus,
+.chatInputText:focus, .center-wrapper .content form #nick:focus, .center-wrapper .content form #captcha-block #captcha-input:focus, .chatPeople .chatPeopleTitle:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:focus, #join-chat-button:focus,
 #join-chat-button2:focus {
   outline: none;
 }
@@ -924,8 +924,6 @@ option[value="EXIT"] {
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   background: #343c47;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .smilesBox p a {
@@ -962,7 +960,7 @@ option[value="EXIT"] {
   width: 100%;
   content: '';
   border-radius: .25em;
-  background: url("https://i.pinimg.com/originals/7c/df/a9/7cdfa992ba2918be0bd9244694dfafc8.png") 90% 50% no-repeat;
+  background: url("https://shop.madeas.ru/chatemplate/bridge/src/alertlog.png") 90% 50% no-repeat;
   background-size: 50%;
 }
 
@@ -1040,7 +1038,7 @@ option[value="EXIT"] {
 
 body:not(.has-nick) .chatFooterWrapper::after {
   position: absolute;
-  top: 2px;
+  top: 4px;
   right: 5px;
   content: '© 2019 by Andrej Sharapov';
   color: rgba(255, 255, 255, 0.07);

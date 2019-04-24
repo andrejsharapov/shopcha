@@ -24,8 +24,12 @@ $col2: #a39a47;
 $col3: #343c47;
 $black: #000;
 
-$bgi: 'https://www.lukas-petereit.com/wp-content/uploads/2017/05/Rakotzbr%C3%BCcke-Rakotz-Bridge-Kromlau-Lake-Devils-Bridge-Sunrise-Landscape-Reflection-Germany-Saxony-Travel-Photography-Nature-Photo-Spreewald.jpg';
-$afterlog: 'https://i.pinimg.com/originals/7c/df/a9/7cdfa992ba2918be0bd9244694dfafc8.png';
+$base: 'https://shop.madeas.ru/chatemplate/';
+$base_bg: '/src/bg.jpg';
+$base_alert: '/src/alertlog.png';
+
+$bgi: $base + 'bridge' + $base_bg;
+$afterlog: $base + 'bridge' + $base_alert;
 
 %bg {
     background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
@@ -66,6 +70,7 @@ $afterlog: 'https://i.pinimg.com/originals/7c/df/a9/7cdfa992ba2918be0bd9244694df
     background-color: rgba($black, .3);
     background-image: none;
     box-shadow: inset 0 1px 3px rgba($black, .06);
+    @extend %focus;
 }
 
 %bdcbs {
@@ -975,7 +980,6 @@ option[value="EXIT"] {
 
 .chatInputText {
     @extend %inputs;
-    @extend %focus;
 }
 
 #join-chat-button,
@@ -1067,7 +1071,6 @@ option[value="EXIT"] {
     color: $white;
     border-top: 1px solid rgba($white, .18);
     background: $col3;
-    transition: all 0.25s ease-in-out;
 
     p {
         @extend %sizes;
@@ -1232,7 +1235,7 @@ body:not(.has-nick) {
     .chatFooterWrapper {
         &::after {
             position: absolute;
-            top: 2px;
+            top: 4px;
             right: 5px;
             content: '© 2019 by Andrej Sharapov';
             color: rgba($white, .07);
