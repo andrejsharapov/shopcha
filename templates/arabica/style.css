@@ -1,20 +1,20 @@
 @charset "UTF-8";
 /*
 Theme Name: Arabica
-To project: shopcha
+To project: shop.madeas.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
-Version: 1.0.5
+Version: 1.0.6
  *
  * Copyright (c) 2019 Andrej Sharapov
  */
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 .chatMain, .chatFull .transparent {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65)), to(rgba(47, 23, 15, 0.65))), url("http://www.lebo.ru/upload/headers/lb-production-first.png");
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("http://www.lebo.ru/upload/headers/lb-production-first.png");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65)), to(rgba(47, 23, 15, 0.65))), url("https://shop.madeas.ru/chatemplate/arabica/src/bg.jpg");
+  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("https://shop.madeas.ru/chatemplate/arabica/src/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -378,6 +378,11 @@ input[type=text] {
   .chatMain .chatPrivateMessages {
     top: 110px;
   }
+}
+
+.chatMain .chatMessages .chatMessage,
+.chatMain .chatPrivateMessages .chatMessage {
+  line-height: 1.7;
 }
 
 .chatMain .chatMessages .chatMessage a,
@@ -924,8 +929,6 @@ option[value="EXIT"] {
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   background: #2f170f;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .smilesBox p a {
@@ -952,24 +955,12 @@ option[value="EXIT"] {
   opacity: 1;
 }
 
-.center-wrapper .content::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  margin: auto;
-  height: 100%;
-  width: 100%;
-  content: '';
-  border-radius: .25em;
-  background: url("https://i.pinimg.com/736x/59/4b/96/594b969d1e6f19ea7671cfadfc1af632.jpg") 90% 50% no-repeat;
-  background-size: 50%;
-}
-
 .center-wrapper .content form {
-  position: fixed;
-  top: 20%;
-  left: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 1;
   margin: .5rem;
   padding: 3rem;

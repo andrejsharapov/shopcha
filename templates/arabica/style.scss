@@ -1,11 +1,11 @@
 /*
 Theme Name: Arabica
-To project: shopcha
+To project: shop.madeas.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
-Version: 1.0.5
+Version: 1.0.6
  *
  * Copyright (c) 2019 Andrej Sharapov
  */
@@ -13,21 +13,23 @@ Version: 1.0.5
 @import url('https://cdn.linearicons.com/free/1.0.0/icon-font.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-//- COMPONENTS
-
 $more: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC';
 $btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATxJREFUeNqkU7Fqw0AMzYkSjo5Jtto0QwshX9FCshbyCRk6lEz9qUymtHMC7W+EbonjIZSMxYTkrpLjM4osTxUInW2903uSbLz3rf/YlXwxHj9eY3Do+Wr1Xdy+2WxN+D4aPVCw6EB5IC9YLD5/MRyWy69aNQSH/CM65eVGk2DMuWAc31QMSrBjaYBF6gwCWKlcA7dKHaTbooMGLk0F8ybmmmYyIfECXDFoatgZbBrB6hgvNRPYq+DArJgC1x7H0Yf37imA+TfvzXuaphMuC2TlbrczRfBOgtF2zrlnyRYk7V6vs7e2PZMTwcdZlmU/cm+ArWelsd+/fcOQsLxkvd4m2tIFBpY1tGjY6eRfiDY5ndkaq1OAcr+rbhPdKIpe6Twc3u/xH3Ha1gLfNDkq7Ph8MLib47HdtKJ/AgwA9W6ajnCeJa4AAAAASUVORK5CYII=';
 
 $bdrs: 6px;
 
 $white: #fff;
-$col1: #e6a756; //* 230,167,86
-$col2: #df902a; //* 223, 144, 42
-$col3: #2f170f; //* 47,23,15
+$col1: #e6a756;
+$col2: #df902a;
+$col3: #2f170f;
 $black: #000;
 
-$bgi: 'http://www.lebo.ru/upload/headers/lb-production-first.png';
-$afterlog: 'https://i.pinimg.com/736x/59/4b/96/594b969d1e6f19ea7671cfadfc1af632.jpg';
+$base: 'https://shop.madeas.ru/chatemplate/';
+$base_bg: '/src/bg.jpg';
+$base_alert: '/src/alertlog.png';
+
+$bgi: $base+'arabica'+$base_bg;
+$afterlog: $base+'arabica'+$base_alert;
 
 %bg {
     background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
@@ -411,6 +413,7 @@ input[type=text] {
         }
 
         .chatMessage {
+            line-height: 1.7;
 
             a {
                 @extend %tdn;
@@ -1069,7 +1072,6 @@ option[value="EXIT"] {
     color: $white;
     border-top: 1px solid rgba($white, .18);
     background: $col3;
-    transition: all 0.25s ease-in-out;
 
     p {
         @extend %sizes;
@@ -1104,25 +1106,11 @@ option[value="EXIT"] {
 
 .center-wrapper {
     .content {
-
-        &::after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            margin: auto;
-            height: 100%;
-            width: 100%;
-            content: '';
-            border-radius: .25em;
-            background: url($afterlog) 90% 50% no-repeat;
-            background-size: 50%;
-        }
-
         form {
-            position: fixed;
-            top: 20%;
-            left: 20%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 1;
             margin: .5rem;
             padding: 3rem;
@@ -1174,7 +1162,8 @@ option[value="EXIT"] {
 
             #captcha-block {
                 a {
-                    img { //* captcha
+                    img {
+                        //* captcha
                         width: 100%;
                         height: auto;
                     }
