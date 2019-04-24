@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: Arabica
 To project: shop.madeas.ru
@@ -7,8 +6,6 @@ Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 Version: 1.0.6
- *
- * Copyright (c) 2019 Andrej Sharapov
  */
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
@@ -37,7 +34,7 @@ Version: 1.0.6
 }
 
 .chatMain .chatMessages .chatMessage a,
-.chatMain .chatPrivateMessages .chatMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .chatPopupMenuDiv2, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a, .center-wrapper .content form #sign-in-label a, .center-wrapper .content form #account-info a {
+.chatMain .chatPrivateMessages .chatMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .chatPopupMenuDiv2, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a, .center-wrapper .content form #sign-in-label a, .center-wrapper .content form #account-info a, .dialog.smoke a {
   text-decoration: none;
 }
 
@@ -235,6 +232,10 @@ input[type=text] {
   background-color: transparent;
 }
 
+.msi {
+  display: none !important;
+}
+
 .chatTopLineWrapper > ul > li > a {
   position: relative;
   margin-right: 2px;
@@ -419,15 +420,15 @@ input[type=text] {
   font-style: normal !important;
 }
 
-.chatSystemMessage .chatSystemMessage.type-news {
+.chatSystemMessage.type-news {
   background-color: rgba(0, 153, 53, 0.5);
 }
 
-.chatSystemMessage .chatSystemMessage.type-event {
+.chatSystemMessage.type-event {
   background-color: rgba(0, 53, 153, 0.5);
 }
 
-.chatSystemMessage .chatSystemMessage.type-ban {
+.chatSystemMessage.type-ban {
   background-color: rgba(153, 0, 0, 0.5);
 }
 
@@ -1029,11 +1030,33 @@ option[value="EXIT"] {
   background-color: red;
 }
 
+.smokebg {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.dialog.smoke {
+  color: #fff;
+  border-radius: 6px;
+  background-color: rgba(47, 23, 15, 0.9);
+}
+
+.dialog.smoke .dialog-inner {
+  color: #fff;
+}
+
+.dialog.smoke a {
+  color: #e6a756;
+}
+
+.dialog-buttons button {
+  background-color: #df902a;
+}
+
 body:not(.has-nick) .chatFooterWrapper::after {
   position: absolute;
   top: 2px;
   right: 5px;
-  content: '© 2019 by Andrej Sharapov';
+  content: '(c) 2019 by Andrej Sharapov';
   color: rgba(255, 255, 255, 0.07);
   font-size: 9px;
 }

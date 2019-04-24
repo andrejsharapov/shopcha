@@ -6,8 +6,6 @@ Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 Version: 1.0.6
- *
- * Copyright (c) 2019 Andrej Sharapov
  */
 
 @import url('https://cdn.linearicons.com/free/1.0.0/icon-font.min.css');
@@ -215,6 +213,8 @@ input[type=text] {
         height: 50px;
     }
 
+    .chatHeaderWrapper {}
+
     .chatTitle {
         float: none;
         margin: 0;
@@ -239,6 +239,10 @@ input[type=text] {
         border: 1px solid rgba($black, .25);
         background-color: transparent;
     }
+}
+
+.msi {
+    display: none !important;
 }
 
 .chatTopLineWrapper {
@@ -452,18 +456,16 @@ input[type=text] {
 .chatSystemMessage {
     font-style: normal !important;
 
-    .chatSystemMessage {
-        &.type-news {
-            background-color: rgba(0, 153, 53, 0.5);
-        }
+    &.type-news {
+        background-color: rgba(0, 153, 53, 0.5);
+    }
 
-        &.type-event {
-            background-color: rgba(0, 53, 153, 0.5);
-        }
+    &.type-event {
+        background-color: rgba(0, 53, 153, 0.5);
+    }
 
-        &.type-ban {
-            background-color: rgba(153, 0, 0, 0.5);
-        }
+    &.type-ban {
+        background-color: rgba(153, 0, 0, 0.5);
     }
 
     a {
@@ -1212,9 +1214,29 @@ option[value="EXIT"] {
     background-color: red;
 }
 
+.smokebg {
+    background-color: rgba($black, .45)
+}
+
+.dialog.smoke {
+    color: $white;
+    border-radius: $bdrs;
+    background-color: rgba($col3, .9);
+
+    .dialog-inner {
+        color: $white;
+    }
+
+    a {
+        @extend %tdn;
+        color: $col1;
+    }
+}
+
 .dialog-buttons {
     button {
         @extend %btns;
+        background-color: $col2;
     }
 }
 
@@ -1224,7 +1246,7 @@ body:not(.has-nick) {
             position: absolute;
             top: 2px;
             right: 5px;
-            content: '© 2019 by Andrej Sharapov';
+            content: '(c) 2019 by Andrej Sharapov';
             color: rgba($white, .07);
             font-size: 9px;
         }
