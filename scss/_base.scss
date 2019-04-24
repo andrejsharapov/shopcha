@@ -6,8 +6,6 @@ Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 Version: 1.0.0
- *
- * Copyright (c) 2019 Andrej Sharapov
  */
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
@@ -27,8 +25,8 @@ $base: 'https://shop.madeas.ru/chatemplate/';
 $base_bg: '/src/bg.jpg';
 $base_alert: '/src/alertlog.png';
 
-$bgi: $base + 'name' + $base_bg;
-$afterlog: $base + 'name' + $base_alert;
+$bgi: $base+'name'+$base_bg;
+$afterlog: $base+'name'+$base_alert;
 
 %bg {
     background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
@@ -158,6 +156,10 @@ input[type=text] {
     .chatTitle {}
 
     .chatTopLine {}
+}
+
+.msi {
+    display: none !important; //! optional
 }
 
 .chatTopLineWrapper {
@@ -572,7 +574,8 @@ input[type=text] {
 
             #captcha-block {
                 a {
-                    img { //* captcha
+                    img {
+                        //* captcha
                         width: 100%;
                         height: auto;
                     }
@@ -602,6 +605,8 @@ input[type=text] {
     }
 }
 
+//! 18+
+
 .yes-button {
     @extend %btns;
     background-color: green;
@@ -612,8 +617,47 @@ input[type=text] {
     background-color: red;
 }
 
+//! Сообщение не отправлено, так как похоже на флуд.
+
+.smokebg {
+    background-color: rgba($black, .45)
+}
+
+.dialog.smoke {
+    color: $white;
+    border-radius: $bdrs;
+    background-color: rgba($col3, .9);
+
+    .dialog-inner {
+        color: $white;
+        border-radius: $bdrs;
+        background-color: rgba($col3, .5);
+    }
+
+    a {
+        @extend %tdn;
+        color: $col1;
+    }
+}
+
 .dialog-buttons {
     button {
         @extend %btns;
+        background-color: $col2;
+    }
+}
+
+//! copyright
+
+body:not(.has-nick) {
+    .chatFooterWrapper {
+        &::after {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            content: '(c) 2019 by Andrej Sharapov';
+            color: rgba($white, .07);
+            font-size: 9px;
+        }
     }
 }
