@@ -229,8 +229,6 @@ input[type=text] {
                 }
             }
 
-            a {}
-
             ul {
                 border-color: #ccc;
 
@@ -251,14 +249,6 @@ input[type=text] {
 }
 
 .chatMain {
-
-    //! danger message
-    #chatChannel_main {
-        .chatMessage {
-            strong {}
-        }
-    }
-
     .chatMessages,
     .chatPrivateMessages {
         right: 173px;
@@ -389,6 +379,10 @@ input[type=text] {
 .chatTabsRight.chatTabsLRActive,
 .chatTabsLeft.chatTabsLRActive {}
 
+.chatInputText {
+    @extend %inputs;
+}
+
 .chatFooter {
     .chatFooterWrapper {
         .chatPanel {
@@ -472,10 +466,6 @@ input[type=text] {
 .chatLinkVip,
 .chatLinkModerate {}
 
-.chatInputText {
-    @extend %inputs;
-}
-
 .chatSetupNickname {}
 
 #join-chat-button,
@@ -487,7 +477,6 @@ input[type=text] {
 #chatImageUrl {}
 
 .smilesBox {
-    position: absolute;
     left: 0;
     top: 0;
     overflow: auto;
@@ -497,7 +486,6 @@ input[type=text] {
     width: 320px;
     height: 247px;
     background-color: $white;
-    transition: all 200ms ease-in-out;
 
     p {
         @extend %sizes;
@@ -538,7 +526,7 @@ input[type=text] {
 
 .chatFull {
     .transparent {
-        @extend %bgi; //! optimal
+        @extend %bg; //! optimal
         opacity: 1;
     }
 }
