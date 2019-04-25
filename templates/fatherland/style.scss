@@ -1,0 +1,850 @@
+/*
+Theme Name: Fatherland
+To project: shop.madeas.ru
+Author: Andrej Sharapov 
+Author URI: https://madeas.ru
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Version: 1.0.3
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$more: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC';
+$btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATxJREFUeNqkU7Fqw0AMzYkSjo5Jtto0QwshX9FCshbyCRk6lEz9qUymtHMC7W+EbonjIZSMxYTkrpLjM4osTxUInW2903uSbLz3rf/YlXwxHj9eY3Do+Wr1Xdy+2WxN+D4aPVCw6EB5IC9YLD5/MRyWy69aNQSH/CM65eVGk2DMuWAc31QMSrBjaYBF6gwCWKlcA7dKHaTbooMGLk0F8ybmmmYyIfECXDFoatgZbBrB6hgvNRPYq+DArJgC1x7H0Yf37imA+TfvzXuaphMuC2TlbrczRfBOgtF2zrlnyRYk7V6vs7e2PZMTwcdZlmU/cm+ArWelsd+/fcOQsLxkvd4m2tIFBpY1tGjY6eRfiDY5ndkaq1OAcr+rbhPdKIpe6Twc3u/xH3Ha1gLfNDkq7Ph8MLib47HdtKJ/AgwA9W6ajnCeJa4AAAAASUVORK5CYII=';
+
+$white: #fff;
+$col1: #38421c;
+$col2: #2e3812;
+$col3: #232911;
+$black: #000;
+
+$base: 'https://shop.madeas.ru/chatemplate/';
+$base_bg: '/src/bg.jpg';
+
+$bgi: $base+'fatherland'+$base_bg;
+
+%bg {
+    background: linear-gradient(45deg, rgba($col3, .05), rgba($col3, .15)), url($bgi);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+%scroll {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+%tdn {
+    text-decoration: none;
+}
+
+%cur {
+    cursor: pointer;
+}
+
+%focus {
+    &:focus {
+        outline: none;
+    }
+}
+
+%sizes {
+    font-size: 13px;
+}
+
+%inputs {
+    width: 270px;
+    height: 45px;
+    padding: .3em 20px .3em 40px;
+    color: $white;
+    border: 0;
+    background: rgba($black, .4);
+    box-shadow: inset 0 -1px 1px rgba($white, .8);
+
+    &:focus {
+        outline-color: $col2;
+    }
+}
+
+%btns {
+    padding: .75em 1.25em;
+    @extend %tdn;
+    font: 400 13px 'Open Sans', sans-serif;
+    color: $white;
+    @extend %cur;
+    border: 2px solid $col2;
+    background-color: $col2;
+    transition: all 200ms linear;
+    @extend %focus;
+
+    &:hover {
+        border-color: $col3;
+        background-color: $col3;
+    }
+
+    &:active {
+        background-color: $col1;
+        border-color: $col1;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body:not(.has-nick) .chatTopLine,
+body:not(.has-nick) .chatTabs {
+    display: none;
+}
+
+a {
+    color: $white;
+    @extend %cur;
+}
+
+input[type=text] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+//! optional
+.smilesBox,
+.vscrollable {
+    &::-webkit-scrollbar {
+        width: 9px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @extend %scroll;
+        visibility: hidden;
+        opacity: 0;
+        background-color: $col2;
+        transition: visibility 0 linear 500ms, opacity 500ms linear;
+
+        &:hover {
+            background-color: $col1;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        @extend %scroll;
+        background-color: rgba($col3, .3);
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+#scrollBottomBox {
+    margin-top: 0;
+    border-radius: 0;
+}
+
+.chat {
+    font: 16px 'Open Sans', sans-serif;
+    border: 0;
+}
+
+.chatHeader {
+    border-bottom: 0;
+    background-color: transparent;
+
+    .chatHeaderWrapper {
+        height: 100%;
+    }
+
+    .chatTitle {
+        text-shadow: none;
+        color: $white;
+    }
+
+    .chatTopLine {
+        border-color: transparent;
+        background-color: transparent;
+
+        li {
+            a {
+                min-height: 25px;
+            }
+        }
+
+        &:hover {
+            background-color: rgba($black, .4);
+
+            li {
+                &:hover {
+                    background-color: rgba($col2, .35) !important;
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chatTopLineWrapper {
+    >ul {
+        >li {
+            >a {
+                @extend %tdn;
+                display: flex;
+                align-items: center;
+                min-height: 15px;
+                text-shadow: none;
+
+                span {
+                    &.menu_profile_title {
+                        font-weight: normal;
+                    }
+                }
+
+                .downarrowclass {
+                    top: auto;
+                }
+
+                &:hover {
+                    background-color: rgba($col3, .15);
+                }
+            }
+
+            >ul {
+                top: 27px;
+                min-width: 178px;
+                width: auto;
+
+                &[style*="display: none"] {
+                    display: block !important;
+                    pointer-events: none;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(5px);
+                    transition: all 200ms ease-in-out;
+                }
+
+                &[style*="display: block"] {
+                    pointer-events: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                >li {
+                    >a {
+                        margin: 0;
+                        padding: .5em .75em;
+                        display: block;
+                        min-width: 162px;
+                        width: auto;
+                        white-space: nowrap;
+                        @extend %tdn;
+                        @extend %sizes;
+
+                        &:hover {
+                            color: $white !important;
+                            background-color: rgba($col3, .15);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        li {
+            &.chatMenuItemWithSeparator {
+                a {
+                    @extend %tdn;
+                    background-image: none;
+
+                    &:hover {
+                        text-shadow: none;
+                        color: $white;
+                        background-image: none;
+                    }
+                }
+            }
+
+            ul {
+                top: 27px !important;
+                border: 1px solid rgba($col2, .5);
+                background-color: $col1;
+
+                li {
+                    a {
+                        color: $white !important;
+                    }
+                }
+
+                &#chatMainMenuChat,
+                &#chatMainMenuChatovod {
+                    //! if li last-child(display: none)
+                    margin-left: -12px;
+                    min-width: 180px;
+                    width: auto !important;
+                }
+
+                &#chatMainMenuChat {
+                    margin-left: 55px;
+                }
+            }
+        }
+    }
+}
+
+.chatMain {
+    top: 0;
+    bottom: 0;
+    @extend %bg;
+
+    .chatMessages,
+    .chatPrivateMessages {
+        position: absolute;
+        right: 15px;
+        left: 15px;
+        padding: 5px;
+        border: 1px solid #555;
+        background-color: rgba($black, .1);
+        background-image: linear-gradient(top, rgba($black, .1), rgba($black, .3));
+        box-shadow: inset -1px 1px 0px rgba($white, .3), inset 1px 1px 0px rgba($white, 0.3);
+    }
+
+    .chatMessage {
+        line-height: 1.7;
+    }
+
+    .chatPeople {
+        top: 47px;
+        overflow-y: hidden;
+        height: 35px;
+        border: 0;
+        transition: all 500ms ease;
+
+        &:hover {
+            height: auto;
+            border: 0;
+            background-color: rgba($black, .3);
+        }
+    }
+}
+
+.chatMessageToMe {
+    .chatToUser {
+        padding: 2px 6px;
+        color: $black;
+    }
+}
+
+.chatSystemMessage {
+    &.type-news {
+        background-color: rgba(0, 153, 53, .5);
+    }
+
+    &.type-event {
+        background-color: rgba(0, 53, 153, .5);
+    }
+
+    &.type-ban {
+        background-color: rgba(153, 0, 0, .5);
+    }
+
+    a {
+        @extend %tdn;
+    }
+}
+
+#chatUserMiniMenu {
+    border-color: $col2;
+    background-color: $col1;
+    box-shadow: 0 10px 30px rgba($black, .1);
+}
+
+.chatPeople {
+    &.vscrollable {
+        border-left: 0;
+    }
+
+    .chatPeopleTitle {
+        margin-top: 10px;
+        width: 100%;
+        line-height: 2.4em;
+        text-align: center;
+        @extend %focus;
+    }
+
+    ul {
+        &.chatPeopleList {
+            li {
+                .chatUserMenu {
+                    .chatUserMenuItems {
+                        ul {
+                            li {
+                                a {
+                                    @extend %tdn;
+                                    @extend %sizes;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.hover {
+                    border-top: 1px solid rgba($black, .5);
+                    border-bottom: 1px solid rgba($black, .5);
+                    background-color: rgba($black, .6);
+                }
+            }
+        }
+    }
+}
+
+.chatMessages.vscrollable,
+.chatPrivateMessages.vscrollable {
+    margin-top: 44px;
+    margin-bottom: 90px;
+}
+
+.chatTabs {
+    right: 170px;
+    margin-top: 44px;
+
+    ul {
+        li {
+            &.appTab {
+                a {
+                    @extend %tdn;
+
+                    span {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    >ul {
+        >li {
+            &.chatTab {
+                >a {
+                    @extend %tdn;
+                }
+
+                &.chatTabActive {
+                    a {
+                        @extend %tdn;
+                    }
+                }
+
+                &#chat_main {
+                    a {
+                        @extend %tdn;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chatInputText {
+    @extend %inputs;
+    padding: 3px 5px;
+    height: auto;
+    background: rgba($black, .4);
+}
+
+.chatFooter {
+    bottom: 20px;
+    border-top: 0;
+    background-image: none;
+    background: none;
+
+    .chatFooterWrapper {
+        .chatPanel {
+            div {
+                a {
+                    span {
+                        white-space: nowrap;
+                        @extend %sizes;
+                        color: $white;
+                        border-bottom-color: transparent;
+                    }
+                }
+            }
+
+            .chatSendLinksPanel {
+                top: -10px;
+                right: 15px;
+                left: 15px;
+                padding: .75em 1.25em !important;
+                border-top: 1px solid #000;
+                border-bottom: 1px solid #555;
+                background-color: rgba($black, .3);
+                box-shadow: inset -1px 1px 0px rgba($white, 0.3), inset 1px 0 0px rgba($white, 0.3);
+
+                a {
+                    &.chatLinkVip {
+                        margin-right: 33px !important;
+
+                        &::after {
+                            position: absolute;
+                            padding-left: 21px;
+                            content: 'vip';
+                            @extend %sizes;
+                            color: $white;
+                        }
+                    }
+
+                    &.chatLinkModerate {
+
+                        &::before {
+                            position: absolute;
+                            padding-left: 21px;
+                            margin-right: 16px;
+                            content: 'moder';
+                            @extend %sizes;
+                            color: $white;
+                        }
+                    }
+
+                    &.chatLinkMore {
+                        position: relative;
+                        left: 46px;
+                        padding-left: 21px;
+                        background: transparent url($more) 0 0 no-repeat;
+                    }
+                }
+            }
+
+            .chatSendTextPanel {
+                right: 117px !important;
+                left: 104px !important;
+
+                .chatSendText {
+                    padding-left: 40px;
+                    height: 45px;
+                    background: rgba($black, .4) url(https://shop.madeas.ru/chatemplate/dawn/src/text.png) 10px center no-repeat /25px 25px;
+
+                    &:focus {
+                        background: rgba($black, .6) url(https://shop.madeas.ru/chatemplate/dawn/src/text.png) 10px center no-repeat /25px 25px;
+                    }
+                }
+            }
+
+            .chatSendButtonPanel {
+                right: 100% !important;
+                left: 16px !important;
+
+                .chatSendButton {
+                    @extend %btns;
+                    padding: 0 !important;
+                    height: 45px;
+                    line-height: 25px;
+                }
+            }
+
+            .chatSoundPanel {
+                top: 30px !important;
+            }
+
+            .chatSendExitPanel {
+                @extend %focus;
+
+                select {
+                    position: absolute;
+                    top: 22px !important;
+                    color: $white;
+                    @extend %cur;
+                    background-color: transparent;
+                    border-color: #f4f4f4;
+                    @extend %focus;
+
+                    option {
+                        color: #ccc;
+                    }
+
+                    &:hover {
+                        border-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#join-chat-button,
+#join-chat-button2 {
+    @extend %cur;
+    @extend %btns;
+    @extend %focus;
+}
+
+.smilesBox {
+    top: auto !important;
+    bottom: 92px !important;
+    left: 0;
+    overflow: auto;
+    z-index: 98;
+    margin: 1px -4px;
+    padding-left: 3px;
+    width: 313px;
+    height: 248px;
+    background-color: rgba($col3, .7);
+    box-shadow: inset -1px 1px 0px rgba($white, 0.3), inset 1px 1px 0px rgba($white, 0.3);
+
+    p {
+        @extend %sizes;
+
+        a {
+            @extend %tdn;
+        }
+    }
+}
+
+.chatPopupMenuDiv1 {
+    border-color: #333;
+    background-color: rgba($black, .5);
+    box-shadow: inset -1px 1px 0px rgba($white, 0.3), inset 1px 1px 0px rgba($white, 0.3);
+}
+
+.chatPopupMenuDiv2 {
+    top: auto !important;
+    bottom: 92px;
+    width: auto !important;
+    height: auto !important;
+    border-color: #333;
+    background-color: rgba($black, .5);
+    box-shadow: inset -1px 1px 0px rgba($white, 0.3), inset 1px 1px 0px rgba($white, 0.3);
+    transition: all 200ms linear;
+
+    &:hover {
+        background-color: rgba($black, .8);
+    }
+
+    .chatPopupMenuContent {
+        p {
+            white-space: nowrap;
+            @extend %sizes;
+            color: $white;
+
+            a {
+                @extend %tdn;
+                color: $white;
+            }
+
+            input[type="submit"] {
+                @extend %btns;
+                padding: 3px 5px !important;
+                height: auto;
+            }
+        }
+    }
+}
+
+//* login page
+
+.chatFull {
+    .transparent {
+        @extend %bg; //! optimal
+        opacity: 1;
+    }
+}
+
+//* login form
+
+.center-wrapper {
+    .content {
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 300px;
+            min-height: 310px;
+            padding: 8px 12px;
+            color: rgba($white, 0.85);
+            border: 1px solid #555;
+            background-image: linear-gradient(top, rgba($black, .1), rgba($black, .3));
+            box-shadow: inset -1px 1px 0px rgba($white, .3), inset 1px 1px 0px rgba($white, .3);
+
+            #sign-in-label {
+                a {
+                    @extend %tdn;
+                    text-transform: uppercase;
+                    text-align: center;
+                    line-height: 1em;
+                    @extend %btns;
+                    display: inherit;
+                    width: 100%;
+                    padding: 0.75em 0;
+                    font-weight: 600;
+                    color: $black;
+                    background-color: $col1;
+                    transition: 200ms all linear;
+                }
+            }
+
+            #account-info {
+
+                margin: .5em;
+                text-align: center;
+                text-shadow: 0 1px 2px rgba($black, 0.5);
+                font-weight: 900;
+
+                a {
+                    position: absolute;
+                    bottom: 20px;
+                    margin-left: -20px;
+                    display: inherit;
+                    width: 100%;
+                    padding: .75em 1.25em;
+                    text-transform: uppercase;
+                    @extend %tdn;
+                    color: $white;
+                    border-top: 1px solid $black;
+                    box-shadow: inset -1px 1px 0px rgba($white, .3), inset 1px 0 0px rgba($white, .3);
+                    animation: slideOut 400ms ease-in-out 500ms backwards;
+                }
+            }
+
+            #nick {
+                @extend %inputs;
+                background-color: rgba($black, .5);
+                background-image: url($base + 'dawn/src/user.png');
+                background-position: 10px center;
+                background-repeat: no-repeat;
+                background-size: 25px;
+            }
+
+            #captcha-block {
+                a {
+                    @extend %tdn;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                #captcha-input {
+                    @extend %inputs;
+                    background-color: rgba($black, .5);
+                    background-image: url($base + 'dawn/src/login.png');
+                    background-position: 10px center;
+                    background-repeat: no-repeat;
+                    background-size: 25px;
+                }
+            }
+
+            //! #join-buttons
+            .justify {
+                #join-chat-button2 {
+                    //* input[type="submit"]
+                    @extend %sizes;
+                }
+
+                a {
+                    @extend %tdn;
+                    padding: .75em 1.25em;
+                    @extend %sizes;
+                    color: $white;
+                    border: 2px solid #ddd;
+
+                    &:hover {
+                        border-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//! 18+
+
+.yes-button {
+    @extend %btns;
+    background-color: green;
+}
+
+.no-button {
+    @extend %btns;
+    background-color: red;
+}
+
+//! Сообщение не отправлено, так как похоже на флуд.
+
+.smokebg {
+    background-color: rgba($black, .45)
+}
+
+.dialog.smoke {
+    color: $white;
+    background-color: rgba($black, .3);
+    box-shadow: 0 0 rgba($black, .8);
+
+    .dialog-inner {
+        color: $white;
+        background-color: rgba($black, .5);
+    }
+
+    a {
+        @extend %tdn;
+        color: $col1;
+    }
+}
+
+.dialog-buttons {
+    button {
+        @extend %btns;
+        background-color: $col2;
+    }
+}
+
+//! copyright
+
+body:not(.has-nick) {
+    .chatFooterWrapper {
+        &::after {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            content: '(c) 2019 by Andrej Sharapov';
+            color: rgba($white, .07);
+            font-size: 9px;
+        }
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        bottom: -30px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
