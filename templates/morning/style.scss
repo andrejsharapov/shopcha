@@ -27,7 +27,7 @@ $base_alert: '/src/alertlog.png';
 $bgi: $base+'morning'+$base_bg;
 
 %bg {
-    background: linear-gradient(rgba($col3, .05), rgba($col3, .15)), url($bgi);
+    background: linear-gradient(89deg, rgba($col3, .05), rgba($col3, .15)), url($bgi);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

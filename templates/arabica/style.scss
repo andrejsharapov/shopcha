@@ -30,7 +30,7 @@ $bgi: $base+'arabica'+$base_bg;
 $afterlog: $base+'arabica'+$base_alert;
 
 %bg {
-    background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
+    background: linear-gradient(89deg, rgba($col3, .65), rgba($col3, .65)), url($bgi);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -212,8 +212,6 @@ input[type=text] {
     @media (max-width: 768px) {
         height: 50px;
     }
-
-    .chatHeaderWrapper {}
 
     .chatTitle {
         float: none;

@@ -30,7 +30,7 @@ $bgi: $base+'bridge'+$base_bg;
 $afterlog: $base+'bridge'+$base_alert;
 
 %bg {
-    background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
+    background: linear-gradient(89deg, rgba($col3, .65), rgba($col3, .65)), url($bgi);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

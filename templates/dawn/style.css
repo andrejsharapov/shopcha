@@ -9,8 +9,7 @@ Version: 1.0.1
  */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .chatMain, .chatFull .transparent {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(207, 207, 201, 0.05)), to(rgba(207, 207, 201, 0.15))), url("https://shop.madeas.ru/chatemplate/dawn/src/bg.jpg");
-  background: linear-gradient(rgba(207, 207, 201, 0.05), rgba(207, 207, 201, 0.15)), url("https://shop.madeas.ru/chatemplate/dawn/src/bg.jpg");
+  background: linear-gradient(89deg, rgba(207, 207, 201, 0.05), rgba(207, 207, 201, 0.15)), url("https://shop.madeas.ru/chatemplate/dawn/src/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
