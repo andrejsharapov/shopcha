@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: Flowers
 To project: shop.madeas.ru
@@ -6,11 +5,16 @@ Author: Andrej Sharapov
 Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
-Version: 1.0.0
- *
- * Copyright (c) 2019 Andrej Sharapov
+Version: 1.0.3
  */
 @import url("https://fonts.googleapis.com/css?family=Comfortaa");
+.chatMain, .chatFull .transparent {
+  background: url("https://shop.madeas.ru/chatemplate/flowers/src/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .smilesBox::-webkit-scrollbar-thumb,
 .vscrollable::-webkit-scrollbar-thumb, .smilesBox::-webkit-scrollbar-track,
 .vscrollable::-webkit-scrollbar-track {
@@ -18,28 +22,27 @@ Version: 1.0.0
   margin-bottom: 7px;
 }
 
-.chatPeople .chatPeopleTitle:focus, .chatSendExitPanel select:focus, .chatInputText:focus, input:focus[type="submit"],
-input:focus[type="button"],
-#join-chat-button:focus,
-#join-chat-button2:focus {
-  outline: none;
-}
-
-.chatTopLineWrapper > ul > li > ul > li > a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel div a span, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::after, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before, .chatPopupMenuDiv2 .chatPopupMenuContent p, .smilesBox p {
-  font-size: 13px;
-}
-
-.chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs > ul > li.appTab a, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .smilesBox p a {
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, #join-chat-button,
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .yes-button, .no-button, .dialog-buttons button, .chatSystemMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .smilesBox p a, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .center-wrapper .content form #account-info a, .dialog.smoke a {
   text-decoration: none;
 }
 
+.chatInputText:focus, .center-wrapper .content form #nick:focus, .center-wrapper .content form #captcha-block #captcha-input:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:focus, #join-chat-button:focus,
+#join-chat-button2:focus, .chatPopupMenuDiv2 .chatPopupMenuContent p input:focus[type="submit"], .center-wrapper .content form #sign-in-label a:focus, .yes-button:focus, .no-button:focus, .dialog-buttons button:focus, .chatPeople .chatPeopleTitle:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel:focus {
+  outline: none;
+}
+
+.chatTopLineWrapper > ul > li > ul > li > a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel div a span, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::after, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before, .smilesBox p, .chatPopupMenuDiv2 .chatPopupMenuContent p, .center-wrapper .content form .justify #join-chat-button2, .center-wrapper .content form .justify a {
+  font-size: 13px;
+}
+
 .chatHeader .chatTopLine, .chatMain .chatMessages,
-.chatMain .chatPrivateMessages, .chatEventDiv, .chatPeople, .chatTabs, .chatPopupMenuDiv2, .smilesBox, .content form {
+.chatMain .chatPrivateMessages, .chatPeople, .chatTabs, .smilesBox, .chatEventDiv, .chatPopupMenuDiv2, .center-wrapper .content form {
   border-radius: 6px;
 }
 
 .chatHeader, .chatMain .chatMessages,
-.chatMain .chatPrivateMessages, .chatMain .chatPeople, .chatTabs, .content form {
+.chatMain .chatPrivateMessages, .chatMain .chatPeople {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.31);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.31);
 }
@@ -54,7 +57,6 @@ input:focus[type="button"],
 html {
   font-size: 100%;
   height: 100%;
-  overflow: hidden;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -70,10 +72,6 @@ input[type=text] {
   border-radius: 3px;
 }
 
-.msi {
-  display: none;
-}
-
 .smilesBox::-webkit-scrollbar,
 .vscrollable::-webkit-scrollbar {
   width: 8px;
@@ -84,15 +82,13 @@ input[type=text] {
   visibility: hidden;
   opacity: 0;
   background-color: rgba(235, 97, 194, 0.3);
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  -webkit-transition: visibility 0 linear 500ms, opacity 500ms linear;
-  transition: visibility 0 linear 500ms, opacity 500ms linear;
+  -webkit-transition: all 500ms linear;
+  transition: all 500ms linear;
 }
 
 .smilesBox::-webkit-scrollbar-thumb:hover,
 .vscrollable::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(235, 97, 194, 0.6);
+  background-color: rgba(235, 97, 194, 0.7);
 }
 
 .smilesBox:hover::-webkit-scrollbar-thumb,
@@ -123,7 +119,7 @@ input[type=text] {
   right: 10px;
   left: 10px;
   margin: 0;
-  padding: 10px 40px 10px;
+  min-height: 70px;
   border: 0;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -132,22 +128,22 @@ input[type=text] {
 
 .chatHeader .chatHeaderWrapper {
   top: 0;
-  right: 10px;
-  left: 10px;
   margin: 0;
-  padding: 10px 40px 10px;
+  padding-left: 15px;
+  height: 100%;
 }
 
 .chatHeader .chatTitle {
   white-space: nowrap;
   margin: 0;
-  margin-top: -10px;
-  padding: 0;
-  overflow: hidden;
-  width: 80%;
-  line-height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
   font-size: 34px;
-  font-weight: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -156,15 +152,22 @@ input[type=text] {
   background-color: #fff;
 }
 
+.msi {
+  display: none !important;
+}
+
 .chatTopLineWrapper > ul > li > a {
-  white-space: nowrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 15px;
+  min-height: 23px;
+  white-space: nowrap;
+  background: #eb55a3;
+  color: #fff;
+  text-shadow: none;
 }
 
 .chatTopLineWrapper > ul > li > a span.menu_profile_title {
@@ -175,8 +178,32 @@ input[type=text] {
   top: auto;
 }
 
+.chatTopLineWrapper > ul > li > a:hover {
+  background-color: #e899cf;
+}
+
 .chatTopLineWrapper > ul > li > ul {
   width: auto;
+  border: 1px solid #cfcfc9;
+}
+
+.chatTopLineWrapper > ul > li > ul[style*="display: none"] {
+  display: block !important;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.chatTopLineWrapper > ul > li > ul[style*="display: block"] {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .chatTopLineWrapper > ul > li > ul > li > a {
@@ -189,12 +216,13 @@ input[type=text] {
   color: #333;
 }
 
-.chatTopLineWrapper > ul > li:nth-child(3) {
-  display: none;
+.chatTopLineWrapper > ul > li > ul > li > a:hover {
+  background-color: #e899cf;
+  color: #fff;
 }
 
-.chatTopLineWrapper ul li.chatMenuItemWithSeparator a {
-  background-image: none;
+.chatTopLineWrapper ul li.chatMenuItemWithSeparator a:hover {
+  background-image: url("https://st1.chatovod.ru/i/widget/vborder.png");
 }
 
 .chatTopLineWrapper ul li ul {
@@ -203,17 +231,116 @@ input[type=text] {
 
 .chatTopLineWrapper ul li ul#chatMainMenuChat, .chatTopLineWrapper ul li ul#chatMainMenuChatovod {
   margin-left: -12px;
+  width: auto !important;
+  min-width: 180px;
+}
+
+.chatTopLineWrapper ul li:first-child > a {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.chatTopLineWrapper ul li:last-child > a {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.chatMain {
+  top: 0;
+  bottom: 0;
 }
 
 .chatMain .chatMessages,
 .chatMain .chatPrivateMessages {
-  right: 173px;
+  top: 141px;
+  right: 210px;
+  bottom: 6em;
+  margin: 0 10px;
+  padding: 10px 5px 15px;
+  background-color: #fff;
+}
+
+.chatMain .chatPeople {
+  top: 85px;
+  right: 10px;
+  bottom: 6em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 200px;
+  color: #fff;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.chatMessageToMe .chatToUser {
+  padding: 2px 6px;
+}
+
+.chatSystemMessage.type-news {
+  background-color: rgba(0, 153, 53, 0.5);
+}
+
+.chatSystemMessage.type-event {
+  background-color: rgba(0, 53, 153, 0.5);
+}
+
+.chatSystemMessage.type-ban {
+  background-color: rgba(153, 0, 0, 0.5);
 }
 
 .chatPeople .chatPeopleTitle {
   margin: 4px 0;
   width: 100%;
   text-align: center;
+}
+
+.chatPeople ul.chatPeopleList li a.chatUserSex2 b {
+  position: relative;
+}
+
+.chatPeople ul.chatPeopleList li a.chatUserSex2 b::before {
+  position: absolute;
+  top: 7px;
+  left: -5px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url("https://shop.madeas.ru/chatemplate/flowers/src/flower_16.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+}
+
+.chatTabs {
+  top: 85px;
+  right: 220px;
+  left: 10px;
+  background: #fff;
+}
+
+.chatTabs ul li.appTab a {
+  background-color: transparent;
+  background-image: url("https://shop.madeas.ru/chatemplate/flowers/src/flower.png");
+  background-position: 4px 4px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+.chatTabs > ul > li.chatTab > a:hover {
+  background-color: #fff;
+}
+
+.chatTabs > ul > li.chatTab > a.active {
+  background-color: #fff;
+}
+
+.chatTabs > ul > li.chatTab.chatTabActive a {
+  background-color: #fff;
+}
+
+.chatFooter {
+  background-color: #fff;
 }
 
 .chatFooter .chatFooterWrapper .chatPanel div a span {
@@ -235,7 +362,7 @@ input[type=text] {
   position: absolute;
   padding-left: 21px;
   margin-right: 16px;
-  content: 'модер';
+  content: 'moder';
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkMore {
@@ -245,58 +372,18 @@ input[type=text] {
   background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC") 0 0 no-repeat;
 }
 
-.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText {
-  border-radius: 3px;
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel {
+  right: 244px;
 }
 
-.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton {
-  border-radius: 3px;
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel {
+  width: 120px !important;
+  height: 28px !important;
 }
 
-.chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a {
-  white-space: nowrap;
-}
-
-.chatSendExitPanel select {
-  border-radius: 3px;
-}
-
-.chatInputText {
-  border-radius: 3px;
-}
-
-input[type="submit"],
-input[type="button"],
-#join-chat-button,
-#join-chat-button2 {
-  font-weight: 300;
-  color: #fff;
-  cursor: pointer;
-  border: 0;
-  border-radius: 3px;
-  background: #eb55a3;
-}
-
-input[type="submit"]:hover,
-input[type="button"]:hover,
-#join-chat-button:hover,
-#join-chat-button2:hover {
-  background: #e899cf;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-}
-
-.chatPopupMenuDiv2 {
-  width: auto !important;
-  border: 0;
-}
-
-.chatPopupMenuDiv2 .chatPopupMenuContent p {
-  white-space: nowrap;
-}
-
-.chatPopupMenuDiv2 .chatPopupMenuContent p a {
-  white-space: nowrap;
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select {
+  height: 28px !important;
+  border: 1px solid #cfcfc9;
 }
 
 .smilesBox {
@@ -310,11 +397,90 @@ input[type="button"]:hover,
   width: 320px;
   height: 247px;
   background-color: #fff;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
-#nick {
-  border-radius: 3px;
+.chatEventDiv {
+  top: inherit !important;
+  bottom: 72px !important;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.31);
+          box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.31);
+}
+
+.chatPopupMenuDiv1 {
+  display: none !important;
+}
+
+.chatPopupMenuDiv2 {
+  top: auto !important;
+  bottom: 72px !important;
+  left: 15px !important;
+  width: 325px !important;
+  height: 250px !important;
+  border: 0;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.31);
+          box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.31);
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent {
+  top: auto !important;
+  left: 15px !important;
+  width: 325px !important;
+  height: 250px !important;
+}
+
+.chatPopupMenuDiv2 .chatPopupMenuContent p {
+  white-space: nowrap;
+}
+
+.chatFull .transparent {
+  opacity: 1;
+}
+
+.center-wrapper .content form #captcha-block a img {
+  width: 100%;
+  height: auto;
+}
+
+.yes-button {
+  background-color: green;
+}
+
+.no-button {
+  background-color: red;
+}
+
+.smokebg {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.dialog.smoke {
+  color: #fff;
+  border-radius: 6px;
+  background-color: rgba(235, 85, 163, 0.9);
+}
+
+.dialog.smoke .dialog-inner {
+  color: #fff;
+  border-radius: 6px;
+  background-color: rgba(235, 85, 163, 0.5);
+}
+
+.dialog.smoke a {
+  color: #e899cf;
+}
+
+.dialog-buttons button {
+  background-color: #eb61c2;
+}
+
+body:not(.has-nick) .chatFooterWrapper::after {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  content: '(c) 2019 by Andrej Sharapov';
+  color: rgba(255, 255, 255, 0.07);
+  font-size: 9px;
 }
 /*# sourceMappingURL=style.css.map */

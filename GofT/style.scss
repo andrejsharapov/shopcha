@@ -151,8 +151,6 @@ input[type=text] {
     filter: brightness(0) invert(1);
 }
 
-#chatMainMenuProfile {}
-
 .chat {
     font: 16px 'Montserrat', sans-serif;
     border: 0;
@@ -294,10 +292,6 @@ input[type=text] {
                 margin-top: 5px;
                 border-color: #ccc;
 
-                li {
-                    a {}
-                }
-
                 &#chatMainMenuChat,
                 &#chatMainMenuChatovod {
                     //! if li last-child(display: none)
@@ -367,9 +361,10 @@ input[type=text] {
     }
 }
 
-#chatUserMiniMenu {}
-
-.chatUserFrom {}
+#chatUserMiniMenu {
+    border-radius: $bdrs;
+    box-shadow: none;
+}
 
 .chatPeople {
     .chatPeopleTitle {
@@ -386,19 +381,6 @@ input[type=text] {
     ul {
         &.chatPeopleList {
             li {
-                a {
-
-                    &.chatUserSex1,
-                    &.chatUserSex2,
-                    &.chatUserSex0 {
-                        b {}
-                    }
-
-                    &.chatUser {}
-                }
-
-                img {}
-
                 .chatUserMenu {
                     .chatUserMenuItems {
                         ul {
@@ -420,20 +402,6 @@ input[type=text] {
             }
         }
     }
-}
-
-.chatUserSex1,
-.chatUserSex2,
-.chatUserSex0 {
-    b {}
-}
-
-.chatUserWrapper {}
-
-.chatUserAvatar {}
-
-.chatUserGiftsCount {
-    >img {}
 }
 
 .chatTabs {
@@ -475,9 +443,6 @@ input[type=text] {
     }
 }
 
-.chatTabsRight.chatTabsLRActive,
-.chatTabsLeft.chatTabsLRActive {}
-
 .chatInputText {
     @extend %inputs;
 }
@@ -504,14 +469,6 @@ input[type=text] {
 
             .chatSendLinksPanel {
                 a {
-                    &.chatLinkSmiles {}
-
-                    &.chatLinkImage {}
-
-                    &.chatLinkProfile {}
-
-                    &.chatLinkGold {}
-
                     &.chatLinkVip {
                         margin-right: 33px !important;
 
@@ -564,12 +521,6 @@ input[type=text] {
                 }
             }
 
-            .chatSoundPanel {
-                a {
-                    &.muted {}
-                }
-            }
-
             .chatSendExitPanel {
                 @extend %focus;
 
@@ -616,8 +567,6 @@ input[type=text] {
             @extend %tdn;
         }
     }
-
-    &.hidden {}
 }
 
 .chatPopupMenuDiv1 {
