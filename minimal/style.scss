@@ -8,32 +8,20 @@ License URI: https://opensource.org/licenses/MIT
 Version: 1.0.0
  */
 
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 $more: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEVSURBVHjarFM7boQwEDVSgIJuqWlouAGiQl5pT0CxZ8kRcpYtOEGkBURFTwsN9dJAwU+OZzY49ipuQkYaNMwbP88b2wZjjByxN/hcP6+/YXfu9DvOuJ9fC26X25Ng2zYShqECVlVF95wcS/hPB+u6Iolsck6HC4JlWURiNzmnwwXBPM8isZuc0+Eywb0sS2pZFgE3TZO4risWQVzXNYN/WAjOJeFgkWCaJpokibLDOI5kGAaMgyAgjuMoeJqmVJHQdZ32rPu+R9dK4B1keZ5TaB0k2LaNMnzfx6KmaVAOrxPz4EPN5A7OURQpOxRFwTzPw7htWxLHsfGC/+MpHL4HR26iAa/x9H7602N6fDyeBEfsS4ABAL8Y9kkNjy+sAAAAAElFTkSuQmCC';
 $btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATxJREFUeNqkU7Fqw0AMzYkSjo5Jtto0QwshX9FCshbyCRk6lEz9qUymtHMC7W+EbonjIZSMxYTkrpLjM4osTxUInW2903uSbLz3rf/YlXwxHj9eY3Do+Wr1Xdy+2WxN+D4aPVCw6EB5IC9YLD5/MRyWy69aNQSH/CM65eVGk2DMuWAc31QMSrBjaYBF6gwCWKlcA7dKHaTbooMGLk0F8ybmmmYyIfECXDFoatgZbBrB6hgvNRPYq+DArJgC1x7H0Yf37imA+TfvzXuaphMuC2TlbrczRfBOgtF2zrlnyRYk7V6vs7e2PZMTwcdZlmU/cm+ArWelsd+/fcOQsLxkvd4m2tIFBpY1tGjY6eRfiDY5ndkaq1OAcr+rbhPdKIpe6Twc3u/xH3Ha1gLfNDkq7Ph8MLib47HdtKJ/AgwA9W6ajnCeJa4AAAAASUVORK5CYII=';
 
-$bdrs: 6px;
-
 $white: #fff;
-$col1: #fff; //! light color
+$col1: #fff;
 $col2: #fff;
-$col3: #fff; //! dark color
+$col3: #fff;
 $black: #000;
 
 $base: 'https://shop.madeas.ru/chatemplate/';
 $base_bg: '/src/bg.jpg';
 $base_alert: '/src/alertlog.png';
-
-$bgi: $base+'name'+$base_bg;
-$afterlog: $base+'name'+$base_alert;
-
-%bg {
-    background: linear-gradient(rgba($col3, .65), rgba($col3, .65)), url($bgi);
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-}
 
 %scroll {
     margin-top: 7px;
@@ -61,10 +49,6 @@ $afterlog: $base+'name'+$base_alert;
 %btns {
     @extend %tdn;
     @extend %focus;
-
-    &:hover {}
-
-    &:active {}
 }
 
 *,
@@ -102,7 +86,7 @@ input[type=text] {
         @extend %scroll;
         visibility: hidden;
         opacity: 0;
-        background-color: #555;
+        background-color: #777;
         transition: visibility 0 linear 500ms, opacity 500ms linear;
 
         &:hover {
@@ -138,20 +122,35 @@ input[type=text] {
     background-image: url($btndown);
 }
 
-#chatMainMenuProfile {}
-
 .chat {
-    font: 16px 'Ubuntu', sans-serif;
+    font: 16px 'Lato', sans-serif;
     border: 0;
 }
 
 .chatHeader {
+    height: 26px;
 
-    .chatHeaderWrapper {}
+    .chatHeaderWrapper {
+        height: 100%;
+    }
 
-    .chatTitle {}
+    .chatTitle {
+        margin: 0;
+        margin-left: 15px;
+        width: 50%;
+        height: 26px;
+        line-height: 26px;
+        animation-duration: .25s;
+        animation-fill-mode: both;
+    }
 
-    .chatTopLine {}
+    .chatTopLine {
+        top: 0;
+        right: 0;
+        height: 26px;
+        animation-name: fadeInDown;
+        animation-duration: .5s;
+    }
 }
 
 .msi {
@@ -179,6 +178,7 @@ input[type=text] {
 
             >ul {
                 width: auto;
+                animation-name: fadeInUp90;
 
                 &[style*="display: none"] {
                     display: block !important;
@@ -221,16 +221,14 @@ input[type=text] {
         li {
             &.chatMenuItemWithSeparator {
                 a {
+                    height: 25px;
+                    text-transform: none;
                     background-image: none;
                 }
             }
 
             ul {
                 border-color: #ccc;
-
-                li {
-                    a {}
-                }
 
                 &#chatMainMenuChat,
                 &#chatMainMenuChatovod {
@@ -245,17 +243,14 @@ input[type=text] {
 }
 
 .chatMain {
+    top: 26px;
+
     .chatMessages,
     .chatPrivateMessages {
+        top: 0;
         right: 173px;
-
-        .chatMessage {
-
-            .chatTime {}
-        }
+        left: 112px;
     }
-
-    .chatPeople {}
 }
 
 .chatMessageToMe {
@@ -282,38 +277,26 @@ input[type=text] {
     }
 }
 
-#chatUserMiniMenu {}
-
-.chatUserFrom {}
-
 .chatPeople {
     .chatPeopleTitle {
-        margin: 4px 0;
+        margin: 0;
         width: 100%;
-        text-align: center;
+        min-height: 24px;
+        padding: 0 10px 0 10px;
+        line-height: 24px;
+        font-size: 8pt;
 
         @extend %focus;
-
-        .chatUsersCount {}
     }
 
     ul {
         &.chatPeopleList {
             li {
-                a {
-
-                    &.chatUserSex1,
-                    &.chatUserSex2,
-                    &.chatUserSex0 {
-                        b {}
-                    }
-
-                    &.chatUser {}
-                }
-
-                img {}
-
                 .chatUserMenu {
+                    animation-duration: .5s;
+                    animation-fill-mode: both;
+                    animation-name: fadeInRight;
+
                     .chatUserMenuItems {
                         ul {
                             li {
@@ -325,55 +308,91 @@ input[type=text] {
                         }
                     }
                 }
+
+                &.hover {
+                    border-top: 1px solid transparent;
+                    border-bottom: 1px solid transparent;
+                    background-color: rgba(0, 0, 0, .06);
+
+                    >a {
+                        white-space: nowrap;
+                        transition: all .25s ease-in-out;
+                    }
+                }
+
+                a {
+                    &.chatUser {
+                        font-size: 8pt;
+                        font-weight: normal;
+                    }
+                }
             }
         }
     }
 }
 
-.chatUserSex1,
-.chatUserSex2,
-.chatUserSex0 {
-    b {}
-}
-
-.chatUserWrapper {}
-
-.chatUserAvatar {}
-
-.chatUserGiftsCount {
-    >img {}
+.chatUserWrapper {
+    white-space: nowrap;
+    transition: all .25s ease-in-out;
 }
 
 .chatTabs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    border-right: 1px solid #D4D2CB;
+
     ul {
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+
         li {
             &.appTab {
                 a {
                     @extend %tdn;
+                    width: 79px;
                 }
             }
         }
     }
 
     >ul {
+        margin: 0 !important;
+        width: 110px;
+
         >li {
-            &.chatTab {
-                >a {}
+            margin: 0 !important;
+            display: block;
+            width: 110px;
+            height: auto;
 
-                &.chatTabActive {
-                    a {}
-                }
+            >a {
+                min-width: 110px;
+                padding: 0 10px 0 10px;
+                white-space: nowrap;
+                transition: all .25s ease-in-out;
+            }
 
-                &#chat_main {
-                    a {}
+            &:hover {
+                background-color: rgba(0, 0, 0, .06);
+
+                >a {
+                    transform: translateX(5px);
                 }
             }
         }
     }
 }
 
-.chatTabsRight.chatTabsLRActive,
-.chatTabsLeft.chatTabsLRActive {}
+.chatTabsRight,
+.chatTabsLeft {
+    display: none;
+}
 
 .chatInputText {
     @extend %inputs;
@@ -382,7 +401,6 @@ input[type=text] {
 .chatFooter {
     .chatFooterWrapper {
         .chatPanel {
-
             div {
                 a {
                     span {
@@ -395,13 +413,6 @@ input[type=text] {
 
             .chatSendLinksPanel {
                 a {
-                    &.chatLinkSmiles {}
-
-                    &.chatLinkImage {}
-
-                    &.chatLinkProfile {}
-
-                    &.chatLinkGold {}
 
                     &.chatLinkVip {
                         margin-right: 33px !important;
@@ -434,43 +445,23 @@ input[type=text] {
                 }
             }
 
-            .chatSendTextPanel {
-                .chatSendText {}
-            }
-
             .chatSendButtonPanel {
                 .chatSendButton {
                     @extend %btns;
                 }
             }
 
-            .chatSoundPanel {
-                a {
-                    &.muted {}
-                }
-            }
-
             .chatSendExitPanel {
                 @extend %focus;
-
-                select {}
             }
         }
     }
 }
-
-.chatLinkVip,
-.chatLinkModerate {}
-
-.chatSetupNickname {}
-
 #join-chat-button,
 #join-chat-button2 {
     @extend %btns;
     @extend %focus;
 }
-
-#chatImageUrl {}
 
 .smilesBox {
     left: 0;
@@ -482,6 +473,8 @@ input[type=text] {
     width: 320px;
     height: 247px;
     background-color: $white;
+    animation-duration: .5s;
+    animation-name: fadeIn;
 
     p {
         @extend %sizes;
@@ -490,17 +483,13 @@ input[type=text] {
             @extend %tdn;
         }
     }
-
-    &.hidden {}
 }
-
-.chatEventDiv {}
-
-.chatPopupMenuDiv1 {}
 
 .chatPopupMenuDiv2 {
     width: auto !important;
     border: 0;
+    animation-duration: .5s;
+    animation-name: fadeIn;
 
     .chatPopupMenuContent {
         p {
@@ -518,16 +507,11 @@ input[type=text] {
     }
 }
 
-//* login page
-
 .chatFull {
     .transparent {
-        @extend %bg; //! optimal
         opacity: 1;
     }
 }
-
-//* login form
 
 .center-wrapper {
     .content {
@@ -545,9 +529,6 @@ input[type=text] {
                 }
             }
 
-            #new-nick-label,
-            #existing-nick-label {}
-
             #nick {
                 @extend %inputs;
             }
@@ -555,13 +536,10 @@ input[type=text] {
             #captcha-block {
                 a {
                     img {
-                        //* captcha
                         width: 100%;
                         height: auto;
                     }
                 }
-
-                #captcha-label {}
 
                 #captcha-input {
                     @extend %inputs;
@@ -571,7 +549,6 @@ input[type=text] {
             //! #join-buttons
             .justify {
                 #join-chat-button2 {
-                    //* input[type="submit"]
                     @extend %sizes;
                 }
 
@@ -579,8 +556,6 @@ input[type=text] {
                     @extend %sizes;
                 }
             }
-
-            #email {}
         }
     }
 }
@@ -605,12 +580,10 @@ input[type=text] {
 
 .dialog.smoke {
     color: $white;
-    border-radius: $bdrs;
     background-color: rgba($col3, .9);
 
     .dialog-inner {
         color: $white;
-        border-radius: $bdrs;
         background-color: rgba($col3, .5);
     }
 
@@ -636,8 +609,55 @@ body:not(.has-nick) {
             top: 2px;
             right: 5px;
             content: '(c) 2019 by Andrej Sharapov';
-            color: rgba($white, .07);
+            color: rgba($black, .07);
             font-size: 9px;
         }
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes fadeInUp90 {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 10%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0)
     }
 }
