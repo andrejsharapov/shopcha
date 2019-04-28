@@ -14,14 +14,9 @@ $more: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABG
 $btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATxJREFUeNqkU7Fqw0AMzYkSjo5Jtto0QwshX9FCshbyCRk6lEz9qUymtHMC7W+EbonjIZSMxYTkrpLjM4osTxUInW2903uSbLz3rf/YlXwxHj9eY3Do+Wr1Xdy+2WxN+D4aPVCw6EB5IC9YLD5/MRyWy69aNQSH/CM65eVGk2DMuWAc31QMSrBjaYBF6gwCWKlcA7dKHaTbooMGLk0F8ybmmmYyIfECXDFoatgZbBrB6hgvNRPYq+DArJgC1x7H0Yf37imA+TfvzXuaphMuC2TlbrczRfBOgtF2zrlnyRYk7V6vs7e2PZMTwcdZlmU/cm+ArWelsd+/fcOQsLxkvd4m2tIFBpY1tGjY6eRfiDY5ndkaq1OAcr+rbhPdKIpe6Twc3u/xH3Ha1gLfNDkq7Ph8MLib47HdtKJ/AgwA9W6ajnCeJa4AAAAASUVORK5CYII=';
 
 $white: #fff;
-$col1: #fff;
-$col2: #fff;
-$col3: #fff;
 $black: #000;
-
-$base: 'https://shop.madeas.ru/chatemplate/';
-$base_bg: '/src/bg.jpg';
-$base_alert: '/src/alertlog.png';
+$col1: #cfcfc9;
+$col2: rgba($black, 0.15);
 
 %scroll {
     margin-top: 7px;
@@ -48,6 +43,16 @@ $base_alert: '/src/alertlog.png';
 
 %btns {
     @extend %tdn;
+    min-height: 23px;
+    cursor: pointer;
+    border: 1px solid $col1;
+    background-color: $col2;
+    transition: all 200ms linear;
+
+    &:hover {
+        background-color: rgba($black, .14);
+    }
+
     @extend %focus;
 }
 
@@ -86,11 +91,11 @@ input[type=text] {
         @extend %scroll;
         visibility: hidden;
         opacity: 0;
-        background-color: #777;
-        transition: visibility 0 linear 500ms, opacity 500ms linear;
+        background-color: $col1;
+        transition: all 500ms linear;
 
         &:hover {
-            background-color: #999;
+            background-color: $col2;
         }
     }
 
@@ -153,48 +158,22 @@ input[type=text] {
     }
 }
 
-.msi {
-    display: none !important; //! optional
-}
-
 .chatTopLineWrapper {
     >ul {
         >li {
             >a {
-                display: flex;
-                align-items: center;
-                min-height: 15px;
+                min-height: 25px;
 
                 span {
                     &.menu_profile_title {
                         font-weight: normal;
                     }
                 }
-
-                .downarrowclass {
-                    top: auto;
-                }
             }
 
             >ul {
                 width: auto;
                 animation-name: fadeInUp90;
-
-                &[style*="display: none"] {
-                    display: block !important;
-                    pointer-events: none;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all 200ms ease-in-out;
-                    transform: translateY(5px);
-                }
-
-                &[style*="display: block"] {
-                    pointer-events: auto;
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                }
 
                 >li {
                     >a {
@@ -205,13 +184,8 @@ input[type=text] {
                         width: auto;
                         white-space: nowrap;
                         @extend %sizes;
-                        color: #333;
                     }
                 }
-            }
-
-            &:nth-child(3) {
-                display: none;
             }
         }
     }
@@ -261,15 +235,15 @@ input[type=text] {
 
 .chatSystemMessage {
     &.type-news {
-        background-color: rgba(0, 153, 53, 0.5);
+        background-color: rgba(0, 153, 53, .12);
     }
 
     &.type-event {
-        background-color: rgba(0, 53, 153, 0.5);
+        background-color: rgba(0, 53, 153, .12);
     }
 
     &.type-ban {
-        background-color: rgba(153, 0, 0, 0.5);
+        background-color: rgba(153, 0, 0, .12);
     }
 
     a {
@@ -284,7 +258,7 @@ input[type=text] {
         min-height: 24px;
         padding: 0 10px 0 10px;
         line-height: 24px;
-        font-size: 8pt;
+        @extend %sizes;
 
         @extend %focus;
     }
@@ -292,10 +266,12 @@ input[type=text] {
     ul {
         &.chatPeopleList {
             li {
+                padding: 6px 8px;
+
                 .chatUserMenu {
+                    animation: fadeInRight;
                     animation-duration: .5s;
                     animation-fill-mode: both;
-                    animation-name: fadeInRight;
 
                     .chatUserMenuItems {
                         ul {
@@ -322,7 +298,7 @@ input[type=text] {
 
                 a {
                     &.chatUser {
-                        font-size: 8pt;
+                        @extend %sizes;
                         font-weight: normal;
                     }
                 }
@@ -331,8 +307,17 @@ input[type=text] {
     }
 }
 
+.chatUserSex1,
+.chatUserSex2,
+.chatUserSex0 {
+    float: right;
+}
+
 .chatUserWrapper {
+    margin-left: 0;
+    margin-right: 20px;
     white-space: nowrap;
+    text-align: right;
     transition: all .25s ease-in-out;
 }
 
@@ -431,7 +416,7 @@ input[type=text] {
                             position: absolute;
                             padding-left: 21px;
                             margin-right: 16px;
-                            content: 'модер';
+                            content: 'moder';
                             @extend %sizes;
                         }
                     }
@@ -457,6 +442,7 @@ input[type=text] {
         }
     }
 }
+
 #join-chat-button,
 #join-chat-button2 {
     @extend %btns;
@@ -472,9 +458,6 @@ input[type=text] {
     padding-left: 3px;
     width: 320px;
     height: 247px;
-    background-color: $white;
-    animation-duration: .5s;
-    animation-name: fadeIn;
 
     p {
         @extend %sizes;
@@ -525,7 +508,16 @@ input[type=text] {
 
             #account-info {
                 a {
+                    margin-top: 7px;
+                    @extend %btns;
+                    display: block;
+                    width: 100%;
+                    padding: 3px 6px;
                     @extend %tdn;
+                    text-align: center;
+                    @extend %sizes;
+                    color: $black;
+                    font-weight: bold;
                 }
             }
 
@@ -549,11 +541,18 @@ input[type=text] {
             //! #join-buttons
             .justify {
                 #join-chat-button2 {
+                    @extend %tdn;
+                    @extend %btns;
                     @extend %sizes;
                 }
 
                 a {
+                    @extend %btns;
+                    padding: 4px 6px;
+                    @extend %tdn;
                     @extend %sizes;
+                    color: $black;
+                    font-weight: bold;
                 }
             }
         }
@@ -579,24 +578,14 @@ input[type=text] {
 }
 
 .dialog.smoke {
-    color: $white;
-    background-color: rgba($col3, .9);
-
-    .dialog-inner {
-        color: $white;
-        background-color: rgba($col3, .5);
-    }
-
     a {
         @extend %tdn;
-        color: $col1;
     }
 }
 
 .dialog-buttons {
     button {
         @extend %btns;
-        background-color: $col2;
     }
 }
 
