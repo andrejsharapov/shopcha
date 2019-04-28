@@ -1,5 +1,5 @@
 /*
-Theme Name: Flowers
+Theme Name: Night flowers
 To project: shop.madeas.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
@@ -9,7 +9,7 @@ Version: 1.0.3
  */
 @import url("https://fonts.googleapis.com/css?family=Comfortaa");
 .chatMain, .chatFull .transparent {
-  background: url("https://shop.madeas.ru/chatemplate/flowers/src/bg.jpg");
+  background: url("https://shop.madeas.ru/chatemplate/nightfl/src/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -28,13 +28,13 @@ Version: 1.0.3
 }
 
 .chatHeader, .chatMain .chatPeople, .chatTabs {
-  background: rgba(255, 255, 255, 0.6);
-  -webkit-transition: background 400ms linear;
-  transition: background 400ms linear;
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-transition: all 400ms linear;
+  transition: all 400ms linear;
 }
 
 .chatHeader:hover, .chatMain .chatPeople:hover, .chatTabs:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .chatInputText:focus, .center-wrapper .content form #nick:focus, .center-wrapper .content form #captcha-block #captcha-input:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:focus, #join-chat-button:focus,
@@ -64,14 +64,14 @@ Version: 1.0.3
   min-height: 28px;
   color: #fff;
   cursor: pointer;
-  border: 1px solid #e899cf;
+  border: 1px solid #63467e;
   border-radius: 2px;
-  background-color: #eb55a3;
+  background-color: #54356e;
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, #join-chat-button:hover,
 #join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form #account-info a:hover, .center-wrapper .content form .justify #join-chat-button2:hover, .center-wrapper .content form .justify a:hover, .yes-button:hover, .no-button:hover, .dialog-buttons button:hover {
-  background-color: #eb61c2;
+  background-color: #47467e;
 }
 
 .chatMain .chatMessages,
@@ -121,14 +121,14 @@ input[type=text] {
   opacity: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  background-color: rgba(235, 97, 194, 0.3);
+  background-color: rgba(71, 70, 126, 0.3);
   -webkit-transition: all 500ms linear;
   transition: all 500ms linear;
 }
 
 .smilesBox::-webkit-scrollbar-thumb:hover,
 .vscrollable::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(235, 97, 194, 0.7);
+  background-color: rgba(71, 70, 126, 0.7);
 }
 
 .smilesBox::-webkit-scrollbar-track,
@@ -217,7 +217,7 @@ input[type=text] {
   min-height: 23px;
   white-space: nowrap;
   border-radius: 2px;
-  background: #eb55a3;
+  background: #54356e;
   color: #fff;
   text-shadow: none;
 }
@@ -236,7 +236,7 @@ input[type=text] {
 }
 
 .chatTopLineWrapper > ul > li > a:hover {
-  background-color: #e899cf;
+  background-color: #63467e;
 }
 
 .chatTopLineWrapper > ul > li > ul {
@@ -276,7 +276,7 @@ input[type=text] {
 }
 
 .chatTopLineWrapper > ul > li > ul > li > a:hover {
-  background-color: #eb55a3;
+  background-color: #54356e;
   color: #fff;
 }
 
@@ -321,7 +321,9 @@ input[type=text] {
 
 .chatMain .chatMessages .chatMessage,
 .chatMain .chatPrivateMessages .chatMessage {
-  margin: 5px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
 }
 
 .chatMain .chatMessages .chatMessage:hover,
@@ -365,7 +367,7 @@ input[type=text] {
   margin: 4px 0;
   width: 100%;
   text-align: center;
-  color: #eb55a3;
+  color: #54356e;
 }
 
 .chatPeople ul.chatPeopleList li a.chatUserSex2 b {
@@ -380,15 +382,15 @@ input[type=text] {
   width: 20px;
   height: 20px;
   background-color: transparent;
-  background-image: url("https://shop.madeas.ru/chatemplate/flowers/src/flower16.png");
+  background-image: url("https://shop.madeas.ru/chatemplate/nightfl/src/flower.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 12px 12px;
 }
 
 .chatPeople ul.chatPeopleList li.hover {
-  border-top-color: #e899cf;
-  border-bottom-color: #e899cf;
+  border-top-color: #63467e;
+  border-bottom-color: #63467e;
 }
 
 .chatTabs {
@@ -399,7 +401,7 @@ input[type=text] {
 
 .chatTabs ul li.appTab a {
   background-color: transparent;
-  background-image: url("https://shop.madeas.ru/chatemplate/flowers/src/flower16.png") !important;
+  background-image: url("https://shop.madeas.ru/chatemplate/nightfl/src/flower.png") !important;
   background-position: 4px 4px;
   background-repeat: no-repeat;
   background-size: 16px;
@@ -411,11 +413,11 @@ input[type=text] {
 
 .chatTabs > ul > li.chatTab > a:hover {
   color: #fff;
-  background-color: #eb61c2;
+  background-color: #54356e;
 }
 
 .chatTabs > ul > li.chatTab > a.active {
-  background-color: #eb55a3;
+  background-color: #54356e;
 }
 
 .chatFooter {
@@ -525,6 +527,10 @@ input[type=text] {
   left: 15px !important;
   width: 325px !important;
   height: 250px !important;
+  background-image: url("https://shop.madeas.ru/chatemplate/nightfl/src/dragon.png");
+  background-repeat: no-repeat;
+  background-position: 90% 100%;
+  background-size: 150px;
 }
 
 .chatPopupMenuDiv2 .chatPopupMenuContent p {
@@ -575,8 +581,8 @@ input[type=text] {
 
 .center-wrapper .content form #account-info a {
   min-height: 35px;
-  color: #eb55a3;
-  border: 1px solid #eb55a3;
+  color: #54356e;
+  border: 1px solid #54356e;
   background-color: transparent;
 }
 
@@ -602,7 +608,7 @@ input[type=text] {
   text-align: center;
   color: #fff;
   border-radius: 2px;
-  background-color: #eb55a3;
+  background-color: #54356e;
 }
 
 .yes-button {
@@ -614,28 +620,28 @@ input[type=text] {
 }
 
 .smokebg {
-  background-color: rgba(232, 153, 207, 0.45);
+  background-color: rgba(99, 70, 126, 0.45);
 }
 
 .dialog.smoke {
   color: #fff;
   border-radius: 4px;
-  background-color: rgba(235, 85, 163, 0.9);
+  background-color: rgba(84, 53, 110, 0.9);
 }
 
 .dialog.smoke .dialog-inner {
   color: #fff;
   border-radius: 4px;
-  background-color: rgba(235, 85, 163, 0.5);
+  background-color: rgba(84, 53, 110, 0.5);
 }
 
 .dialog.smoke a {
-  color: #e899cf;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dialog-buttons button {
   width: 100%;
-  color: #eb55a3;
+  color: #54356e;
   border-radius: 4px;
   background-color: #fff;
 }
@@ -643,7 +649,7 @@ input[type=text] {
 .dialog-buttons button:hover {
   color: #fff;
   border-color: #fff;
-  background-color: #eb55a3;
+  background-color: #54356e;
 }
 
 body:not(.has-nick) .chatFooterWrapper::after {
@@ -651,7 +657,7 @@ body:not(.has-nick) .chatFooterWrapper::after {
   top: 2px;
   right: 5px;
   content: '(c) 2019 by Andrej Sharapov';
-  color: rgba(255, 255, 255, 0.07);
+  color: rgba(99, 70, 126, 0.17);
   font-size: 9px;
 }
 /*# sourceMappingURL=style.css.map */

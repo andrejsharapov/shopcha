@@ -1,15 +1,15 @@
 /*
-Theme Name: Flowers
+Theme Name: Night
 To project: shop.madeas.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
 License: MIT
 License URI: https://opensource.org/licenses/MIT
-Version: 1.0.3
+Version: 1.0.2
  */
 @import url("https://fonts.googleapis.com/css?family=Comfortaa");
 .chatMain, .chatFull .transparent {
-  background: url("https://shop.madeas.ru/chatemplate/flowers/src/bg.jpg");
+  background: url("https://shop.madeas.ru/chatemplate/night/src/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -28,13 +28,13 @@ Version: 1.0.3
 }
 
 .chatHeader, .chatMain .chatPeople, .chatTabs {
-  background: rgba(255, 255, 255, 0.6);
-  -webkit-transition: background 400ms linear;
-  transition: background 400ms linear;
+  background: rgba(0, 0, 0, 0.35);
+  -webkit-transition: all 400ms linear;
+  transition: all 400ms linear;
 }
 
 .chatHeader:hover, .chatMain .chatPeople:hover, .chatTabs:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .chatInputText:focus, .center-wrapper .content form #nick:focus, .center-wrapper .content form #captcha-block #captcha-input:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:focus, #join-chat-button:focus,
@@ -42,7 +42,7 @@ Version: 1.0.3
   outline: none;
 }
 
-.chatTopLineWrapper > ul > li > ul > li > a, .chatPeople .chatPeopleTitle, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel div a span, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::after, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before, .smilesBox p, .chatPopupMenuDiv2 .chatPopupMenuContent p, .center-wrapper .content form .justify #join-chat-button2, .center-wrapper .content form .justify a {
+.chatTopLineWrapper > ul > li > ul > li > a, .chatPeople .chatPeopleTitle, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs ul li.appTab a, .chatFooter .chatFooterWrapper .chatPanel div a span, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::after, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before, .smilesBox p, .chatPopupMenuDiv2 .chatPopupMenuContent p, .center-wrapper .content form .justify #join-chat-button2, .center-wrapper .content form .justify a {
   font-size: 13px;
 }
 
@@ -64,14 +64,14 @@ Version: 1.0.3
   min-height: 28px;
   color: #fff;
   cursor: pointer;
-  border: 1px solid #e899cf;
+  border: 1px solid #6babec;
   border-radius: 2px;
-  background-color: #eb55a3;
+  background-color: #6babec;
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, #join-chat-button:hover,
 #join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form #account-info a:hover, .center-wrapper .content form .justify #join-chat-button2:hover, .center-wrapper .content form .justify a:hover, .yes-button:hover, .no-button:hover, .dialog-buttons button:hover {
-  background-color: #eb61c2;
+  background-color: #3683df;
 }
 
 .chatMain .chatMessages,
@@ -121,14 +121,14 @@ input[type=text] {
   opacity: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  background-color: rgba(235, 97, 194, 0.3);
-  -webkit-transition: all 500ms linear;
-  transition: all 500ms linear;
+  background-color: rgba(107, 171, 236, 0.7);
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
 }
 
 .smilesBox::-webkit-scrollbar-thumb:hover,
 .vscrollable::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(235, 97, 194, 0.7);
+  background-color: rgba(107, 171, 236, 0.95);
 }
 
 .smilesBox::-webkit-scrollbar-track,
@@ -217,7 +217,7 @@ input[type=text] {
   min-height: 23px;
   white-space: nowrap;
   border-radius: 2px;
-  background: #eb55a3;
+  background: #104a7f;
   color: #fff;
   text-shadow: none;
 }
@@ -236,14 +236,15 @@ input[type=text] {
 }
 
 .chatTopLineWrapper > ul > li > a:hover {
-  background-color: #e899cf;
+  background-color: #6babec;
 }
 
 .chatTopLineWrapper > ul > li > ul {
   margin-top: 7px;
   width: auto;
-  border: 1px solid #cfcfc9;
+  border: 1px solid #104a7f;
   border-radius: 4px;
+  background-color: rgba(16, 74, 127, 0.75);
 }
 
 .chatTopLineWrapper > ul > li > ul[style*="display: none"] {
@@ -271,12 +272,12 @@ input[type=text] {
   display: block;
   min-width: 162px;
   width: auto;
+  color: #fff;
   white-space: nowrap;
-  color: #333;
 }
 
 .chatTopLineWrapper > ul > li > ul > li > a:hover {
-  background-color: #eb55a3;
+  background-color: #3683df;
   color: #fff;
 }
 
@@ -292,10 +293,6 @@ input[type=text] {
 
 .chatTopLineWrapper ul li.chatMenuItemWithSeparator a:hover {
   background-image: url("https://st1.chatovod.ru/i/widget/vborder.png");
-}
-
-.chatTopLineWrapper ul li ul {
-  border-color: #ccc;
 }
 
 .chatTopLineWrapper ul li ul#chatMainMenuChat, .chatTopLineWrapper ul li ul#chatMainMenuChatovod {
@@ -316,17 +313,24 @@ input[type=text] {
   bottom: 80px;
   margin: 0 10px;
   padding: 10px 5px 15px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .chatMain .chatMessages .chatMessage,
 .chatMain .chatPrivateMessages .chatMessage {
-  margin: 5px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
 }
 
 .chatMain .chatMessages .chatMessage:hover,
 .chatMain .chatPrivateMessages .chatMessage:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(107, 171, 236, 0.4);
+}
+
+.chatMain .chatMessages:hover,
+.chatMain .chatPrivateMessages:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .chatMain .chatPeople {
@@ -365,7 +369,7 @@ input[type=text] {
   margin: 4px 0;
   width: 100%;
   text-align: center;
-  color: #eb55a3;
+  color: #104a7f;
 }
 
 .chatPeople ul.chatPeopleList li a.chatUserSex2 b {
@@ -380,15 +384,16 @@ input[type=text] {
   width: 20px;
   height: 20px;
   background-color: transparent;
-  background-image: url("https://shop.madeas.ru/chatemplate/flowers/src/flower16.png");
+  background-image: url("https://shop.madeas.ru/chatemplate/night/src/flower.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 12px 12px;
 }
 
 .chatPeople ul.chatPeopleList li.hover {
-  border-top-color: #e899cf;
-  border-bottom-color: #e899cf;
+  border-top-color: #6babec;
+  border-bottom-color: #6babec;
+  background-color: #104a7f;
 }
 
 .chatTabs {
@@ -399,10 +404,6 @@ input[type=text] {
 
 .chatTabs ul li.appTab a {
   background-color: transparent;
-  background-image: url("https://shop.madeas.ru/chatemplate/flowers/src/flower16.png") !important;
-  background-position: 4px 4px;
-  background-repeat: no-repeat;
-  background-size: 16px;
 }
 
 .chatTabs > ul > li.chatTab > a {
@@ -411,15 +412,20 @@ input[type=text] {
 
 .chatTabs > ul > li.chatTab > a:hover {
   color: #fff;
-  background-color: #eb61c2;
+  background-color: #104a7f;
 }
 
 .chatTabs > ul > li.chatTab > a.active {
-  background-color: #eb55a3;
+  background-color: #104a7f;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel {
+  top: 28px;
 }
 
 .chatFooter {
-  background-color: #fff;
+  border-top-color: #3683df;
+  background-color: #104a7f;
 }
 
 .chatFooter .chatFooterWrapper .chatPanel div a span {
@@ -493,7 +499,7 @@ input[type=text] {
   padding-left: 3px;
   width: 320px;
   height: 247px;
-  background-color: #fff;
+  background-color: #104a7f;
 }
 
 .chatEventDiv {
@@ -515,7 +521,7 @@ input[type=text] {
   width: 325px !important;
   height: 250px !important;
   border: 0;
-  background: #fff;
+  background: #104a7f;
   -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.31);
           box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.31);
 }
@@ -525,6 +531,10 @@ input[type=text] {
   left: 15px !important;
   width: 325px !important;
   height: 250px !important;
+  background-image: url("https://shop.madeas.ru/chatemplate/night/src/popup.png");
+  background-repeat: no-repeat;
+  background-position: 90% 100%;
+  background-size: 150px;
 }
 
 .chatPopupMenuDiv2 .chatPopupMenuContent p {
@@ -575,8 +585,8 @@ input[type=text] {
 
 .center-wrapper .content form #account-info a {
   min-height: 35px;
-  color: #eb55a3;
-  border: 1px solid #eb55a3;
+  color: #104a7f;
+  border: 1px solid #104a7f;
   background-color: transparent;
 }
 
@@ -602,7 +612,7 @@ input[type=text] {
   text-align: center;
   color: #fff;
   border-radius: 2px;
-  background-color: #eb55a3;
+  background-color: #104a7f;
 }
 
 .yes-button {
@@ -614,28 +624,28 @@ input[type=text] {
 }
 
 .smokebg {
-  background-color: rgba(232, 153, 207, 0.45);
+  background-color: rgba(107, 171, 236, 0.45);
 }
 
 .dialog.smoke {
   color: #fff;
   border-radius: 4px;
-  background-color: rgba(235, 85, 163, 0.9);
+  background-color: rgba(16, 74, 127, 0.9);
 }
 
 .dialog.smoke .dialog-inner {
   color: #fff;
   border-radius: 4px;
-  background-color: rgba(235, 85, 163, 0.5);
+  background-color: rgba(16, 74, 127, 0.5);
 }
 
 .dialog.smoke a {
-  color: #e899cf;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dialog-buttons button {
   width: 100%;
-  color: #eb55a3;
+  color: #104a7f;
   border-radius: 4px;
   background-color: #fff;
 }
@@ -643,7 +653,7 @@ input[type=text] {
 .dialog-buttons button:hover {
   color: #fff;
   border-color: #fff;
-  background-color: #eb55a3;
+  background-color: #104a7f;
 }
 
 body:not(.has-nick) .chatFooterWrapper::after {
@@ -651,7 +661,7 @@ body:not(.has-nick) .chatFooterWrapper::after {
   top: 2px;
   right: 5px;
   content: '(c) 2019 by Andrej Sharapov';
-  color: rgba(255, 255, 255, 0.07);
+  color: rgba(107, 171, 236, 0.17);
   font-size: 9px;
 }
 /*# sourceMappingURL=style.css.map */

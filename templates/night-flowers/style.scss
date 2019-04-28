@@ -1,5 +1,5 @@
 /*
-Theme Name: Flowers
+Theme Name: Night flowers
 To project: shop.madeas.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
@@ -16,19 +16,19 @@ $btndown: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAA
 $bdrs: 4px;
 
 $white: #fff;
-$col1: #e899cf;
-$col2: #eb61c2;
-$col3: #eb55a3;
+$col1: #63467e;
+$col2: #47467e;
+$col3: #54356e;
 $black: #000;
 
 $base: 'https://shop.madeas.ru/chatemplate/';
 $base_bg: '/src/bg.jpg';
-$base_aftert: '/src/flower16.png';
-$base_16: '/src/flower16.png';
+$base_aftert: '/src/flower.png';
+$base_16: '/src/flower.png';
 
-$bgi: $base+'flowers'+$base_bg;
-$afterlog: $base+'flowers'+$base_aftert;
-$img_16: $base+'flowers'+$base_16;
+$bgi: $base+'nightfl'+$base_bg;
+$afterlog: $base+'nightfl'+$base_aftert;
+$img_16: $base+'nightfl'+$base_16;
 
 %bg {
     background: url($bgi);
@@ -47,11 +47,11 @@ $img_16: $base+'flowers'+$base_16;
 }
 
 %bgc {
-    background: rgba($white, .6);
-    transition: background 400ms linear;
+    background: rgba($white, .35);
+    transition: all 400ms linear;
 
     &:hover {
-        background: rgba($white, .95);
+        background: rgba($white, .75);
     }
 }
 
@@ -354,7 +354,9 @@ input[type=text] {
         @extend %shadow;
 
         .chatMessage {
-            margin: 5px 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: $bdrs;
 
             &:hover {
                 background-color: rgba($white, .6);
@@ -496,7 +498,7 @@ input[type=text] {
 
                     &:hover {
                         color: $white;
-                        background-color: $col2;
+                        background-color: $col3;
                     }
 
                     &.active {
@@ -656,7 +658,11 @@ input[type=text] {
         left: 15px !important;
         width: 325px !important;
         height: 250px !important;
-
+        background-image: url($base + 'nightfl' + '/src/dragon.png');
+        background-repeat: no-repeat;
+        background-position: 90% 100%;
+        background-size: 150px;
+        
         p {
             @extend %sizes;
             margin-bottom: 5px;
@@ -824,7 +830,7 @@ input[type=text] {
 
     a {
         @extend %tdn;
-        color: $col1;
+        color: rgba($white, .6);
     }
 }
 
@@ -853,7 +859,7 @@ body:not(.has-nick) {
             top: 2px;
             right: 5px;
             content: '(c) 2019 by Andrej Sharapov';
-            color: rgba($white, .07);
+            color: rgba($col1, .17);
             font-size: 9px;
         }
     }
