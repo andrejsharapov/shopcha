@@ -1,0 +1,784 @@
+/*
+Theme Name: Serenity
+To project: shop.madeas.ru
+Author: Andrej Sharapov 
+Author URI: https://madeas.ru
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Version: 1.0.0
+ */
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://cdn.linearicons.com/free/1.0.0/icon-font.min.css);
+.smilesBox::-webkit-scrollbar-thumb,
+.vscrollable::-webkit-scrollbar-thumb, .smilesBox::-webkit-scrollbar-track,
+.vscrollable::-webkit-scrollbar-track, .chatTopLineWrapper > ul > li > a {
+  border-radius: 4px;
+}
+
+.chatMain, .chatFull .transparent {
+  background-color: rgba(0, 0, 0, 0.3);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.smilesBox::-webkit-scrollbar-thumb,
+.vscrollable::-webkit-scrollbar-thumb, .smilesBox::-webkit-scrollbar-track,
+.vscrollable::-webkit-scrollbar-track {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, #join-chat-button,
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .center-wrapper .content form #account-info a, .center-wrapper .content form .justify a, .yes-button, .no-button, .dialog-buttons button, .chatTabs ul li.appTab a, .chatMain .chatMessages .chatMessage a,
+.chatMain .chatPrivateMessages .chatMessage a, .chatSystemMessage a, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .smilesBox p a, .chatPopupMenuDiv2 .chatPopupMenuContent p a, .dialog.smoke a {
+  text-decoration: none;
+}
+
+.chatInputText:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText:focus, .center-wrapper .content form #nick:focus, .center-wrapper .content form #captcha-block #captcha-input:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:focus, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:focus, #join-chat-button:focus,
+#join-chat-button2:focus, .chatPopupMenuDiv2 .chatPopupMenuContent p input:focus[type="submit"], .center-wrapper .content form #sign-in-label a:focus, .center-wrapper .content form #account-info a:focus, .center-wrapper .content form .justify a:focus, .yes-button:focus, .no-button:focus, .dialog-buttons button:focus, .chatPeople .chatPeopleTitle:focus {
+  outline: none;
+}
+
+.chatInputText, .chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText, .center-wrapper .content form #nick, .center-wrapper .content form #captcha-block #captcha-input, .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, #join-chat-button,
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .center-wrapper .content form #account-info a, .center-wrapper .content form .justify a, .yes-button, .no-button, .dialog-buttons button, .chatTopLineWrapper ul li ul li a, .chatTabs > ul > li > a, .chatTabs > ul > li.chatTab.chatTabActive a, .chatTabs > ul > li.chatTab#chat_main a, .chatPeople .chatPeopleTitle, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel div a span, .smilesBox p, .chatPopupMenuDiv2 .chatPopupMenuContent p, .center-wrapper .content form .justify #join-chat-button2 {
+  font-size: 14px;
+}
+
+.chatInputText, .chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText, .center-wrapper .content form #nick, .center-wrapper .content form #captcha-block #captcha-input {
+  min-height: 35px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: none;
+  -webkit-box-shadow: inset 1px 3px 7px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 1px 3px 7px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.chatInputText:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel .chatSendText:hover, .center-wrapper .content form #nick:hover, .center-wrapper .content form #captcha-block #captcha-input:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton, #join-chat-button,
+#join-chat-button2, .chatPopupMenuDiv2 .chatPopupMenuContent p input[type="submit"], .center-wrapper .content form #sign-in-label a, .center-wrapper .content form #account-info a, .center-wrapper .content form .justify a, .yes-button, .no-button, .dialog-buttons button {
+  padding: .25em .75em;
+  min-height: 37px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #444857;
+  border-radius: 4px;
+  background-color: #444857;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, #join-chat-button:hover,
+#join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form #account-info a:hover, .center-wrapper .content form .justify a:hover, .yes-button:hover, .no-button:hover, .dialog-buttons button:hover {
+  border-color: #5a5f73;
+  background-color: #5a5f73;
+}
+
+.msi, .chatTopLineWrapper > ul > li > a span, .chatTopLineWrapper > ul > li > a .downarrowclass, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a > span, .chatPopupMenuDiv1 {
+  display: none !important;
+}
+
+.chatTopLineWrapper > ul > li > a::before, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a::before, .chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel a::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'Linearicons-Free';
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text] {
+  padding-right: 5px;
+  padding-left: 5px;
+  min-height: 1.75em;
+}
+
+.smilesBox::-webkit-scrollbar,
+.vscrollable::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.smilesBox::-webkit-scrollbar-thumb,
+.vscrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.smilesBox::-webkit-scrollbar-thumb:hover,
+.vscrollable::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.smilesBox::-webkit-scrollbar-track,
+.vscrollable::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+#scrollBottomBox {
+  right: 30px;
+  left: auto !important;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 57, 61, 0.1);
+  font-size: 0 !important;
+  z-index: 10;
+}
+
+#scrollBottomBox::before {
+  position: relative;
+  bottom: 0;
+  font-family: 'Linearicons-Free';
+  content: '\e874';
+  font-size: 16px !important;
+  color: #ffffff;
+  background: 0 0;
+  -webkit-animation: bouncing 1s cubic-bezier(0.1, 0.25, 0.1, 1) infinite;
+          animation: bouncing 1s cubic-bezier(0.1, 0.25, 0.1, 1) infinite;
+}
+
+#scrollBottomBox:hover::before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.chat {
+  font: 14px 'Montserrat', sans-serif;
+  border: 0;
+}
+
+.chatHeader {
+  border-bottom: 0;
+  background: transparent;
+}
+
+.chatHeader .chatHeaderWrapper {
+  height: 100%;
+}
+
+.chatHeader .chatTitle {
+  text-shadow: none;
+}
+
+.chatHeader .chatTopLine {
+  top: 7px;
+  background-color: transparent;
+  border: 0;
+}
+
+.chatTopLineWrapper > ul > li > a {
+  margin-right: 3px;
+  margin-left: 3px;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  text-shadow: none;
+  border-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.chatTopLineWrapper > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.chatTopLineWrapper > ul > li:nth-child(1) > a::before {
+  content: '\e82a';
+}
+
+.chatTopLineWrapper > ul > li:nth-child(2) > a::before {
+  content: '\e83f';
+}
+
+.chatTopLineWrapper > ul > li:nth-child(3) img {
+  display: none;
+}
+
+.chatTopLineWrapper > ul > li:nth-child(3) > a::before {
+  content: '\e871';
+}
+
+.chatTopLineWrapper ul li.chatMenuItemWithSeparator a {
+  background-image: none;
+}
+
+.chatTopLineWrapper ul li ul {
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-width: 190px;
+  border-color: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chatTopLineWrapper ul li ul li a {
+  min-width: 190px;
+  white-space: nowrap;
+}
+
+.chatTopLineWrapper ul li:last-child ul {
+  margin-left: -14px;
+}
+
+.chatTabs {
+  top: 46px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.chatTabs > ul > li.chatTab.chatTabActive a {
+  border-radius: 2px;
+}
+
+.chatTabs > ul > li.chatTab#chat_main a {
+  border-radius: 2px;
+}
+
+.chatMain {
+  top: 0;
+  bottom: 0;
+  --mnt: 90px;
+  --mnb: 80px;
+}
+
+.chatMain .chatMessages,
+.chatMain .chatPrivateMessages {
+  top: var(--mnt);
+  right: 5px;
+  bottom: var(--mnb);
+  left: 5px;
+}
+
+.chatMain .chatMessages .chatMessage,
+.chatMain .chatPrivateMessages .chatMessage {
+  padding-left: 8px;
+  margin-right: 173px;
+  line-height: 1.7;
+  border-radius: 2px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.chatMain .chatMessages .chatMessage .chatTime,
+.chatMain .chatPrivateMessages .chatMessage .chatTime {
+  padding-top: 3px;
+}
+
+.chatMain .chatMessages .chatMessage:hover,
+.chatMain .chatPrivateMessages .chatMessage:hover {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.chatMain .chatPeople {
+  top: var(--mnt);
+  right: 15px;
+  bottom: var(--mnb);
+  border-left: 0;
+}
+
+.chatMessageToMe .chatToUser {
+  padding: 3px 0 3px 18px;
+  font-style: normal;
+  font-weight: 700;
+  background-color: transparent;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTnU1rJkAAABRklEQVRIS7XTvS8EQRzG8TsEUXgL0RAvoRD9NhKdEpXOf6AVBYUGjWhEolIodQqNSo+eiiBqgoIQfJ/Ljezv9mezYRSfyd1zs8/OTWZKSZL8CzeMwQ1jcMMY3LCATcyhnMoMNyzgFvdYQkM1MzJBQXf4xAMW0QQzx3z5QR2a0YYuDOMGKhatfAH6/XtrakvSVDiEGWzhFI/4QCgNnrCGXlTKvULpwzyO8IzaIs8L9jCKslc6gQNodV5BHpXPIlM8iRO8w3swzxtW0QOzFWM4xm9L19ENs8ct2MArwuRL6CJMYwQdaIX2/xphnhayjcpKg/BhHOfQm8+gk6CDr7d7t+sKoXQfOg1mjgYd7mVoFSvohJnkuIAWcYjBamZoaIf2Zwq6CJlJjh3sYiCVGRoaoT2sD2EB/cj9Z24YgxvG4IYxuOHfJaUvlUiaIhsuOxQAAAAASUVORK5CYII=);
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+
+.chatSystemMessage {
+  background-image: none !important;
+}
+
+.chatSystemMessage.type-news {
+  background-color: rgba(0, 153, 53, 0.15);
+}
+
+.chatSystemMessage.type-event {
+  background-color: rgba(0, 53, 153, 0.15);
+}
+
+.chatSystemMessage.type-ban {
+  background-color: rgba(153, 0, 0, 0.15);
+}
+
+#chatUserMiniMenu {
+  border: 0;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#chatUserMiniMenu .buttons div {
+  position: relative;
+  margin-left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.25);
+  background-image: none;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#chatUserMiniMenu .buttons div::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #3b393d;
+  font-family: 'Linearicons-Free';
+  font-size: 13px;
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuInfo::before {
+  content: '\e82a';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuPrivate::before {
+  content: '\e82b';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuPhotos::before {
+  content: '\e827';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuGift::before {
+  content: '\e844';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuIgnore::before {
+  content: '\e86e';
+}
+
+#chatUserMiniMenu .buttons div.chatUserMenuBan::before {
+  content: '\e880';
+}
+
+.chatUserFrom {
+  margin-right: 5px;
+  padding-top: 3px;
+}
+
+.chatPeople .chatPeopleTitle {
+  margin: 4px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.chatPeople ul.chatPeopleList li.hover {
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 8px;
+}
+
+.chatUserAvatar {
+  border-radius: 4px;
+}
+
+.chatInputText {
+  border-color: #eee;
+}
+
+.chatFooter {
+  height: 80px;
+  border-top: 0;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.chatFooter .chatFooterWrapper {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div a span {
+  white-space: nowrap;
+  border-bottom-color: transparent;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel {
+  top: 3px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 7px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a {
+  position: relative;
+  margin: 2px;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.25);
+  background-image: none !important;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkSmiles::before {
+  content: '\e854';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkImage::before {
+  content: '\e824';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkProfile::before {
+  content: '\e82a';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkGold::before {
+  content: '\e80e';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkVip::before {
+  content: '\e814';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkModerate::before {
+  content: '\e810';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a.chatLinkMore::before {
+  content: '\e82b';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel > a:last-child {
+  margin-right: 0 !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel {
+  top: auto;
+  bottom: 3px;
+  width: auto;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select {
+  position: relative;
+  padding: 0;
+  height: 35px;
+  width: auto;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel {
+  top: auto;
+  bottom: 3px;
+  right: 160px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton {
+  width: auto;
+  height: auto;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel {
+  top: auto;
+  right: 275px;
+  bottom: 4px;
+  left: 7px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel {
+  top: 5px;
+  right: 15px;
+  z-index: 99;
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel a {
+  margin: 2px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background-image: none !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel a::before {
+  content: '\e85a';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel a.muted::before {
+  content: '\e85d';
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel a > span {
+  font-size: 0;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel div.chatSoundPanel:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.chatSetupNickname {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.smilesBox {
+  width: 315px !important;
+}
+
+.chatEventDiv {
+  padding: 6px;
+  top: auto;
+  right: auto;
+  bottom: 82px;
+  left: 3px;
+  width: 325px;
+  min-height: 200px;
+  border-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  -webkit-box-shadow: 3px -3px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 3px -3px 20px rgba(0, 0, 0, 0.05);
+}
+
+.chatPopupMenuDiv2 {
+  top: auto !important;
+  right: auto;
+  bottom: 82px;
+  left: 3px !important;
+  width: 325px !important;
+  min-height: 200px;
+  border-color: rgba(255, 255, 255, 0.08);
+  -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.05);
+}
+
+.chatFull .transparent {
+  opacity: 1;
+}
+
+.center-wrapper {
+  width: 100%;
+}
+
+.center-wrapper .content {
+  padding-top: 0;
+}
+
+.center-wrapper .content form {
+  position: relative;
+  margin: auto;
+  padding: 15px;
+  width: 270px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.center-wrapper .content form::before {
+  position: absolute;
+  content: '';
+  --mar: -10px;
+  top: var(--mar);
+  right: var(--mar);
+  bottom: var(--mar);
+  left: var(--mar);
+  z-index: -1;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.center-wrapper .content form #sign-in-label a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: inherit;
+}
+
+.center-wrapper .content form #account-info {
+  text-align: center;
+}
+
+.center-wrapper .content form #account-info span {
+  margin: 7px auto;
+  display: block;
+}
+
+.center-wrapper .content form #account-info a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: inherit;
+}
+
+.center-wrapper .content form #captcha-block a img {
+  width: 100%;
+  height: auto;
+}
+
+.center-wrapper .content form .justify {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.center-wrapper .content form .justify a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: inherit;
+}
+
+.yes-button {
+  background-color: green;
+}
+
+.no-button {
+  background-color: red;
+}
+
+.smokebg {
+  background-color: rgba(59, 57, 61, 0.45);
+}
+
+.dialog.smoke {
+  border-color: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  background-color: rgba(59, 57, 61, 0.9);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 3px 3px 20px;
+          box-shadow: rgba(0, 0, 0, 0.05) 3px 3px 20px;
+}
+
+.dialog.smoke .dialog-inner {
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: rgba(59, 57, 61, 0.5);
+}
+
+.dialog-buttons button {
+  width: 80%;
+  background-color: #444857;
+}
+
+body:not(.has-nick) .chatFooterWrapper::after {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  content: '(c) 2019 by Andrej Sharapov';
+  color: rgba(255, 255, 255, 0.07);
+  font-size: 9px;
+}
+
+@-webkit-keyframes bouncing {
+  20% {
+    bottom: 25px;
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+  }
+}
+
+@keyframes bouncing {
+  20% {
+    bottom: 25px;
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+  }
+}
+/*# sourceMappingURL=new.css.map */

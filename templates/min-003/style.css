@@ -1,0 +1,286 @@
+/*
+Theme Name: Min-003
+To project: shop.madeas.ru
+Author: Andrej Sharapov 
+Author URI: https://madeas.ru
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Version: 1.0.1
+ */
+@import url("https://madeas.ru/css/chatemplate/alignment.min.css");
+.smilesBox::-webkit-scrollbar-track,
+.vscrollable::-webkit-scrollbar-track {
+  background: rgba(245, 244, 239, 0.14);
+}
+
+.chatHeader {
+  height: 69px;
+}
+
+.chatHeader .chatHeaderWrapper {
+  height: 69px;
+}
+
+.chatHeader .chatTitle {
+  margin: auto;
+  width: calc(100% - 170px);
+  line-height: 69px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.chatHeader .chatTopLine {
+  top: 0;
+  right: 0;
+  width: 170px;
+  height: 69px;
+  border: 0;
+  border-bottom: 1px solid #D4D2CB;
+  -webkit-animation-name: fadeInRight90;
+          animation-name: fadeInRight90;
+  -webkit-animation-duration: .55s;
+          animation-duration: .55s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.chatTopLineWrapper ul li.chatMenuItemWithSeparator a {
+  background-image: none !important;
+}
+
+.chatTopLineWrapper > ul {
+  top: 0;
+  right: 0;
+  width: 170px;
+  height: 69px;
+  border: 0;
+}
+
+.chatTopLineWrapper > ul > li {
+  float: none;
+  -webkit-animation-name: fadeInRight90;
+          animation-name: fadeInRight90;
+}
+
+.chatTopLineWrapper > ul > li:nth-child(2) {
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+}
+
+.chatTopLineWrapper > ul > li:nth-child(3) {
+  -webkit-animation-duration: .95s;
+          animation-duration: .95s;
+}
+
+.chatTopLineWrapper > ul > li > ul {
+  position: absolute;
+  right: 0;
+  left: auto !important;
+  z-index: 102;
+  width: 171px;
+  border: 1px solid #D4D2CB;
+  border-top: 0;
+  -webkit-animation-name: fadeInUp90;
+          animation-name: fadeInUp90;
+  -webkit-animation-duration: .35s;
+          animation-duration: .35s;
+}
+
+.chatTopLineWrapper > ul > li > ul > li > a {
+  width: 169px;
+}
+
+.chatMain {
+  top: 69px;
+}
+
+.chatMain::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.chatTabs {
+  top: 0;
+  right: 170px;
+  border-bottom: 1px solid #D4D2CB;
+}
+
+.chatPeople {
+  top: 0;
+}
+
+.chatPeople ul.chatPeopleList li {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+#menu_profile_title {
+  white-space: nowrap;
+}
+
+.center-wrapper .content form {
+  -webkit-animation-name: bounceIn;
+          animation-name: bounceIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+            transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+            transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp90 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 90%, 0);
+            transform: translate3d(0, 90%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInUp90 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 90%, 0);
+            transform: translate3d(0, 90%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInRight90 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(90%, 0, 0);
+            transform: translate3d(90%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInRight90 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(90%, 0, 0);
+            transform: translate3d(90%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
