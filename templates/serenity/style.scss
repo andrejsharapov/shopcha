@@ -29,7 +29,6 @@ $bdrs: 4px;
 }
 
 %bg {
-    background-color: rgba($black, .3);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -144,11 +143,11 @@ input[type=text] {
     &::-webkit-scrollbar-thumb {
         @extend %scroll;
         @extend %bdrs;
-        background-color: rgba($black, .3);
+        background-color: rgba($col2, .3);
         transition: all 300ms linear;
 
         &:hover {
-            background-color: rgba($black, .6)
+            background-color: $col2;
         }
     }
 
@@ -408,6 +407,7 @@ input[type=text] {
         padding: 3px 0 3px 18px;
         font-style: normal;
         font-weight: 700;
+        color: inherit;
         background-color: transparent;
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTnU1rJkAAABRklEQVRIS7XTvS8EQRzG8TsEUXgL0RAvoRD9NhKdEpXOf6AVBYUGjWhEolIodQqNSo+eiiBqgoIQfJ/Ljezv9mezYRSfyd1zs8/OTWZKSZL8CzeMwQ1jcMMY3LCATcyhnMoMNyzgFvdYQkM1MzJBQXf4xAMW0QQzx3z5QR2a0YYuDOMGKhatfAH6/XtrakvSVDiEGWzhFI/4QCgNnrCGXlTKvULpwzyO8IzaIs8L9jCKslc6gQNodV5BHpXPIlM8iRO8w3swzxtW0QOzFWM4xm9L19ENs8ct2MArwuRL6CJMYwQdaIX2/xphnhayjcpKg/BhHOfQm8+gk6CDr7d7t+sKoXQfOg1mjgYd7mVoFSvohJnkuIAWcYjBamZoaIf2Zwq6CJlJjh3sYiCVGRoaoT2sD2EB/cj9Z24YgxvG4IYxuOHfJaUvlUiaIhsuOxQAAAAASUVORK5CYII=);
         background-position: 0 center;
