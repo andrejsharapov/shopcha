@@ -23,7 +23,7 @@ Version: 1.0.3
   background-size: 40% auto, cover;
 }
 
-.chatHeader, .chatMain .chatMessages,
+.chatHeader, .chatHeader .chatTopLine:hover, .chatMain .chatMessages,
 .chatMain .chatPrivateMessages, .chatPeople, .chatFooter, .center-wrapper .content form {
   background-color: rgba(44, 46, 50, 0.8);
 }
@@ -194,6 +194,8 @@ input[type=text] {
   top: -25px;
   right: var(--r);
   border-color: transparent;
+  border-top-right-radius: var(--r);
+  border-top-left-radius: var(--r);
   background-color: transparent;
 }
 
@@ -419,7 +421,6 @@ input[type=text] {
 
 .chatFooter .chatFooterWrapper .chatPanel div a span {
   white-space: nowrap;
-  color: var(--wh);
   border-bottom-color: transparent;
 }
 
@@ -438,7 +439,6 @@ input[type=text] {
   position: absolute;
   padding-left: 21px;
   content: 'vip';
-  color: var(--wh);
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before {
@@ -446,7 +446,6 @@ input[type=text] {
   padding-left: 21px;
   margin-right: 16px;
   content: 'moder';
-  color: var(--wh);
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkMore {

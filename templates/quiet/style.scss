@@ -210,7 +210,13 @@ input[type=text] {
         top: -25px;
         right: var(--r);
         border-color: transparent;
+        border-top-right-radius: var(--r);
+        border-top-left-radius: var(--r);
         background-color: transparent;
+        
+        &:hover {
+            @extend %bgc;
+        }
     }
 }
 
@@ -500,7 +506,6 @@ input[type=text] {
                     span {
                         white-space: nowrap;
                         @extend %sizes;
-                        color: var(--wh);
                         border-bottom-color: transparent;
                     }
                 }
@@ -521,7 +526,6 @@ input[type=text] {
                             padding-left: 21px;
                             content: 'vip';
                             @extend %sizes;
-                            color: var(--wh);
                         }
                     }
 
@@ -533,7 +537,6 @@ input[type=text] {
                             margin-right: 16px;
                             content: 'moder';
                             @extend %sizes;
-                            color: var(--wh);
                         }
                     }
 
