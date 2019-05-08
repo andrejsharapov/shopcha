@@ -42,7 +42,7 @@ Version: 1.0.3
   outline: none;
 }
 
-.chatTopLineWrapper > ul > li > ul > li > a, .chatPeople .chatPeopleTitle, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatFooter .chatFooterWrapper .chatPanel div a span, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::after, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before, .smilesBox p, .chatPopupMenuDiv2 .chatPopupMenuContent p, .center-wrapper .content form .justify #join-chat-button2, .center-wrapper .content form .justify a {
+.chatTopLineWrapper > ul > li > ul > li > a, .chatPeople .chatPeopleTitle, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a, .chatTabs > ul > li.chatTab > a, .chatFooter .chatFooterWrapper .chatPanel div a span, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkVip::after, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a.chatLinkModerate::before, .smilesBox p, .chatPopupMenuDiv2 .chatPopupMenuContent p, .center-wrapper .content form .justify #join-chat-button2, .center-wrapper .content form .justify a {
   font-size: 13px;
 }
 
@@ -62,6 +62,7 @@ Version: 1.0.3
       -ms-flex-align: center;
           align-items: center;
   min-height: 28px;
+  font-family: 'Comfortaa', sans-serif;
   color: #fff;
   cursor: pointer;
   border: 1px solid #e899cf;
@@ -290,8 +291,8 @@ input[type=text] {
   position: absolute;
 }
 
-.chatTopLineWrapper ul li.chatMenuItemWithSeparator a:hover {
-  background-image: url("https://st1.chatovod.ru/i/widget/vborder.png");
+.chatTopLineWrapper ul li.chatMenuItemWithSeparator a {
+  background-image: none !important;
 }
 
 .chatTopLineWrapper ul li ul {
@@ -418,6 +419,23 @@ input[type=text] {
   background-color: #eb55a3;
 }
 
+.chatTabsLeft {
+  background-color: transparent;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEAAACxABrSO9dQAABJBJREFUeF7t3clqVEEUxnEjccJHEcTHENwoKk5gHF5DfAKHhTigWQRURNBldoLiWgzuJaIICj6AuDGeQ7gaO1Onu6rOOXX+DbVJN32H71enqm7fdM+srKzs4pH4DCgAWt5zQPjJOwAAAJC3/DH0yfyPk5C7AwCAISB3D8heAakAVAAqQOYqQAWgAlABqADJewEAAJB2KEx74Jl7/dpjB0Dy6geArQHsl95yXtoTaUvSlqV9kPZM2py0g9ErCQA2B6DBf5O21eOHPHlV2kxUCABYD2C3hHlnm+BHn16QP8xGRACA/wFo+I92GP7w8ucREQDgH4Bpwg+LAACrAEqEHxIBAMqGPyCYjzIxzA6gZM8fnTqcizApzAygZviK4Yu0Pd4RZAVQO/yhGhwDgL9Lra3CVwS3AeALQMvwFcAiAPwAaB2+AngNAB8ALMJXAC8AYA/AKnwFcA0AtgAsw1cAhwFgB8A6/Ffew9f96/U6gHX4P+XkHgKATe+3Dv+3BH82Qvg9VgAP4c9FCb83AIQ/QcXtZQ5A+BOE30sFIPwJw+8BAOFPEX50AIQ/ZfiRARB+gfCjAiD8QuFHBED4BcOPBoDwC4cfCQDhVwg/CgDCrxR+BACEXzF87wAIv3L4ngEQfoPwvQIg/EbhewRA+A3D9waA8BuH7wkA4RuE7wUA4RuF7wEA4RuGbw2A8I3Dtwaw069ik/0t9tBbt0PdvVvrTmOrm0L1vnmrB+GvqTwWAPZK8l+N0if8kWHHAsAJwvfzIx0WAB4aAKDnbzLhtADwtjEAwt9itWEBYKkhAMLfZqkJAAdr8VpLvHHe1wIAQ4AjdBYAHjQcAoZNMRQ4mgQeNwCgmwTBBggsKoB+f+5nEPi4FmABQLd50ggAlcDBlcAB3Q0Q2FcBqwqg29Vf2rprjODSOEulnl9jCQAEDpaD1gBAYIzAAwAQGCLwAgAERgg8AQCBAQJvAEDQGIFHAF4QXO55+Tccm1cAIGhUCTwDAEEDBN4BDAjuGV8x7HY4iAAABBUrQRQAIKiEIBIAEFRAEA2AFwRXelkiRgQAgoKVICoAEBRCEBkACAogiA4ABFMi6AEACKZA0AsAPQ79yhnrK4bhVgc9AQDBBJWgNwBeEFyIcp2gRwAeEPwSAO5/Ol6R9grAA4I3EapAzwA8IDjiHUHvAKwRXAfABDPTCifNaon4ssKxFO20Rd/M+cEqgvuN7yxyPw/IBGAYDloiWHTeKbpeBWyGu2UluAkAH3OAUQytEBwFgE8ALYaDTxL+LAD8AqiN4JT38Hu/EjjuBLfGcKATzXG3b/o60407OkklETyNUPoj/G9ga5wlEIQKnyFgfZmeBkG48AGw8TitCG7t8IrhfKSyv3bobV1mI23vtJyo7X7a5ru85qI0/cq7SMf2d19D7nTDk71PtnVG2oK0d9I+Snsv7bE0vevnQMN9qZJVlTeNflIy7T8AgpbuUkgBAICYk5dSPSD7+1ABqABUgMxVgApABaACUAGS9wIAACDtUJj2wDP3ej4MouLxYRAVYHXyzxCQvBoAAABcB8g8HPwBgi9P5MBure0AAAAASUVORK5CYII);
+  background-position: 2px 12px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+.chatTabsRight {
+  right: 5px;
+  background-color: transparent;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEAAACxABrSO9dQAABMNJREFUeF7tnT2LFEEQhj1RUQT/jWAgIoiJJmKgGAkK5yf+BAMDvxD8AWoiCiKiaKagwWUehxgYCIIIJoIGxgqe1XIH693ebs92T9VU17NQ0c5MV/f79Ns9vT2zc8vLy5v4BG6BBAARtw0QP3gHAAAAiGt/DH0y/6MRYncAAGAIiN0DojsgDoAD4ACRXQAHwAFwABwgeC8AAAAIOxSGrXjkXj9adwAI7n4tALBLiJ6XeCLxQeKLxHuJ+xLHJbbR2zee6HsGYE6EvSTxU2LS56t8eRQIxkPgFYDUqx9PEX7t19eAYD0EHgFI4j/vKP7q4beB4H8IvAFQIj4QjJnwegKghvhAsAYCTwA8mtH2NzqN4SDtCHcyJp6tLD5OsOIEHgDYIWp97wmAdNnQTuABgBM9ih/eCTwAcE8BgLBO4AGABSUAQkLgAYAlRQDCQeABgJfKAISCwAMANw0ACAOBBwD2GgEQAgIPAKQcF4Ggn827XgDYLQD8AoL6EHgBIOV5SuIPENSFwBMAKddzQBAbACCovInVmwOs5osTVALBKwA4AQD8GwtxgkIQPDsAw0Gh+GkzUAsA4AQFILQCABDMCEFLAADBDBC0BgAQdISgRQCAoAMErQIABJkQtAwAEGRA0DoAQDAFgggAAMEECKIAAAQbQBAJACBw/nh4LVj5AWkEhFqN6u06QODo6eC+4AKChn4NnBWS8BDM2nAtnRcagpaELKmLNQRX0+YMizAp1KKiGWVaQ3AoI8fqelW/oEUlKpZpCcFHqcfminXJ0jbrIO2kjMuzhOCAdt0BYPzYawVBehReVRPVwrQrV1ieBQQvCnPurGfnE7QTNC5PG4I32vUFgMmWe175YdTXAKA8Bk5ocG3x05PvzwBgGABYiJ8AUF8QYghYD5yV+AmA/TiArQNYip/+7yj9DY5qp1QtTLtyHcuzFD+9+uZgx3yraFflIhaJVy7TUvxk/Zcr1ydb1+wDrRJUKDeJb/kx/TOr6ACEFj91rsgAhBc/MgCIH3hTKOIH3haO+GvWGSLNARA/8JNBFyzv86Rs01u9SbfSERwA8QM/HWwt/nWFhayiTlx08sArh/gZPyy1CgDiZ4jf6kIQ4meK3yIAiN9B/NYAuGh8qzf4Cd+4OVsrcwDE79jzV2FoAQDEn1H8FoYAxC8Q3zsAiF8ovmcArMW/MfBFsOyhPfvAAVUY8Sv0fK+TQMSvKL63IWDe+D6/GdsfdXMvQ8AeSfq3IQBNiu/JAd4hfj+PjHlwgH2I34/4XhzglhEAzdq+tznAKwMAQojvxQGWlAFQf1OX5RqLhznAgiIAocT34gB3lAAIJ74XAI4pABBSfC8AbJdEv/UIQVjxvQCQ5imnewIgtPieAEgQPKgMQXjxvQGwVRJ+WgkCxHf6foAaECC+8/cDlECA+I28HyBB8LDjcHDFcsVtqGV7WAmclOMZadgfU0D4LN8fHqoA1nl5ByDlv1Pi5IojpH0DnyTeStyVOCKxxbqRh1x+CwBQh4J9gjReQeMNuWfn5gYAANDfdqNcCjnOTgMcAAewo4+eb9/2OAAOYE8hTmCnAQ6AA9jRR8+3b3scAAewpxAnsNMAB8AB7Oij59u3PQ6AA9hTiBPYafAX7IROrGTvJ20AAAAASUVORK5CYII);
+  background-position: 2px 12px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
 .chatFooter {
   background-color: #fff;
 }
@@ -452,13 +470,17 @@ input[type=text] {
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel {
-  right: 225px;
+  right: 270px;
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel {
-  right: 97px;
+  right: 140px;
   width: 120px !important;
   height: 28px !important;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton {
+  width: auto;
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel {
@@ -467,6 +489,7 @@ input[type=text] {
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel select {
   height: 28px !important;
+  font-family: 'Comfortaa', sans-serif;
   border: 1px solid #cfcfc9;
 }
 
