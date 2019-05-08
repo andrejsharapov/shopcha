@@ -225,8 +225,6 @@ select:focus {
     transition: all 0.4s linear;
 }
 
-/* СЌС„С„РµРєС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё (РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ) РјРѕР¶РЅРѕ СѓРґР°Р»РёС‚СЊ РІРµСЃСЊ РєРѕРґ РЅРёР¶Рµ */
-
 #join-chat-button:hover,
 #join-chat-button2:hover,
 input[type="button"]:hover,
