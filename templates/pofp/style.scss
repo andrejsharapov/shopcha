@@ -27,7 +27,11 @@ $base_bg: '/src/bg.jpg';
 $bgi: $base+'pofp'+$base_bg;
 
 %bg {
-    background: linear-gradient(90deg, rgba($black, .35), rgba($col2, .35)), url($bgi);
+    background: linear-gradient(
+        91deg, 
+        rgba($black, .35),
+        rgba($col2, .35)),
+        url($bgi);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -439,7 +443,11 @@ input[type=text] {
     height: 72px;
     border-top: 0;
     background-color: transparent;
-    background-image: linear-gradient(90deg, rgba($black, .5), rgba($black, .25));
+    background-image: linear-gradient(
+        91deg, 
+        rgba($black, .5), 
+        rgba($black, .25)
+    );
 
     .chatFooterWrapper {
         .chatPanel {

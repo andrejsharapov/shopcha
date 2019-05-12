@@ -72,8 +72,7 @@ Version: 1.0.7
   text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(223, 144, 42, 0.09)));
-  background: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
+  background: linear-gradient(181deg, rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
   -webkit-box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
           box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
   -webkit-transition: all 0.1s linear;
@@ -86,10 +85,9 @@ Version: 1.0.7
 
 .chatTopLineWrapper > ul > li > a:hover, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:hover, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:hover, #join-chat-button:hover,
 #join-chat-button2:hover, .chatPopupMenuDiv2 .chatPopupMenuContent p input:hover[type="submit"], .center-wrapper .content form #sign-in-label a:hover, .center-wrapper .content form .justify a:hover, .yes-button:hover, .no-button:hover, .dialog-buttons button:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(255, 255, 255, 0.08)));
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(181deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .chatTopLineWrapper > ul > li > a:active, .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendLinksPanel a:active, .chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton:active, .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:active, #join-chat-button:active,
@@ -466,15 +464,13 @@ input[type=text] {
   font-family: 'Linearicons-Free';
   font-size: 13px !important;
   border-radius: 3px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(223, 144, 42, 0.09)));
-  background: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
+  background: linear-gradient(181deg, rgba(255, 255, 255, 0.2) 0%, rgba(223, 144, 42, 0.09) 100%);
   -webkit-box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
           box-shadow: inset rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px;
 }
 
 #chatUserMiniMenu .buttons div:active::before {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.08)), to(rgba(255, 255, 255, 0.08)));
-  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%);
+  background-image: linear-gradient(181deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%);
 }
 
 #chatUserMiniMenu .buttons div.chatUserMenuInfo::before {
@@ -821,10 +817,9 @@ input[type=text] {
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSoundPanel a:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(255, 255, 255, 0.08)));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(181deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel {

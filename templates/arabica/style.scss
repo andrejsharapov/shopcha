@@ -91,15 +91,26 @@ $afterlog: $base+'arabica'+$base_alert;
     text-decoration: none;
     border: 1px solid rgba($black, .25);
     border-radius: $bdrs / 3;
-    background: linear-gradient(rgba($white, .2) 0%, rgba($col2, .09) 100%);
-    box-shadow: inset rgba($white, .1) 0px 1px 0px, rgba($black, .3) 0px 1px 3px;
+    background: linear-gradient(
+        181deg, rgba($white, .2) 0%, 
+        rgba($col2, .09) 100%
+    );
+    box-shadow: 
+        inset rgba($white, .1) 0px 1px 0px, 
+        rgba($black, .3) 0px 1px 3px;
 
     transition: all 0.1s linear;
     user-select: none;
 
     &:hover {
-        background-image: linear-gradient(to bottom, rgba($white, .15) 0%, rgba($white, .08) 100%);
-        box-shadow: 0 1px 0 rgba($white, .1) inset, 0 1px 2px rgba($black, .1);
+        background-image: linear-gradient(
+            181deg, 
+            rgba($white, .15) 0%, 
+            rgba($white, .08) 100%
+        );
+        box-shadow: 
+            inset 0 1px 0 rgba($white, .1), 
+            0 1px 2px rgba($black, .1);
     }
 
     &:active {
@@ -500,13 +511,23 @@ input[type=text] {
                 font-family: 'Linearicons-Free';
                 font-size: 13px !important;
                 border-radius: 3px;
-                background: linear-gradient(rgba($white, 0.2) 0%, rgba($col2, .09) 100%);
-                box-shadow: inset rgba($white, 0.1) 0px 1px 0px, rgba($black, 0.3) 0px 1px 3px;
+                background: linear-gradient(
+                    181deg, 
+                    rgba($white, 0.2) 0%, 
+                    rgba($col2, .09) 100%
+                );
+                box-shadow: 
+                    inset rgba($white, 0.1) 0px 1px 0px, 
+                    rgba($black, 0.3) 0px 1px 3px;
             }
 
             &:active {
                 &::before {
-                    background-image: linear-gradient(rgba($white, .08) 0%, rgba($white, .08) 100%);
+                    background-image: linear-gradient(
+                        181deg, 
+                        rgba($white, .08) 0%, 
+                        rgba($white, .08) 100%
+                    );
                 }
             }
 
@@ -932,8 +953,14 @@ input[type=text] {
                     }
 
                     &:hover {
-                        background: linear-gradient(to bottom, rgba($white, .15) 0%, rgba($white, .08) 100%);
-                        box-shadow: 0 1px 0 rgba($white, .1) inset, 0 1px 2px rgba($black, .1);
+                        background: linear-gradient(
+                            181deg, 
+                            rgba($white, .15) 0%, 
+                            rgba($white, .08) 100%
+                        );
+                        box-shadow: 
+                            inset 0 1px 0 rgba($white, .1), 
+                            0 1px 2px rgba($black, .1);
                     }
                 }
             }

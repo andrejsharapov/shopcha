@@ -25,7 +25,11 @@ $base_bg: '/src/bg.jpg';
 $bgi: $base+'underwater'+$base_bg;
 
 %bg {
-    background: linear-gradient(45deg, rgba($col3, .05), rgba($col3, .15)), url($bgi);
+    background: linear-gradient(
+        45deg, 
+        rgba($col3, .05), 
+        rgba($col3, .15)), 
+        url($bgi);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -328,8 +332,14 @@ input[type=text] {
         padding: 5px;
         border: 1px solid #555;
         background-color: rgba($black, .1);
-        background-image: linear-gradient(top, rgba($black, .1), rgba($black, .3));
-        box-shadow: inset -1px 1px 0px rgba($white, .3), inset 1px 1px 0px rgba($white, 0.3);
+        background-image: linear-gradient(
+            181deg, 
+            rgba($black, .1), 
+            rgba($black, .3)
+        );
+        box-shadow: 
+            inset -1px 1px 0px rgba($white, .3), 
+            inset 1px 1px 0px rgba($white, 0.3);
     }
 
     .chatMessage {
@@ -347,7 +357,11 @@ input[type=text] {
             height: auto;
             border: 0;
             background-color: transparent;
-            background-image: linear-gradient(180deg, transparent, rgba($col2, .6));
+            background-image: linear-gradient(
+                181deg, 
+                transparent, 
+                rgba($col2, .6)
+            );
         }
     }
 }
@@ -697,8 +711,14 @@ input[type=text] {
             padding: 8px 12px;
             color: rgba($white, 0.85);
             border: 1px solid #555;
-            background-image: linear-gradient(top, rgba($black, .1), rgba($black, .3));
-            box-shadow: inset -1px 1px 0px rgba($white, .3), inset 1px 1px 0px rgba($white, .3);
+            background-image: linear-gradient(
+                181deg, 
+                rgba($black, .1), 
+                rgba($black, .3)
+            );
+            box-shadow: 
+                inset -1px 1px 0px rgba($white, .3), 
+                inset 1px 1px 0px rgba($white, .3);
 
             #sign-in-label {
                 a {
