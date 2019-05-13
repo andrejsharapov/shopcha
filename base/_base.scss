@@ -138,8 +138,6 @@ input[type=text] {
     background-image: url($btndown);
 }
 
-#chatMainMenuProfile {}
-
 .chat {
     font: 16px 'Ubuntu', sans-serif;
     border: 0;
@@ -462,6 +460,8 @@ input[type=text] {
 .chatLinkVip,
 .chatLinkModerate {}
 
+//! panel with #join-chat-button
+
 .chatSetupNickname {}
 
 #join-chat-button,
@@ -469,6 +469,8 @@ input[type=text] {
     @extend %btns;
     @extend %focus;
 }
+
+//! panel for media links
 
 #chatImageUrl {}
 
