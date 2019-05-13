@@ -12,8 +12,8 @@ Version: 1.0.0
 @import url('https://cdn.linearicons.com/free/1.0.0/icon-font.min.css');
 
 :root {
-    --bgcolor: #a0ca2d;
-    --txcolor: #b6e245;
+    --bgcolor: #f98500;
+    --txcolor: #f7a13e;
 }
 
 $bdrs: 3px;
@@ -211,6 +211,10 @@ input[type=text] {
     border-bottom: 0;
     background-color: transparent;
 
+    @media (max-width:768px) {
+        height: 60px;
+    }
+
     .chatHeaderWrapper {
         position: absolute;
         top: 80px;
@@ -229,6 +233,14 @@ input[type=text] {
             family: 'Montserrat';
             size: 32px !important;
             weight: 800;
+        }
+
+        @media (max-width:991px) {
+            font-size: 26px !important;
+        }
+
+        @media (max-width:768px) {
+            display: none;
         }
     }
 
@@ -382,6 +394,10 @@ input[type=text] {
         bottom: 76px;
         left: 12px;
 
+        @media (max-width:768px) {
+            top: 97px;
+        }
+
         .chatMessage {
             margin-top: 3px;
             margin-right: 5px;
@@ -466,6 +482,85 @@ input[type=text] {
     border-radius: $bdrs;
     @extend %bgc3;
     box-shadow: none;
+
+    div {
+        line-height: 24px;
+    }
+
+    .chatUserFrom {
+        span {
+            color: var(--txcolor) !important;
+        }
+    }
+
+    .buttons {
+        div {
+            position: relative;
+            display: flex;
+            width: 24px;
+            height: 24px;
+            line-height: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 3px;
+            text-align: center;
+            border: 1px solid rgba($black, .25);
+            border-radius: $bdrs;
+            @extend %bgc3;
+            background-image: none;
+            box-shadow:
+                    inset 0 1px 0 rgba($white, .1),
+                    0 1px 3px rgba($black, .3);
+            transition: all 200ms linear;
+
+            &::before {
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                padding-top: 2px;
+                font-family: 'Linearicons-Free';
+                @extend %sizes;
+                color: $white;
+                border-radius: $bdrs;
+            }
+
+            &.chatUserMenuInfo {
+                &::before {
+                    content: '\e82a';
+                }
+            }
+
+            &.chatUserMenuPrivate {
+                &::before {
+                    content: '\e82b';
+                }
+            }
+
+            &.chatUserMenuPhotos {
+                &::before {
+                    content: '\e827';
+                }
+            }
+
+            &.chatUserMenuGift {
+                &::before {
+                    content: '\e844';
+                }
+            }
+
+            &.chatUserMenuIgnore {
+                &::before {
+                    content: '\e86e';
+                }
+            }
+
+            &.chatUserMenuBan {
+                &::before {
+                    content: '\e880';
+                }
+            }
+        }
+    }
 }
 
 .chatPeople {
@@ -593,7 +688,9 @@ input[type=text] {
 
                     a {
                         &.chatUser {
-                            color: var(--txcolor) !important;
+                            span {
+                                color: var(--txcolor) !important;
+                            }
                         }
                     }
                 }
@@ -652,10 +749,6 @@ input[type=text] {
                     @extend %sizes;
                     line-height: 39px;
                 }
-            }
-
-            &:hover {
-                background-color: var(--bgcolor);
             }
         }
     }
@@ -1244,7 +1337,7 @@ body:not(.has-nick) {
             animation: bounceInLeft .75s both;
         }
     }
-    
+
     .chatTopLine,
     .chatUserMenuBan,
     .chatUserMenuGift,
@@ -1282,6 +1375,7 @@ body:not(.has-nick) {
         opacity: 0;
         transform: translate3d(0, -100%, 0)
     }
+
     to {
         opacity: 1;
         transform: none
@@ -1301,23 +1395,33 @@ body:not(.has-nick) {
 }
 
 @keyframes bounceInLeft {
-    0%, 60%, 75%, 90%, to {
+
+    0%,
+    60%,
+    75%,
+    90%,
+    to {
         animation-timing-function: cubic-bezier(.215, .61, .355, 1)
     }
+
     0% {
         opacity: 0;
         transform: translate3d(-1000px, 0, 0)
     }
+
     60% {
         opacity: 1;
         transform: translate3d(25px, 0, 0)
     }
+
     75% {
         transform: translate3d(-10px, 0, 0)
     }
+
     90% {
         transform: translate3d(5px, 0, 0)
     }
+
     to {
         transform: none
     }
