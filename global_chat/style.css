@@ -307,7 +307,7 @@ input[type=text] {
 
 .chatTopLineWrapper > ul > li > ul > li > a:hover {
   border-radius: 3px;
-  background-color: var(--txcolor);
+  background-color: var(--bgcolor);
 }
 
 .chatTopLineWrapper > ul > li:nth-child(1) > a::before {
