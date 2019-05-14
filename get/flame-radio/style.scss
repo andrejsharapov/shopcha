@@ -44,6 +44,8 @@ $black: #000;
     color: #bbb;
     border: 1px solid $col3;
     background: $black;
+    transition: all 200ms linear;
+
     @extend %focus;
 }
 
@@ -101,7 +103,6 @@ input[type=text] {
         visibility: hidden;
         opacity: 0;
         background-color: rgba($col1, .25);
-        transition: all 500ms linear;
 
         &:hover {
             background-color: $col1;
@@ -121,6 +122,7 @@ input[type=text] {
 }
 
 #scrollBottomBox {
+    padding: 3px 7px;
     border: 0;
     border-radius: 0;
     color: $white;
@@ -292,12 +294,21 @@ input[type=text] {
         bottom: 75px;
 
         .chatMessage {
-            padding-right: 15px;
+            padding: 3px 15px 3px 40px;
             line-height: 1.7;
+            background-image: url(https://shop.madeas.ru/chatemplate/headphones.svg);
+            background-position: 16px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
 
             a {
                 text-decoration: none;
-                color: $white;
+                color: #bbb;
+                transition: all 200ms linear;
+
+                &:hover {
+                    color: $white;
+                }
             }
 
             &:hover {
@@ -316,7 +327,7 @@ input[type=text] {
 
         &:hover {
             transform: none;
-            background-color: rgba($black, .75);
+            background-color: rgba($black, .55);
         }
     }
 }
@@ -340,10 +351,43 @@ input[type=text] {
     font-style: normal;
 }
 
+.chatMessage {
+    &.type-news,
+    &.type-event {
+        background: none;
+    }
+}
+
 .chatMessageToMe {
     .chatToUser {
+        position: relative;
+        z-index: 1;
         padding: 2px 6px;
+        color: inherit;
+        background-color: transparent;
+        transition: all 200ms linear;
 
+        &::before {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: -1;
+            content:'';
+            width: 70%;
+            height: 2px;
+            background-color: $col1;
+            transition: inherit;
+        }
+
+        &:hover {
+            color: $white;
+
+            &::before {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }
 
@@ -377,9 +421,10 @@ input[type=text] {
 
 .chatPeople {
     .chatPeopleTitle {
-        margin: 4px 0;
+        margin: 7px 0;
         width: 100%;
         text-align: center;
+        @extend %sizes;
         color: $white;
 
         .chatUsersCount {
@@ -570,11 +615,12 @@ input[type=text] {
             }
 
             .chatSendTextPanel {
-                right: 268px;
+                top: 29px;
+                right: 275px;
 
                 .chatSendText {
                     @extend %inputs;
-                    height: 35px;
+                    min-height: 37px;
                     color: $white;
 
                     &:focus {
@@ -584,26 +630,27 @@ input[type=text] {
             }
 
             .chatSendButtonPanel {
-                right: 152px;
+                right: 157px;
 
                 .chatSendButton {
                     width: auto;
                     height: auto;
+                    max-height: 35px;
                     @extend %btns;
                 }
             }
 
             .chatSendExitPanel {
+                width: auto;
+                max-width: 135px;
                 @extend %focus;
 
                 select {
                     position: relative;
-                    right: 37px;
-                    padding-left: 5px;
-                    width: auto;
+                    padding-left: 7px;
                     height: 35px;
                     text-transform: uppercase;
-                    font-weight: 900;
+                    font-weight: 600;
                     color: $white;
                     cursor: pointer;
                     border: 0;
