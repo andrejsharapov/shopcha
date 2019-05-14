@@ -169,7 +169,7 @@ input[type=text] {
                 margin: 0 10px;
                 align-items: center;
                 justify-content: center;
-                text-shadow: none;
+                text-shadow: none !important;
                 text-transform: uppercase;
                 @extend %sizes;
                 font-weight: 900;
@@ -368,6 +368,9 @@ input[type=text] {
     ul {
         &.chatPeopleList {
             li {
+                border-top: 2px solid transparent;
+                border-bottom: 0;
+
                 .chatUserMenu {
                     .chatUserMenuItems {
                         ul {
@@ -387,8 +390,8 @@ input[type=text] {
                 }
 
                 &.hover {
-                    border-top-color: transparent;
-                    border-bottom-color: transparent;
+                    border-top: 2px solid $col1;
+                    border-bottom: 0;
                     background-color: rgba($col3, .75);
                 }
             }
