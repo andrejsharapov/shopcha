@@ -87,14 +87,14 @@ input[type=text] {
 .vscrollable::-webkit-scrollbar-thumb {
   visibility: hidden;
   opacity: 0;
-  background-color: rgba(246, 213, 0, 0.75);
+  background-color: rgba(156, 207, 49, 0.25);
   -webkit-transition: all 500ms linear;
   transition: all 500ms linear;
 }
 
 .smilesBox::-webkit-scrollbar-thumb:hover,
 .vscrollable::-webkit-scrollbar-thumb:hover {
-  background-color: #f6d500;
+  background-color: #9ccf31;
 }
 
 .smilesBox::-webkit-scrollbar-track,
@@ -110,6 +110,9 @@ input[type=text] {
 
 #scrollBottomBox {
   border: 0;
+  border-radius: 0;
+  color: #fff;
+  background-color: #9ccf31;
 }
 
 .chat {

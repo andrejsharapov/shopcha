@@ -100,11 +100,11 @@ input[type=text] {
     &::-webkit-scrollbar-thumb {
         visibility: hidden;
         opacity: 0;
-        background-color: rgba($col2, .75);
+        background-color: rgba($col1, .25);
         transition: all 500ms linear;
 
         &:hover {
-            background-color: $col2;
+            background-color: $col1;
         }
     }
 
@@ -122,6 +122,9 @@ input[type=text] {
 
 #scrollBottomBox {
     border: 0;
+    border-radius: 0;
+    color: $white;
+    background-color: $col1;
 
 }
 
