@@ -276,6 +276,12 @@ input[type=text] {
   line-height: 1.7;
 }
 
+.chatMain .chatMessages .chatMessage a,
+.chatMain .chatPrivateMessages .chatMessage a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .chatMain .chatMessages .chatMessage:hover,
 .chatMain .chatPrivateMessages .chatMessage:hover {
   background-color: rgba(0, 0, 0, 0.25);
