@@ -298,6 +298,10 @@ input[type=text] {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.chatTime {
+  margin-top: 3px;
+}
+
 .chatSystemMessage a {
   font-style: normal;
   color: #f6d500;
