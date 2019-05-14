@@ -298,6 +298,10 @@ input[type=text] {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.chatUserAvatar {
+  margin-top: 7px;
+}
+
 .chatTime {
   margin-top: 3px;
 }
@@ -328,8 +332,14 @@ input[type=text] {
 }
 
 #chatUserMiniMenu {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  border-color: #222222;
+  background-color: #222222;
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+#chatUserMiniMenu .chatUserFrom {
+  font-weight: 600;
 }
 
 .chatPeople .chatPeopleTitle {
@@ -349,7 +359,9 @@ input[type=text] {
 }
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a {
+  padding-left: 0 !important;
   color: #bbb;
+  background-image: none !important;
 }
 
 .chatPeople ul.chatPeopleList li .chatUserMenu .chatUserMenuItems ul li a:hover {
@@ -537,7 +549,6 @@ input[type=text] {
 }
 
 .chatPopupMenuDiv2 {
-  top: auto;
   bottom: 65px;
   width: auto !important;
   border: 0;

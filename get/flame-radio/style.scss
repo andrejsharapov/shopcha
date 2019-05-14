@@ -316,6 +316,10 @@ input[type=text] {
     }
 }
 
+.chatUserAvatar {
+    margin-top: 7px;
+}
+
 .chatTime {
     margin-top: 3px;
 }
@@ -357,7 +361,13 @@ input[type=text] {
 }
 
 #chatUserMiniMenu {
-    box-shadow: none;
+    border-color: $col3;
+    background-color: $col3;
+    box-shadow: 1px 3px 5px rgba($black, .5);
+
+    .chatUserFrom {
+        font-weight: 600;
+    }
 }
 
 .chatPeople {
@@ -383,9 +393,11 @@ input[type=text] {
                         ul {
                             li {
                                 a {
+                                    padding-left: 0 !important;
                                     @extend %tdn;
                                     @extend %sizes;
                                     color: #bbb;
+                                    background-image: none !important;
 
                                     &:hover {
                                         color: $white;
@@ -630,7 +642,6 @@ input[type=text] {
 }
 
 .chatPopupMenuDiv2 {
-    top: auto;
     bottom: 65px;
     width: auto !important;
     border: 0;
