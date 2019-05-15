@@ -9,6 +9,25 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    content:'example@mail.ru';
+    content: 'example@mail.ru';
     visibility: visible;
+}
+
+.chat {
+    border: 0;
+}
+
+// options
+
+.has-account #sign-in-label,
+.has-account #captcha-block,
+.has-account #new-nick-label {
+    display: block;
+}
+.has-account #account-info,
+.has-account #existing-nick-label {
+    display: none;
+}
+#nick {
+    font-size: 0;
 }
