@@ -262,6 +262,7 @@ input[type=text] {
         >li {
             margin-right: 1px;
             margin-left: 1px;
+            transition: all 200ms linear;
 
             >a {
                 position: relative;
@@ -355,6 +356,11 @@ input[type=text] {
                     }
                 }
             }
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 30px 40px rgba($col3, 0.3);
+              }
         }
     }
 
@@ -708,8 +714,7 @@ input[type=text] {
     border: 1px solid rgba($black, .25);
     border-radius: $bdrs;
     @extend %bgc3;
-    box-shadow: 0 30px 40px rgba($col3, .3);
-    transition: all .25s ease-in-out;
+    transition: all 200ms linear;
 
     ul {
         top: 0;
@@ -766,6 +771,8 @@ input[type=text] {
     &:hover {
         right: auto;
         width: calc(100% - 160px);
+        transform: translateY(-3px);
+        box-shadow: 0 30px 40px rgba($col3, 0.3);
     }
 }
 
