@@ -3,8 +3,6 @@ Theme Name: Flame Radio
 To project: flameradio.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
-License: MIT
-License URI: https://opensource.org/licenses/MIT
 Version: 1.0.0
  */
 
@@ -92,7 +90,6 @@ input[type=text] {
     @extend %inputs;
 }
 
-//! optional
 .smilesBox,
 .vscrollable {
     &::-webkit-scrollbar {
@@ -733,7 +730,7 @@ input[type=text] {
 
 .chatFull {
     .transparent {
-        @extend %bg; //! optimal
+        @extend %bg;
         opacity: 1;
     }
 }
@@ -848,8 +845,6 @@ input[type=text] {
     }
 }
 
-//! 18+
-
 .yes-button {
     @extend %btns;
     background-color: green;
@@ -859,8 +854,6 @@ input[type=text] {
     @extend %btns;
     background-color: red;
 }
-
-//! Сообщение не отправлено, так как похоже на флуд.
 
 .smokebg {
     background-color: rgba($black, .45)
@@ -892,8 +885,6 @@ input[type=text] {
         @extend %btns;
     }
 }
-
-//! copyright
 
 body:not(.has-nick) {
     .chatFooterWrapper {
