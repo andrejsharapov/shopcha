@@ -749,6 +749,16 @@ input[type=text] {
                     @extend %sizes;
                     line-height: 39px;
                 }
+
+                .close {
+                    filter: brightness(.3)  contrast(.5);
+                }
+
+                &.chatTabActive {
+                    .close {
+                        filter: contrast(3);
+                    }
+                }
             }
         }
     }
@@ -775,10 +785,33 @@ input[type=text] {
 
 .chatTabsRight.chatTabsLRActive,
 .chatTabsLeft.chatTabsLRActive {
+    z-index: 1;
     width: 48px;
     text-align: center;
     @extend %bgc3;
     background-position: center center;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        content:'';
+        width: 48px;
+        height: inherit;
+    }
+}
+
+.chatTabsRight.chatTabsLRActive {
+    &::before {
+        right: 100%;
+        background-image: linear-gradient(91deg, transparent, rgba($col3, .8));
+    }
+}
+
+.chatTabsLeft.chatTabsLRActive {
+    &::before {
+        left: 100%;
+        background-image: linear-gradient(-91deg, transparent, rgba($col3, .8));
+    }
 }
 
 .chatInputText {
