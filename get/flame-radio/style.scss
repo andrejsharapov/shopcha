@@ -1,6 +1,6 @@
 /*
 Theme Name: Flame Radio
-To project: Flameradio.ru
+To project: flameradio.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
 License: MIT
@@ -297,7 +297,7 @@ input[type=text] {
             padding: 3px 15px 3px 40px;
             line-height: 1.7;
             background-image: url(https://shop.madeas.ru/chatemplate/headphones.svg);
-            background-position: 16px center;
+            background-position: 16px 3px;
             background-repeat: no-repeat;
             background-size: 16px;
 
@@ -313,6 +313,10 @@ input[type=text] {
 
             &:hover {
                 background-color: rgba($black, .25);
+
+                .chatUserFrom {
+                    background-color: rgba($black, .05);
+                }
             }
         }
     }
@@ -348,7 +352,11 @@ input[type=text] {
 }
 
 .chatUserFrom {
+    position: relative;
+    margin-right: -3px;
+    vertical-align: top;
     font-style: normal;
+    background-color: $col3;
 }
 
 .chatMessage {
@@ -410,6 +418,7 @@ input[type=text] {
 }
 
 #chatUserMiniMenu {
+    z-index: 1;
     border-color: $col3;
     background-color: $col3;
     box-shadow: 1px 3px 5px rgba($black, .5);
@@ -879,10 +888,8 @@ input[type=text] {
 
 .dialog-buttons {
     button {
-        width: 100%;
+        width: 60%;
         @extend %btns;
-        border: 1px solid $white;
-        background-color: transparent;
     }
 }
 

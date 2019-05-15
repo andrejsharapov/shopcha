@@ -1,6 +1,6 @@
 /*
 Theme Name: Flame Radio
-To project: Flameradio.ru
+To project: flameradio.ru
 Author: Andrej Sharapov 
 Author URI: https://madeas.ru
 License: MIT
@@ -276,7 +276,7 @@ input[type=text] {
   padding: 3px 15px 3px 40px;
   line-height: 1.7;
   background-image: url(https://shop.madeas.ru/chatemplate/headphones.svg);
-  background-position: 16px center;
+  background-position: 16px 3px;
   background-repeat: no-repeat;
   background-size: 16px;
 }
@@ -297,6 +297,11 @@ input[type=text] {
 .chatMain .chatMessages .chatMessage:hover,
 .chatMain .chatPrivateMessages .chatMessage:hover {
   background-color: rgba(0, 0, 0, 0.25);
+}
+
+.chatMain .chatMessages .chatMessage:hover .chatUserFrom,
+.chatMain .chatPrivateMessages .chatMessage:hover .chatUserFrom {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .chatMain .chatPeople {
@@ -330,7 +335,11 @@ input[type=text] {
 }
 
 .chatUserFrom {
+  position: relative;
+  margin-right: -3px;
+  vertical-align: top;
   font-style: normal;
+  background-color: #222222;
 }
 
 .chatMessage.type-news, .chatMessage.type-event {
@@ -384,6 +393,7 @@ input[type=text] {
 }
 
 #chatUserMiniMenu {
+  z-index: 1;
   border-color: #222222;
   background-color: #222222;
   -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
@@ -742,9 +752,7 @@ input[type=text] {
 }
 
 .dialog-buttons button {
-  width: 100%;
-  border: 1px solid #fff;
-  background-color: transparent;
+  width: 60%;
 }
 
 body:not(.has-nick) .chatFooterWrapper::after {
