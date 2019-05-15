@@ -535,6 +535,14 @@ input[type=text] {
                         height: 2px;
                         background-color: $col1;
                     }
+
+                    &.active {
+                        color: $col2 !important;
+
+                        &::before {
+                            background-color: $col2;
+                        }
+                    }
                 }
 
                 &.chatTabActive {

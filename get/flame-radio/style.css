@@ -487,6 +487,14 @@ input[type=text] {
   background-color: #9ccf31;
 }
 
+.chatTabs > ul > li.chatTab > a.active {
+  color: #f6d500 !important;
+}
+
+.chatTabs > ul > li.chatTab > a.active::before {
+  background-color: #f6d500;
+}
+
 .chatTabs > ul > li.chatTab.chatTabActive > a {
   color: #f6d500 !important;
 }
