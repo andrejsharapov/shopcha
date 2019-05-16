@@ -13,6 +13,19 @@
     visibility: visible;
 }
 
+#nick {
+    font-size: 0;
+}
+
+.chatHeader .chatTitle {
+    visibility: hidden;
+}
+
+.chatHeader .chatTitle::before {
+    visibility: visible;
+    content: ' ChaTemplate - CSS for Chatovod';
+}
+
 .chat {
     border: 0;
 }
@@ -24,10 +37,10 @@
 .has-account #new-nick-label {
     display: block;
 }
+
 .has-account #account-info,
 .has-account #existing-nick-label {
     display: none;
 }
-#nick {
-    font-size: 0;
-}
+
+// end
