@@ -1,0 +1,284 @@
+:root {
+    --btnbg: #b6e245;
+    --btnhover: #a0ca2d;
+    --btncolor: #fff;
+    --radius: 3px;
+
+    --texts: #808080;
+    --bordertext: #ccc;
+
+    --border: #b2b2b2;
+    --pad: 25px;
+}
+
+.chatFull .transparent {
+    position: relative;
+    height: 35vh;
+    background-image: url('https://ak5.picdn.net/shutterstock/videos/9916175/thumb/1.jpg');
+    background-position: 50% 100%;
+    background-size: cover;
+    opacity: 1;
+}
+
+.chatFull .transparent::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: rgba(0, 0, 0, .5);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.center-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 65vh;
+    background-color: #fff;
+}
+
+.chatFull .content {
+    position: relative;
+    padding-top: 0 !important;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatFull .content form {
+    width: 40vw;
+    height: 100%;
+}
+
+#sign-in-label a,
+#account-info {
+    --size: 30px;
+    margin-top: -20vh;
+    margin-bottom: 20vh;
+    padding: 0;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: var(--size);
+    font-weight: 900;
+    color: var(--btncolor);
+}
+
+#sign-in-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-in-label a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    text-decoration: none;
+}
+
+#account-info {
+    font-size: 0;
+}
+
+#email {
+    font-size: var(--size);
+}
+
+#new-nick-label,
+#existing-nick-label,
+#captcha-label {
+    font-weight: normal;
+    color: var(--texts);
+}
+
+#new-nick-label,
+#existing-nick-label,
+#nick,
+#captcha-block,
+#captcha-input,
+#join-buttons,
+.dialog-buttons button {
+    padding: 6px var(--pad);
+}
+
+#nick {
+    margin: auto;
+    display: block;
+    width: calc(100% - (var(--pad) * 2));
+}
+
+#nick,
+#captcha-input {
+    padding: 0 var(--pad);
+    min-height: 40px !important;
+    color: var(--texts);
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    background-color: transparent;
+}
+
+#captcha-block a {
+    border-bottom: 0;
+}
+
+#captcha-block img {
+    width: 100%;
+    object-fit: contain;
+}
+
+#join-buttons a {
+    position: relative;
+    margin-top: var(--pad);
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--btnbg);
+}
+
+#join-chat-button2 {
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    text-transform: uppercase;
+    color: var(--btncolor);
+    cursor: pointer;
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--btnbg);
+    transition: all 0.4s linear;
+}
+
+.dialog-buttons button {
+    border-radius: var(--radius);
+    background-color: var(--btnbg);
+}
+
+/* settings for inputs */
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel .chatSendButton,
+.chatSendExitPanel select {
+    width: auto;
+    min-height: 27px;
+    height: auto;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendExitPanel {
+    width: auto;
+}
+
+.chatSendExitPanel select {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendButtonPanel {
+    right: 140px;
+}
+
+.chatFooter .chatFooterWrapper .chatPanel .chatSendTextPanel {
+    right: 247px;
+}
+
+input[type="text"] {
+    min-height: 27px;
+    padding-left: 15px;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    background-color: transparent;
+    background-image: none;
+}
+
+input[type="button"],
+input[type="submit"],
+select {
+    padding: 3px 15px;
+    font-family: var(--fonts);
+    color: var(--btncolor);
+    cursor: pointer;
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--btnbg);
+    transition: all 0.4s linear;
+}
+
+select option {
+    color: var(--btncolor) !important;
+}
+
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+}
+
+#join-chat-button,
+.dialog-buttons button {
+    padding: 10px var(--pad);
+    transition: all 0.4s linear;
+}
+
+#join-chat-button:hover,
+#join-chat-button2:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+select:hover,
+.dialog-buttons button:hover {
+    background-color: var(--btnhover);
+}
+
+#email {
+    position: relative;
+    display: block;
+    visibility: hidden;
+}
+
+#email::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: 'example@mail.ru';
+    visibility: visible;
+}
+
+#nick {
+    font-size: 0;
+}
+
+.chatHeader .chatTitle {
+    visibility: hidden;
+}
+
+.chatHeader .chatTitle::before {
+    visibility: visible;
+    content: ' ChaTemplate - CSS for Chatovod';
+}
+
+.has-account #sign-in-label,
+.has-account #captcha-block,
+.has-account #new-nick-label {
+    display: block;
+}
+
+.has-account #account-info,
+.has-account #existing-nick-label {
+    display: none;
+}
